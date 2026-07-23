@@ -46,8 +46,8 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/* 2. PRINCIPIO DE LA CASA */}
-      <section id="metodo" className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-5 py-8 sm:py-12 border-t border-white/[0.07]">
+      {/* 2. PRINCIPIO DE LA CASA (DIVISOR ELEGANTE Y VISIBLE) */}
+      <section id="metodo" className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-5 py-8 sm:py-12 border-t border-white/15">
         <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
           Principio fundamental
         </span>
@@ -65,8 +65,8 @@ export default function HomePage() {
       {/* 3. RECORRIDO DE LAS 4 CAPAS */}
       <ScrollTimeline />
 
-      {/* 4. EQUIPO HUMANO */}
-      <section id="equipo" className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-white/[0.07]">
+      {/* 4. EQUIPO HUMANO (DIVISOR ELEGANTE Y VISIBLE) */}
+      <section id="equipo" className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-white/15">
         <div className="text-center space-y-3">
           <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
             Acompañamiento humano
@@ -115,8 +115,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. PROCESO COMERCIAL */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-white/[0.07]">
+      {/* 5. PROCESO COMERCIAL (DIVISOR ELEGANTE Y VISIBLE) */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-white/15">
         <div className="text-center space-y-3">
           <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
             Paso a Paso
