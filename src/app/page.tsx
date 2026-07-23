@@ -129,11 +129,11 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Tarjetas monocromas en blanco */}
+        {/* Tarjetas monocromas con números más grandes en Open Sans gris */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Step 1 */}
           <div className="space-y-3 p-6 rounded-2xl bg-surface-card border border-surface-border">
-            <span className="text-3xl font-extrabold text-white font-mono">01</span>
+            <span className="text-4xl sm:text-5xl font-bold text-gray-400 font-['Open_Sans',sans-serif] block">01</span>
             <h3 className="text-xl sm:text-2xl font-bold text-white">Primera conversación</h3>
             <p className="text-sm font-normal text-gray-300 font-['Open_Sans',sans-serif]">Gratuita · 45 minutos</p>
             <p className="text-base text-gray-200 leading-relaxed font-normal">
@@ -143,7 +143,7 @@ export default function HomePage() {
 
           {/* Step 2 */}
           <div className="space-y-3 p-6 rounded-2xl bg-surface-card border border-white/30">
-            <span className="text-3xl font-extrabold text-white font-mono">02</span>
+            <span className="text-4xl sm:text-5xl font-bold text-gray-400 font-['Open_Sans',sans-serif] block">02</span>
             <h3 className="text-xl sm:text-2xl font-bold text-white">Diagnóstico iARTESANA</h3>
             <p className="text-sm font-normal text-gray-300 font-['Open_Sans',sans-serif]">350 € (Descontables al 100%)</p>
             <p className="text-base text-gray-200 leading-relaxed font-normal">
@@ -153,7 +153,7 @@ export default function HomePage() {
 
           {/* Step 3 */}
           <div className="space-y-3 p-6 rounded-2xl bg-surface-card border border-surface-border">
-            <span className="text-3xl font-extrabold text-white font-mono">03</span>
+            <span className="text-4xl sm:text-5xl font-bold text-gray-400 font-['Open_Sans',sans-serif] block">03</span>
             <h3 className="text-xl sm:text-2xl font-bold text-white">Implantación por capas</h3>
             <p className="text-sm font-normal text-gray-300 font-['Open_Sans',sans-serif]">Presupuesto personalizado</p>
             <p className="text-base text-gray-200 leading-relaxed font-normal">
