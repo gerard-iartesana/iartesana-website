@@ -35,6 +35,7 @@ export default function StickyScrollVideoSection({
       const rect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
+      // Distancia de recorrido del scroll en la sección
       const totalScrollable = rect.height - windowHeight;
       if (totalScrollable <= 0) return;
 
@@ -69,10 +70,10 @@ export default function StickyScrollVideoSection({
   return (
     <div
       ref={sectionRef}
-      className="relative min-h-[160vh] sm:min-h-[190vh] w-full"
+      className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] min-h-[220vh] overflow-x-hidden"
     >
-      {/* Vídeo fijo que ocupa el 100% del ancho de la pantalla (Edge-to-Edge) */}
-      <div className="sticky top-0 h-screen w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden pointer-events-none z-0">
+      {/* Vídeo de fondo: 100% de lado a lado de la pantalla (w-screen h-screen) anclado al scroll */}
+      <div className="sticky top-0 w-screen h-screen overflow-hidden pointer-events-none z-0">
         <video
           ref={videoRef}
           onLoadedMetadata={handleLoadedMetadata}
@@ -84,15 +85,14 @@ export default function StickyScrollVideoSection({
           <source src={src} type="video/mp4" />
         </video>
 
-        {/* Velo oscuro sutil e integración con fondo para asegurar máxima legibilidad de las letras */}
-        <div className="absolute inset-0 bg-[#0B0E14]/40 pointer-events-none" />
+        {/* Capa de contraste transparente para asegurar la legibilidad del texto en blanco */}
+        <div className="absolute inset-0 bg-[#0B0E14]/65 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-[#0B0E14] pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0E14] via-transparent to-[#0B0E14] pointer-events-none" />
       </div>
 
-      {/* Contenido flotante 100% TRANSPARENTE: sin fondo de tarjeta, solo las letras e iconos */}
-      <div className="relative z-10 -mt-[85vh] sm:-mt-[90vh] pb-32 max-w-4xl mx-auto px-4 sm:px-6">
-        <div className="bg-transparent border-none shadow-none p-0 space-y-6 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+      {/* Texto flotante encima con transparencia completa */}
+      <div className="relative z-10 -mt-[100vh] min-h-screen flex items-center justify-center pointer-events-auto py-20 px-4 sm:px-6">
+        <div className="w-full max-w-4xl mx-auto bg-transparent text-white space-y-6 drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
           {children}
         </div>
       </div>
