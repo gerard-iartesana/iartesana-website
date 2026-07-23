@@ -30,8 +30,8 @@ export default function ScrollRevealChecklist({ items }: ScrollRevealChecklistPr
 
       // Items appear spread across 20%-90% of the section scroll
       // This gives time for the video to advance between each item
-      const startAt = 0.05;
-      const endAt = 0.75;
+      const startAt = 0.0;
+      const endAt = 0.65;
       const itemProgress = Math.max(0, Math.min(1, (sectionProgress - startAt) / (endAt - startAt)));
 
       // Map to number of visible items
