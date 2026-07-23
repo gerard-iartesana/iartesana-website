@@ -90,7 +90,7 @@ export default function ScrollTimeline() {
   }, []);
 
   return (
-    <section id="capas" className="w-full max-w-5xl mx-auto py-8 sm:py-12 px-4 sm:px-6 lg:px-8 border-t border-white/15" ref={timelineRef}>
+    <section id="capas" className="w-full max-w-5xl mx-auto py-8 sm:py-12 px-4 sm:px-6 lg:px-8" ref={timelineRef}>
       <div className="text-center space-y-3 mb-10 sm:mb-12">
         {/* Descriptor en Open Sans tipografía normal */}
         <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">

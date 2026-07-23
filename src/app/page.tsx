@@ -49,7 +49,7 @@ export default function HomePage() {
       </section>
 
       {/* 2. PRINCIPIO DE LA CASA */}
-      <section id="metodo" className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-5 py-8 sm:py-12 border-t border-white/15">
+      <section id="metodo" className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-5 py-8 sm:py-12">
         <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
           Principio fundamental
         </span>
