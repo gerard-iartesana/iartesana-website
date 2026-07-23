@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
-import Link from 'next/link';
-import { ArrowRight, Check, ChevronDown, ChevronUp } from 'lucide-react';
+import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function ScrollTimeline() {
   const [activeStep, setActiveStep] = useState<number>(0);
@@ -14,14 +13,12 @@ export default function ScrollTimeline() {
       title: 'Base digital',
       color: '#86BF58',
       mainIdea: 'Ordenamos el conocimiento, los datos y las herramientas de la empresa.',
-      description: 'Construimos el contexto estable inmutable y la base de datos viva sobre la que operan las personas y la inteligencia artificial sin generar caos.',
+      description: 'Construimos el contexto estable y la base de datos viva sobre la que operan las personas y la inteligencia artificial sin generar caos.',
       results: [
         'Contexto estable e identidad codificada',
         'Base de datos viva estructurada y exportable',
         'Herramientas operativas conectadas para la plantilla',
       ],
-      linkText: 'Explorar Base digital',
-      href: '/base-digital',
     },
     {
       title: 'IA aplicada',
@@ -33,8 +30,6 @@ export default function ScrollTimeline() {
         'Agentes conectados a conocimiento real sin alucinaciones',
         'Procesamiento automático de documentos e información',
       ],
-      linkText: 'Explorar IA aplicada',
-      href: '/ia-aplicada',
     },
     {
       title: 'Seguridad y control',
@@ -42,12 +37,10 @@ export default function ScrollTimeline() {
       mainIdea: 'Construimos para que la empresa conserve el control de lo suyo.',
       description: 'Garantía de portabilidad absoluta, trazabilidad forense de cada acción de IA y preparación estructural ante la normativa europea (EU AI Act).',
       results: [
-        'Datos estructurados y portables sin software cerrado',
+        'Datos estructurados y portables',
         'Trazabilidad y explicabilidad en cada respuesta',
         'Alineación estructural con el Reglamento Europeo de IA',
       ],
-      linkText: 'Ver Seguridad y control',
-      href: '/seguridad-control',
     },
     {
       title: 'Acompañamiento humano',
@@ -59,8 +52,6 @@ export default function ScrollTimeline() {
         'Formación práctica para la autonomía de tu plantilla',
         'Evolución del sistema adaptada al crecimiento real',
       ],
-      linkText: 'Conocer al Equipo',
-      href: '/acompanamiento',
     },
   ];
 
@@ -191,18 +182,6 @@ export default function ScrollTimeline() {
                         </li>
                       ))}
                     </ul>
-                  </div>
-
-                  {/* Link */}
-                  <div className="pt-2 pb-2">
-                    <Link
-                      href={step.href}
-                      className="inline-flex items-center gap-2 text-base sm:text-lg font-bold transition-colors hover:underline"
-                      style={{ color: step.color }}
-                    >
-                      <span>{step.linkText}</span>
-                      <ArrowRight className="w-5 h-5" />
-                    </Link>
                   </div>
                 </div>
               </div>
