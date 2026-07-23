@@ -48,12 +48,15 @@ export default function StickyScrollVideoSection({
     const onScroll = () => {
       const rect = wrapper.getBoundingClientRect();
       const wh = window.innerHeight;
-      const scrollDistance = rect.height + wh;
-      const scrolled = wh - rect.top;
-      const progress = Math.max(0, Math.min(1, scrolled / scrollDistance));
+      // progress 0→1 based on how far through the section we've scrolled
+      const totalScroll = rect.height - wh;
+      if (totalScroll <= 0) return;
+      const scrolled = -rect.top;
+      const progress = Math.max(0, Math.min(1, scrolled / totalScroll));
       targetTimeRef.current = progress * video.duration;
     };
 
+    // Smooth lerp loop for video scrubbing
     const loop = () => {
       if (video.duration) {
         const diff = targetTimeRef.current - currentTimeRef.current;
@@ -76,45 +79,42 @@ export default function StickyScrollVideoSection({
   }, [ready]);
 
   return (
-    <section
+    <div
       ref={wrapperRef}
-      className="relative w-[100vw] -ml-[50vw] left-[50%]"
-      style={{ minHeight: '400vh' }}
+      className="relative"
+      style={{ height: '350vh' }}
     >
-      {/* Video de fondo: fijo en pantalla, 100% edge-to-edge */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden pointer-events-none z-0">
+      {/* Video de fondo: fijo en pantalla mientras se hace scroll por esta sección */}
+      <div className="sticky top-0 w-full h-screen overflow-hidden z-0">
         <video
           ref={videoRef}
           muted
           playsInline
           preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ willChange: 'transform' }}
         >
           <source src={src} type="video/mp4" />
         </video>
 
-        {/* Overlay oscuro para legibilidad */}
-        <div className="absolute inset-0 bg-[#0B0E14]/55" />
+        {/* Overlay oscuro para legibilidad del texto */}
+        <div className="absolute inset-0 bg-[#0B0E14]/50" />
 
-        {/* Gradientes de entrada/salida */}
+        {/* Gradientes superior e inferior para integrar con fondo */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'linear-gradient(to bottom, #0B0E14 0%, transparent 15%, transparent 85%, #0B0E14 100%)',
+              'linear-gradient(to bottom, #0B0E14 0%, transparent 12%, transparent 88%, #0B0E14 100%)',
           }}
         />
-      </div>
 
-      {/* Texto que se desplaza sobre el vídeo fijo */}
-      <div className="relative z-10 -mt-[100vh] pointer-events-auto">
-        <div className="min-h-screen flex items-center justify-center px-4 sm:px-8 py-[25vh]">
-          <div className="w-full max-w-4xl mx-auto text-white space-y-8">
+        {/* Contenido centrado sobre el vídeo */}
+        <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 z-10">
+          <div className="w-full max-w-4xl mx-auto text-white space-y-6">
             {children}
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
