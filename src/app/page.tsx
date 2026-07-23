@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import ScrollTimeline from '@/components/ScrollTimeline';
 import HeroVideo from '@/components/HeroVideo';
+import ConvergenceLines from '@/components/ConvergenceLines';
 
 export default function HomePage() {
   return (
@@ -60,6 +61,9 @@ export default function HomePage() {
         <p className="text-lg sm:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto font-normal">
           Intentar automatizar sobre información desordenada solo genera errores a mayor velocidad. Construimos primero la base limpia sobre la que operan las personas y la inteligencia artificial.
         </p>
+
+        {/* Animación de líneas verticales que se comprimen con el scroll */}
+        <ConvergenceLines />
       </section>
 
       {/* 3. RECORRIDO DE LAS 4 CAPAS */}
