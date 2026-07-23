@@ -99,8 +99,8 @@ export default function ScrollTimeline() {
         <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
           Cómo se construye el sistema
         </h2>
-        <p className="text-lg sm:text-xl text-gray-300 max-w-xl mx-auto font-normal">
-          Haz clic en cada capa para desplegar los detalles de implantación.
+        <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed">
+          Una arquitectura en 4 capas para que la inteligencia artificial trabaje sobre bases sólidas, seguras y bajo el control de tu empresa.
         </p>
       </div>
 
