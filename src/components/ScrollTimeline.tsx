@@ -154,20 +154,19 @@ export default function ScrollTimeline() {
                   onClick={() => toggleExpand(index)}
                 >
                   <div className="flex items-center justify-between">
-                    {/* Título en tipografía normal (font-normal / font-medium) */}
                     <h3 className="text-3xl sm:text-5xl font-normal text-white tracking-tight group-hover:text-gray-200 transition-colors">
                       {step.title}
                     </h3>
+                    {/* Texto limpio en gris sin pestaña ni borde */}
                     <button
                       type="button"
-                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-medium px-3.5 py-1.5 rounded-full border border-gray-800 bg-surface-card/60 text-gray-400 hover:text-white hover:border-gray-500 transition-all shrink-0"
+                      className="inline-flex items-center gap-1.5 text-sm sm:text-base font-medium text-gray-400 group-hover:text-white transition-colors shrink-0"
                     >
                       <span>{isExpanded ? 'Menos detalles' : 'Saber más'}</span>
-                      {isExpanded ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
+                      {isExpanded ? <ChevronUp className="w-4 h-4 text-gray-400 group-hover:text-white" /> : <ChevronDown className="w-4 h-4 text-gray-400 group-hover:text-white" />}
                     </button>
                   </div>
 
-                  {/* Texto de debajo en BOLD / EXTRA BOLD */}
                   <p className="text-xl sm:text-3xl font-extrabold text-white max-w-3xl leading-snug">
                     {step.mainIdea}
                   </p>
