@@ -8,12 +8,22 @@ import { Menu, X } from 'lucide-react';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalHeight > 0) {
+        const currentProgress = (window.scrollY / totalHeight) * 100;
+        setScrollProgress(Math.min(100, Math.max(0, currentProgress)));
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -122,6 +132,14 @@ export default function Navbar() {
           </div>
         </div>
       )}
+
+      {/* Barra de progreso de lectura / scroll muy sutil en blanco al borde inferior de la cabecera */}
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/10 overflow-hidden pointer-events-none">
+        <div
+          className="h-full bg-white/90 shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-150 ease-out"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
     </header>
   );
 }
