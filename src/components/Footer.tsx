@@ -41,7 +41,7 @@ export default function Footer() {
               <li><Link href="#metodo" className="text-gray-300 hover:text-white transition-colors">Método iARTESANA</Link></li>
               <li><Link href="#capas" className="text-gray-300 hover:text-white transition-colors">Las 4 capas</Link></li>
               <li><Link href="#equipo" className="text-gray-300 hover:text-white transition-colors">Equipo humano</Link></li>
-              <li><Link href="#pasos" className="text-gray-300 hover:text-white transition-colors">Pasos</Link></li>
+              <li><Link href="#pasos" className="text-gray-300 hover:text-white transition-colors">Diagnóstico 360 €</Link></li>
             </ul>
           </div>
 

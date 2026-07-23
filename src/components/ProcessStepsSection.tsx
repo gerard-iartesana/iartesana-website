@@ -14,7 +14,6 @@ export default function ProcessStepsSection() {
       const rect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Calcular el avance exacto del scroll a medida que la sección baja por la pantalla
       const start = windowHeight * 0.88;
       const end = windowHeight * 0.30;
 
@@ -43,9 +42,13 @@ export default function ProcessStepsSection() {
     {
       num: '02',
       title: 'Diagnóstico iARTESANA',
-      subtitle: '350 € (Descontables al 100%)',
+      subtitle: (
+        <>
+          <strong className="font-bold text-white text-base">360 €</strong> (Descontables al 100%)
+        </>
+      ),
       text: 'Análisis detallado de tu operativa, oportunidades de automatización y hoja de ruta con presupuesto cerrado.',
-      border: 'border-white/30',
+      border: 'border-[#38A8E0]/70 shadow-[0_0_20px_rgba(56,168,224,0.3)]',
       triggerAt: 0.4,
     },
     {
@@ -72,7 +75,7 @@ export default function ProcessStepsSection() {
         </p>
       </div>
 
-      {/* Tarjetas monocromas que van apareciendo progresivamente a medida que el usuario hace scroll hacia abajo */}
+      {/* Tarjetas monocromas con borde resaltado en Diagnóstico */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {steps.map((step, idx) => {
           const isCardVisible = scrollProgress >= step.triggerAt;
@@ -82,8 +85,8 @@ export default function ProcessStepsSection() {
               key={idx}
               className={`space-y-3 p-6 rounded-2xl bg-surface-card border ${step.border} transition-all duration-700 ease-out transform ${
                 isCardVisible
-                  ? 'opacity-100 translate-x-0 shadow-lg'
-                  : 'opacity-0 -translate-x-16 shadow-none'
+                  ? 'opacity-100 translate-x-0'
+                  : 'opacity-0 -translate-x-16'
               }`}
             >
               <span className="text-4xl sm:text-5xl font-bold text-gray-400 font-['Open_Sans',sans-serif] block">{step.num}</span>

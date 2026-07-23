@@ -83,7 +83,7 @@ export default function RootLayout({
             description:
               'Análisis de procesos, estado de datos, oportunidades y hoja de ruta para implantar IA.',
           },
-          price: '350.00',
+          price: '360.00',
           priceCurrency: 'EUR',
         },
       ],

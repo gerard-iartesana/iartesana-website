@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { FileText, CheckCircle2, ArrowRight, Sparkles, AlertTriangle, ShieldCheck, DollarSign, Clock } from 'lucide-react';
+import { FileText, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Diagnóstico iARTESANA (350 €) | Producto de Entrada',
+  title: 'Diagnóstico iARTESANA (360 €) | Producto de Entrada',
   description: 'Análisis exhaustivo de procesos, estado de datos, matriz de oportunidades y hoja de ruta para la implantación de IA en tu empresa.',
 };
 
@@ -47,12 +47,12 @@ export default function DiagnosticoPage() {
         </div>
 
         <div className="space-y-2">
-          <span className="text-5xl sm:text-6xl font-black text-white">350 €</span>
+          <span className="text-5xl sm:text-6xl font-black text-white">360 €</span>
           <span className="text-gray-400 text-xs block uppercase tracking-widest font-mono">IVA no incluido</span>
         </div>
 
         <p className="text-emerald-400 text-sm font-semibold max-w-md mx-auto">
-          ✓ Garantía: Los 350 € se descuentan al 100% del importe total si avanzamos juntos en la implantación.
+          ✓ Garantía: Los 360 € se descuentan al 100% del importe total si avanzamos juntos en la implantación.
         </p>
 
         <div className="pt-4">
@@ -99,7 +99,7 @@ export default function DiagnosticoPage() {
           </div>
 
           <div className="p-6 rounded-2xl bg-surface-hover/50 border border-[#38A8E0]/30 space-y-2">
-            <span className="text-xs font-mono text-[#86BF58]">PASO 1 (350 €)</span>
+            <span className="text-xs font-mono text-[#86BF58]">PASO 1 (360 €)</span>
             <h4 className="font-bold text-white text-base">Diagnóstico iARTESANA</h4>
             <p className="text-gray-300 text-xs leading-relaxed">
               Promete un trabajo de auditoría técnica con informe formal entregado en PDF y sesión de presentación ejecutiva.
