@@ -9,308 +9,386 @@ import {
   Users, 
   Layers, 
   Cpu, 
-  Lock, 
-  FileText, 
-  Clock, 
-  ChevronRight 
+  ChevronRight, 
+  MessageSquare,
+  FileSearch,
+  Zap,
+  Lock,
+  Compass
 } from 'lucide-react';
+import HeroSystemDiagram from '@/components/HeroSystemDiagram';
+import LayerSystemFlow from '@/components/LayerSystemFlow';
 
 export default function HomePage() {
   return (
-    <div className="space-y-24 pb-20">
-      {/* 1. HERO SECTION */}
-      <section className="relative pt-12 lg:pt-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center space-y-8">
+    <div className="space-y-28 pb-24 text-[#E2E8F0]">
+      {/* 1. SIMPLIFIED HERO */}
+      <section className="relative pt-8 lg:pt-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-center space-y-8">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-card border border-surface-border text-xs text-[#38A8E0] font-mono tracking-wide">
-          <Sparkles className="w-3.5 h-3.5" />
+          <Sparkles className="w-4 h-4 text-[#38A8E0]" />
           <span>Método iARTESANA · Implantación por Capas</span>
         </div>
 
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white max-w-5xl mx-auto leading-[1.1]">
-          Implantamos inteligencia artificial para que tu empresa trabaje con{' '}
+        {/* Headline directo en blanco y una sola frase destacada en color */}
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.15]">
+          Implantamos inteligencia artificial para que tu empresa{' '}
           <span className="bg-gradient-to-r from-[#86BF58] via-[#38A8E0] to-[#E15A9C] bg-clip-text text-transparent">
-            menos tareas repetidas
-          </span>{' '}
-          y mejor información.
+            trabaje mejor.
+          </span>
         </h1>
 
-        <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-normal leading-relaxed">
-          Pero no empezamos instalando herramientas. Primero ordenamos el conocimiento, los datos y los procesos sobre los que deberá trabajar la IA.
+        {/* Subtitular de apoyo claro y legible */}
+        <p className="text-lg sm:text-2xl text-gray-200 max-w-3xl mx-auto font-normal leading-relaxed">
+          Menos tareas repetidas y mejores decisiones ordenando primero el conocimiento, los datos y los procesos de tu negocio.
         </p>
 
-        {/* CTA Box */}
-        <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        {/* Único CTA Principal */}
+        <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-5">
           <Link
             href="/agendar"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-[#38A8E0] via-[#7361A8] to-[#E15A9C] shadow-xl shadow-[#38A8E0]/20 hover:scale-105 transition-all duration-300"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-9 py-4 rounded-full text-base font-bold text-white bg-gradient-to-r from-[#38A8E0] via-[#7361A8] to-[#E15A9C] shadow-2xl shadow-[#38A8E0]/30 hover:scale-105 transition-all duration-300"
           >
-            <Sparkles className="w-4 h-4" />
+            <Sparkles className="w-5 h-5" />
             <span>Reservar primera sesión</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-5 h-5" />
           </Link>
 
           <Link
             href="/diagnostico"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full text-sm font-medium text-gray-300 bg-surface-card hover:bg-surface-hover border border-surface-border transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-base font-semibold text-gray-200 bg-surface-card hover:bg-surface-hover border border-surface-border transition-all"
           >
             <span>Ver Diagnóstico (350 €)</span>
-            <ChevronRight className="w-4 h-4 text-gray-500" />
+            <ChevronRight className="w-5 h-5 text-gray-400" />
           </Link>
         </div>
 
-        <p className="text-xs text-gray-500 font-mono">
-          Una primera conversación de 45 minutos, sin coste ni compromiso.
+        <p className="text-sm text-gray-400 font-medium">
+          ✓ Una primera conversación de 45 minutos, sin coste ni compromiso.
         </p>
       </section>
 
-      {/* 2. EL PRINCIPIO (COLUMNA VERTEBRAL) */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div className="relative p-10 sm:p-14 rounded-3xl bg-gradient-to-b from-surface-card to-[#0F131D] border border-surface-border text-center space-y-6 overflow-hidden">
-          <div className="absolute -top-24 -left-24 w-60 h-60 bg-[#86BF58]/10 rounded-full blur-3xl" />
-          <div className="absolute -bottom-24 -right-24 w-60 h-60 bg-[#38A8E0]/10 rounded-full blur-3xl" />
+      {/* 2. ELEMENTO VISUAL PROTAGONISTA EN HERO (DIAGRAMA INTERACTIVO DE SISTEMA) */}
+      <HeroSystemDiagram />
 
-          <p className="text-xs font-mono uppercase tracking-widest text-[#86BF58]">El principio de la casa</p>
-          
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            "Primero ordenamos.{' '}
-            <span className="text-[#38A8E0]">Después automatizamos.</span>"
+      {/* 3. EL PRINCIPIO (SECCIÓN ABIERTA SIN TARJETA REPETITIVA) */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-6">
+        <span className="text-xs font-mono uppercase tracking-widest text-[#86BF58] font-bold">
+          El principio de la casa
+        </span>
+
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          "Primero ordenamos.{' '}
+          <span className="text-[#38A8E0]">Después automatizamos."</span>
+        </h2>
+
+        <p className="text-lg sm:text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
+          Intentar automatizar el caos solo genera caos a más velocidad. Creamos primero la base de datos viva y el contexto estable que la IA necesita para no inventar ni equivocarse.
+        </p>
+      </section>
+
+      {/* 4. FLUSO VISUAL INTEGRADO DE LAS 4 CAPAS */}
+      <LayerSystemFlow />
+
+      {/* 5. QUÉ CONSTRUIMOS (SECCIÓN A ANCHO COMPLETO CON IDENTIDAD CROMÁTICA) */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+        <div className="text-center space-y-3">
+          <span className="text-xs font-mono uppercase tracking-widest text-gray-400 font-bold">
+            Lo que queda instalado en tu empresa
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-white">
+            Las 4 capas del producto
           </h2>
+        </div>
 
-          <p className="text-gray-300 max-w-2xl mx-auto leading-relaxed text-sm sm:text-base">
-            Intentar automatizar el caos solo genera caos a más velocidad. Creamos primero la base de datos viva y el contexto estable que la IA necesita para no inventar ni equivocarse.
+        {/* Alternancia de bloques grandes con código cromático real */}
+        <div className="space-y-8">
+          {/* Layer 01: Base digital (Green) */}
+          <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-[#86BF58]/10 via-surface-card to-surface-card border-l-8 border-l-[#86BF58] border border-surface-border grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            <div className="lg:col-span-2 space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="px-3 py-1 rounded-md bg-[#86BF58] text-white text-xs font-mono font-bold">
+                  CAPA 01
+                </span>
+                <h3 className="text-3xl font-bold text-white">Base digital</h3>
+                <span className="text-sm italic text-[#86BF58] font-serif">"Los cimientos"</span>
+              </div>
+              <p className="text-base sm:text-lg text-gray-200 leading-relaxed">
+                Marca, conocimiento, datos vivos y herramientas conectadas. Construimos la estructura digital sobre la que trabajan tanto tus empleados como los futuros agentes de inteligencia artificial.
+              </p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-200 pt-2">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0" />
+                  <span>Contexto estable de marca y criterios</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0" />
+                  <span>Base de datos operativa aislada y exportable</span>
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col justify-center items-start lg:items-end">
+              <Link
+                href="/base-digital"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold text-white bg-[#86BF58] hover:bg-[#86BF58]/90 transition-all shadow-lg shadow-[#86BF58]/20"
+              >
+                <span>Explorar Base Digital</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Layer 02: IA Aplicada (Blue) */}
+          <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-[#38A8E0]/10 via-surface-card to-surface-card border-l-8 border-l-[#38A8E0] border border-surface-border grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            <div className="lg:col-span-2 space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="px-3 py-1 rounded-md bg-[#38A8E0] text-white text-xs font-mono font-bold">
+                  CAPA 02
+                </span>
+                <h3 className="text-3xl font-bold text-white">IA aplicada</h3>
+                <span className="text-sm italic text-[#38A8E0] font-serif">"La inteligencia en acción"</span>
+              </div>
+              <p className="text-base sm:text-lg text-gray-200 leading-relaxed">
+                Agentes y asistentes con la Escala de Intervención. Sistemas que asisten en respuestas, automatizan tareas repetitivas y se detienen cuando se requiere aprobación humana.
+              </p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-200 pt-2">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-[#38A8E0] shrink-0" />
+                  <span>Escala: Asiste, Automatiza, Actúa, Aprueba</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-[#38A8E0] shrink-0" />
+                  <span>Procesamiento documental e información interna</span>
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col justify-center items-start lg:items-end">
+              <Link
+                href="/ia-aplicada"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-all shadow-lg shadow-[#38A8E0]/20"
+              >
+                <span>Explorar IA Aplicada</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Layer 03: Seguridad y Control (Violet) */}
+          <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-[#7361A8]/10 via-surface-card to-surface-card border-l-8 border-l-[#7361A8] border border-surface-border grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            <div className="lg:col-span-2 space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="px-3 py-1 rounded-md bg-[#7361A8] text-white text-xs font-mono font-bold">
+                  CAPA 03
+                </span>
+                <h3 className="text-3xl font-bold text-white">Seguridad y control</h3>
+                <span className="text-sm italic text-[#7361A8] font-serif">"Todo bajo control"</span>
+              </div>
+              <p className="text-base sm:text-lg text-gray-200 leading-relaxed">
+                Portabilidad absoluta de la información, trazabilidad de cada acción ejecutada por la IA y alineación con la normativa europea de inteligencia artificial (EU AI Act).
+              </p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-200 pt-2">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-[#7361A8] shrink-0" />
+                  <span>Trazabilidad y explicabilidad en cada respuesta</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-[#7361A8] shrink-0" />
+                  <span>Preparados para cumplir exigencias normativas</span>
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col justify-center items-start lg:items-end">
+              <Link
+                href="/seguridad-control"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold text-white bg-[#7361A8] hover:bg-[#7361A8]/90 transition-all shadow-lg shadow-[#7361A8]/20"
+              >
+                <span>Ver Seguridad y Control</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Layer 04: Acompañamiento Humano (Pink) */}
+          <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-[#E15A9C]/10 via-surface-card to-surface-card border-l-8 border-l-[#E15A9C] border border-surface-border grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            <div className="lg:col-span-2 space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="px-3 py-1 rounded-md bg-[#E15A9C] text-white text-xs font-mono font-bold">
+                  CAPA 04
+                </span>
+                <h3 className="text-3xl font-bold text-white">Acompañamiento humano</h3>
+                <span className="text-sm italic text-[#E15A9C] font-serif">"Personas cerca"</span>
+              </div>
+              <p className="text-base sm:text-lg text-gray-200 leading-relaxed">
+                Formación directa para tu plantilla, soporte sin tickets anónimos y evolución técnica contínua. Alguien con nombre propio que conoce tu proyecto.
+              </p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-200 pt-2">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-[#E15A9C] shrink-0" />
+                  <span>Trato humano directo con David y Gerard</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-[#E15A9C] shrink-0" />
+                  <span>Autonomía y formación continua del equipo</span>
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col justify-center items-start lg:items-end">
+              <Link
+                href="/acompanamiento"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold text-white bg-[#E15A9C] hover:bg-[#E15A9C]/90 transition-all shadow-lg shadow-[#E15A9C]/20"
+              >
+                <span>Conocer al Equipo</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. PROTAGONISMO DEL COMPONENTE HUMANO (DAVID & GERARD AMPLIADO) */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-8">
+        <div className="text-center space-y-2">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#E15A9C] font-bold">
+            El diferencial de iARTESANA
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-white">
+            Quienes acompañan a tu empresa
+          </h2>
+          <p className="text-base text-gray-300 max-w-xl mx-auto">
+            Sin intermediarios, comerciales agresivos ni sistemas de tickets automatizados.
           </p>
         </div>
-      </section>
 
-      {/* 3. QUÉ CONSTRUIMOS (BASE DIGITAL + IA APLICADA) */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-10">
-        <div className="text-center space-y-3">
-          <p className="text-xs font-mono uppercase tracking-widest text-gray-400">Dimensión 1</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">Qué construimos</h2>
-          <p className="text-sm text-gray-400">Los activos tangibles que quedan instalados en tu empresa.</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Card 01: Base digital */}
-          <Link href="/base-digital" className="group">
-            <div className="h-full p-8 rounded-3xl glass-card transition-all duration-300 group-hover:-translate-y-1 space-y-6 border-t-4 border-t-[#86BF58]">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-2xl bg-[#86BF58]/10 text-[#86BF58]">
-                    <Layers className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-mono text-[#86BF58] font-bold">BLOQUE 01</span>
-                    <h3 className="text-2xl font-bold text-white group-hover:text-[#86BF58] transition-colors">
-                      Base digital
-                    </h3>
-                  </div>
-                </div>
-                <span className="text-xs italic text-gray-400 font-serif">"Los cimientos"</span>
-              </div>
-
-              <p className="text-gray-300 text-sm leading-relaxed">
-                Marca, conocimiento, datos y herramientas conectadas. La base sobre la que trabajan las personas y la inteligencia artificial.
-              </p>
-
-              <ul className="space-y-2.5 text-xs text-gray-300 pt-2">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#86BF58] shrink-0" />
-                  <span>Contexto estable: quién sois, cómo habláis y qué criterios seguís.</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#86BF58] shrink-0" />
-                  <span>Datos vivos: información operativa que cambia cada día.</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#86BF58] shrink-0" />
-                  <span>Herramientas conectadas para el equipo.</span>
-                </li>
-              </ul>
-
-              <div className="pt-4 flex items-center gap-2 text-xs font-semibold text-[#86BF58]">
-                <span>Explorar Base Digital</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-          </Link>
-
-          {/* Card 02: IA Aplicada */}
-          <Link href="/ia-aplicada" className="group">
-            <div className="h-full p-8 rounded-3xl glass-card transition-all duration-300 group-hover:-translate-y-1 space-y-6 border-t-4 border-t-[#38A8E0]">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-2xl bg-[#38A8E0]/10 text-[#38A8E0]">
-                    <Cpu className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-mono text-[#38A8E0] font-bold">BLOQUE 02</span>
-                    <h3 className="text-2xl font-bold text-white group-hover:text-[#38A8E0] transition-colors">
-                      IA aplicada
-                    </h3>
-                  </div>
-                </div>
-                <span className="text-xs italic text-gray-400 font-serif">"La inteligencia en acción"</span>
-              </div>
-
-              <p className="text-gray-300 text-sm leading-relaxed">
-                Inteligencia artificial que conoce tu empresa antes de actuar. Agentes, asistentes y automatizaciones operativas con límites claros.
-              </p>
-
-              <ul className="space-y-2.5 text-xs text-gray-300 pt-2">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#38A8E0] shrink-0" />
-                  <span>Escala de intervención (Asiste, Automatiza, Actúa, Pide Aprobación).</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#38A8E0] shrink-0" />
-                  <span>Agentes conectados a conocimiento real del negocio.</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#38A8E0] shrink-0" />
-                  <span>Procesamiento documental y respuesta asistida.</span>
-                </li>
-              </ul>
-
-              <div className="pt-4 flex items-center gap-2 text-xs font-semibold text-[#38A8E0]">
-                <span>Explorar IA Aplicada</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-          </Link>
-        </div>
-      </section>
-
-      {/* 4. CÓMO LO HACEMOS (SEGURIDAD Y CONTROL + ACOMPAÑAMIENTO) */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-10">
-        <div className="text-center space-y-3">
-          <p className="text-xs font-mono uppercase tracking-widest text-gray-400">Dimensión 2</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">Cómo lo hacemos</h2>
-          <p className="text-sm text-gray-400">Garantías permanentes que atraviesan todo el servicio.</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Card 03: Seguridad y Control */}
-          <Link href="/seguridad-control" className="group">
-            <div className="h-full p-8 rounded-3xl glass-card transition-all duration-300 group-hover:-translate-y-1 space-y-6 border-t-4 border-t-[#7361A8]">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-2xl bg-[#7361A8]/10 text-[#7361A8]">
-                    <ShieldCheck className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-mono text-[#7361A8] font-bold">BLOQUE 03</span>
-                    <h3 className="text-2xl font-bold text-white group-hover:text-[#7361A8] transition-colors">
-                      Seguridad y control
-                    </h3>
-                  </div>
-                </div>
-                <span className="text-xs italic text-gray-400 font-serif">"Todo bajo control"</span>
-              </div>
-
-              <p className="text-gray-300 text-sm leading-relaxed">
-                Datos estructurados, documentados y exportables. Trazabilidad de cada acción, explicabilidad y alineación con la normativa europea de IA.
-              </p>
-
-              <div className="pt-2 grid grid-cols-2 gap-2 text-xs text-gray-300 font-mono">
-                <span className="p-2 rounded-lg bg-surface-card border border-surface-border">✓ Portabilidad</span>
-                <span className="p-2 rounded-lg bg-surface-card border border-surface-border">✓ Explicabilidad</span>
-                <span className="p-2 rounded-lg bg-surface-card border border-surface-border">✓ Logs de auditoría</span>
-                <span className="p-2 rounded-lg bg-surface-card border border-surface-border">✓ EU AI Act Ready</span>
-              </div>
-
-              <div className="pt-4 flex items-center gap-2 text-xs font-semibold text-[#7361A8]">
-                <span>Ver Seguridad y Control</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-          </Link>
-
-          {/* Card 04: Acompañamiento Humano */}
-          <Link href="/acompanamiento" className="group">
-            <div className="h-full p-8 rounded-3xl glass-card transition-all duration-300 group-hover:-translate-y-1 space-y-6 border-t-4 border-t-[#E15A9C]">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-2xl bg-[#E15A9C]/10 text-[#E15A9C]">
-                    <Users className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-mono text-[#E15A9C] font-bold">BLOQUE 04</span>
-                    <h3 className="text-2xl font-bold text-white group-hover:text-[#E15A9C] transition-colors">
-                      Acompañamiento humano
-                    </h3>
-                  </div>
-                </div>
-                <span className="text-xs italic text-gray-400 font-serif">"Personas cerca"</span>
-              </div>
-
-              <p className="text-gray-300 text-sm leading-relaxed">
-                Formación para tu equipo, soporte continuo y evolución del sistema. Alguien que conoce tu empresa y responde sin sistemas de tickets anónimos.
-              </p>
-
-              <div className="pt-2 flex items-center gap-4">
-                <div className="flex -space-x-3 overflow-hidden">
-                  <Image src="/team/david.jpg" alt="David" width={36} height={36} className="inline-block h-9 w-9 rounded-full ring-2 ring-[#0B0E14] object-cover" />
-                  <Image src="/team/gerard.jpg" alt="Gerard" width={36} height={36} className="inline-block h-9 w-9 rounded-full ring-2 ring-[#0B0E14] object-cover" />
-                </div>
-                <span className="text-xs text-gray-400">David & Gerard al frente</span>
-              </div>
-
-              <div className="pt-4 flex items-center gap-2 text-xs font-semibold text-[#E15A9C]">
-                <span>Conocer al Equipo y Acompañamiento</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-          </Link>
-        </div>
-      </section>
-
-      {/* 5. PRESENCIA HUMANA */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div className="p-8 sm:p-12 rounded-3xl bg-surface-card border border-surface-border flex flex-col md:flex-row items-center gap-8">
-          <div className="flex shrink-0 -space-x-4">
-            <div className="relative w-24 h-24 rounded-2xl overflow-hidden border-2 border-[#86BF58] shadow-lg">
+        {/* Tarjeta de equipo a gran escala */}
+        <div className="p-8 sm:p-12 rounded-3xl bg-surface-card border border-surface-border grid grid-cols-1 md:grid-cols-2 gap-10 items-center shadow-2xl">
+          {/* David */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 p-6 rounded-2xl bg-surface-hover/40 border border-surface-border">
+            <div className="relative w-36 h-36 rounded-2xl overflow-hidden shrink-0 border-2 border-[#86BF58] shadow-xl">
               <Image src="/team/david.jpg" alt="David" fill className="object-cover" />
             </div>
-            <div className="relative w-24 h-24 rounded-2xl overflow-hidden border-2 border-[#38A8E0] shadow-lg">
-              <Image src="/team/gerard.jpg" alt="Gerard" fill className="object-cover" />
+            <div className="space-y-3 text-center sm:text-left">
+              <h3 className="text-2xl font-bold text-white">David</h3>
+              <p className="text-xs font-mono text-[#86BF58] font-bold">Estrategia & Contexto de Negocio</p>
+              <p className="text-sm text-gray-200 leading-relaxed">
+                Especialista en estructuración de procesos organizativos, tono de marca y contexto. Diseña los cimientos estratégicos para que la IA responda con el verdadero criterio de la empresa.
+              </p>
             </div>
           </div>
 
-          <div className="space-y-3 text-center md:text-left">
-            <h3 className="text-xl font-bold text-white">David & Gerard · Socios Fundadores</h3>
-            <p className="text-sm text-gray-300 leading-relaxed italic">
-              "No vendemos software de alquiler ni plantillas genéricas. Acompañamos a cada cliente a ordenar su conocimiento y construir un sistema del que sea dueño absoluto."
-            </p>
+          {/* Gerard */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 p-6 rounded-2xl bg-surface-hover/40 border border-surface-border">
+            <div className="relative w-36 h-36 rounded-2xl overflow-hidden shrink-0 border-2 border-[#38A8E0] shadow-xl">
+              <Image src="/team/gerard.jpg" alt="Gerard" fill className="object-cover" />
+            </div>
+            <div className="space-y-3 text-center sm:text-left">
+              <h3 className="text-2xl font-bold text-white">Gerard</h3>
+              <p className="text-xs font-mono text-[#38A8E0] font-bold">Ingeniería de Sistemas & Datos</p>
+              <p className="text-sm text-gray-200 leading-relaxed">
+                Desarrollador de infraestructura, bases de datos y agentes. Garantiza el rendimiento técnico, la seguridad en la nube, la explicabilidad y la soberanía de los datos.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 6. CÓMO SE EMPIEZA (PRODUCTO ENTRADA) */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-8">
-        <div className="p-10 rounded-3xl glass-card border border-[#38A8E0]/30 space-y-6">
-          <span className="inline-block px-3 py-1 rounded-full bg-[#38A8E0]/10 text-[#38A8E0] text-xs font-mono font-bold">
-            PASO 1 · PRODUCTO DE ENTRADA
+      {/* 7. CLARIFICACIÓN DE RECORRIDO Y CTAs (3 PASOS CLAROS) */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-12">
+        <div className="text-center space-y-3">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#38A8E0] font-bold">
+            El Recorrido Comercial
           </span>
-
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">Diagnóstico iARTESANA</h2>
-
-          <p className="text-gray-300 max-w-xl mx-auto text-sm leading-relaxed">
-            Diagnóstico de procesos y hoja de ruta para implantar IA. Análisis riguroso con oportunidades priorizadas y evaluación de datos.
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-white">
+            Cómo empezamos a trabajar juntos
+          </h2>
+          <p className="text-base text-gray-300 max-w-xl mx-auto">
+            Tres pasos progresivos para devolver el orden y la tranquilidad a tu empresa.
           </p>
+        </div>
 
-          <div className="inline-block px-6 py-3 rounded-2xl bg-surface-hover border border-surface-border text-center">
-            <span className="text-3xl font-extrabold text-white">350 €</span>
-            <span className="block text-xs text-gray-400 mt-0.5">Se descuentan 100% si avanzamos juntos en la implantación</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Step 1 */}
+          <div className="p-8 rounded-3xl bg-surface-card border border-surface-border space-y-4 relative flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-[#38A8E0]/15 text-[#38A8E0] font-mono font-bold text-base flex items-center justify-center">
+                1
+              </div>
+              <h3 className="text-xl font-bold text-white">Primera conversación</h3>
+              <p className="text-xs text-[#38A8E0] font-semibold">Gratuita · 45 minutos</p>
+              <p className="text-sm text-gray-300 leading-relaxed">
+                Sesión sin coste ni compromiso para conocernos, escuchar tus miedos y evaluar si existe encaje para implantar IA en tu negocio.
+              </p>
+            </div>
+            <div className="pt-4">
+              <Link
+                href="/agendar"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-full text-xs font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-all"
+              >
+                <span>Reservar conversación</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
 
-          <div className="pt-4">
+          {/* Step 2 */}
+          <div className="p-8 rounded-3xl bg-surface-card border-2 border-[#86BF58]/50 space-y-4 relative flex flex-col justify-between shadow-xl">
+            <div className="space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-[#86BF58]/20 text-[#86BF58] font-mono font-bold text-base flex items-center justify-center">
+                2
+              </div>
+              <h3 className="text-xl font-bold text-white">Diagnóstico iARTESANA</h3>
+              <p className="text-xs text-[#86BF58] font-semibold">350 € (Descontables al 100%)</p>
+              <p className="text-sm text-gray-300 leading-relaxed">
+                Análisis exhaustivo de tu operativa, inventario de datos, mapa de oportunidades y propuesta con presupuesto de implantación.
+              </p>
+            </div>
+            <div className="pt-4">
+              <Link
+                href="/diagnostico"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-full text-xs font-bold text-white bg-[#86BF58] hover:bg-[#86BF58]/90 transition-all"
+              >
+                <span>Ver Diagnóstico 350€</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Step 3 */}
+          <div className="p-8 rounded-3xl bg-surface-card border border-surface-border space-y-4 relative flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-[#E15A9C]/15 text-[#E15A9C] font-mono font-bold text-base flex items-center justify-center">
+                3
+              </div>
+              <h3 className="text-xl font-bold text-white">Implantación por capas</h3>
+              <p className="text-xs text-[#E15A9C] font-semibold">Desarrollo a medida</p>
+              <p className="text-sm text-gray-300 leading-relaxed">
+                Construcción progresiva de tu Base Digital, agentes de IA, envolvente de seguridad y acompañamiento a tu equipo.
+              </p>
+            </div>
+            <div className="pt-4">
+              <span className="w-full inline-block text-center py-3 text-xs font-mono text-gray-400 bg-surface-hover rounded-full">
+                Siguiente paso tras el Diagnóstico
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. CIERRE & CTA FINAL */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
+        <div className="p-12 rounded-3xl bg-gradient-to-r from-surface-card via-surface-hover to-surface-card border border-surface-border space-y-6 shadow-2xl">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+            ¿Listo para ordenar la información de tu empresa?
+          </h2>
+          <p className="text-base text-gray-200 max-w-xl mx-auto">
+            Hablemos directamente durante 45 minutos para evaluar tus necesidades.
+          </p>
+          <div>
             <Link
               href="/agendar"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-[#38A8E0] via-[#7361A8] to-[#E15A9C] shadow-xl hover:scale-105 transition-all"
+              className="inline-flex items-center gap-3 px-9 py-4 rounded-full text-base font-bold text-white bg-gradient-to-r from-[#38A8E0] via-[#7361A8] to-[#E15A9C] shadow-2xl hover:scale-105 transition-all"
             >
-              <Sparkles className="w-4 h-4" />
+              <Sparkles className="w-5 h-5" />
               <span>Reservar primera sesión</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
