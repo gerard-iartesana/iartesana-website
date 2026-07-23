@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import IsometricBackground from '@/components/IsometricBackground';
 
+import CustomCursor from '@/components/CustomCursor';
+
 export const metadata: Metadata = {
   title: 'iARTESANA · Implantación de Inteligencia Artificial por Capas',
   description:
@@ -109,6 +111,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col justify-between antialiased selection:bg-[#38A8E0]/30 selection:text-white">
+        <CustomCursor />
         <IsometricBackground />
         <Navbar />
         <main className="relative z-10 flex-grow">{children}</main>
