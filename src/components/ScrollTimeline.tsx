@@ -92,20 +92,21 @@ export default function ScrollTimeline() {
   return (
     <section id="capas" className="w-full max-w-5xl mx-auto py-16 px-4 sm:px-6 lg:px-8" ref={timelineRef}>
       <div className="text-center space-y-4 mb-16">
-        <span className="text-sm sm:text-base font-mono uppercase tracking-widest text-gray-400 font-semibold block">
+        {/* Descriptor en Open Sans tipografía normal */}
+        <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
           Recorrido de Implantación
         </span>
         <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
           Cómo se construye el sistema
         </h2>
-        <p className="text-lg sm:text-xl text-gray-300 max-w-xl mx-auto">
+        <p className="text-lg sm:text-xl text-gray-300 max-w-xl mx-auto font-normal">
           Haz clic en cada capa para desplegar los detalles de implantación.
         </p>
       </div>
 
-      {/* Main container with Left Modular Stack Column inspired by brand reference */}
+      {/* Main container with Left Modular Stack Column */}
       <div className="relative flex gap-6 sm:gap-10">
-        {/* Left Modular Stack Column (Bloques modulares apilados) */}
+        {/* Left Modular Stack Column */}
         <div className="flex flex-col gap-3 w-5 sm:w-8 shrink-0 pt-1">
           {steps.map((step, index) => {
             const isActive = activeStep >= index;
@@ -125,7 +126,6 @@ export default function ScrollTimeline() {
                 }}
                 title={step.title}
               >
-                {/* Subtle active pulse line */}
                 {isCurrent && (
                   <div className="absolute inset-0 bg-white/20 animate-pulse pointer-events-none" />
                 )}
@@ -174,7 +174,7 @@ export default function ScrollTimeline() {
                       </button>
                     </div>
 
-                    {/* Texto de debajo en REGULAR */}
+                    {/* Texto de debajo en REGULAR / NORMAL */}
                     <p className="text-xl sm:text-2xl font-normal text-gray-200 max-w-3xl leading-relaxed">
                       {step.mainIdea}
                     </p>
@@ -187,7 +187,7 @@ export default function ScrollTimeline() {
                     }`}
                   >
                     {/* Description */}
-                    <p className="text-lg sm:text-xl text-gray-300 max-w-3xl leading-relaxed border-t border-surface-border/40 pt-4">
+                    <p className="text-lg sm:text-xl text-gray-300 max-w-3xl leading-relaxed border-t border-surface-border/40 pt-4 font-normal">
                       {step.description}
                     </p>
 
