@@ -52,7 +52,7 @@ export default function Navbar() {
               Equipo
             </Link>
             <Link href="#pasos" className="text-base font-medium text-gray-300 hover:text-white transition-colors">
-              Pasos
+              Cómo empezar
             </Link>
           </nav>
 
@@ -108,7 +108,7 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
             className="block text-lg font-medium text-gray-200 py-2 border-b border-surface-border/50"
           >
-            Pasos
+            Cómo empezar
           </Link>
 
           <div className="pt-2">
