@@ -6,7 +6,7 @@ import { Check, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 
 export default function ScrollTimeline() {
   const [activeStep, setActiveStep] = useState<number>(0);
-  const [expandedSteps, setExpandedSteps] = useState<Record<number, boolean>>({});
+  const [openStep, setOpenStep] = useState<number | null>(0);
   const timelineRef = useRef<HTMLDivElement>(null);
 
   const steps = [
@@ -69,23 +69,28 @@ export default function ScrollTimeline() {
   ];
 
   const toggleExpand = (index: number) => {
-    setExpandedSteps((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
+    setOpenStep((prev) => (prev === index ? null : index));
   };
 
   useEffect(() => {
+    let lastActive = -1;
     const handleScroll = () => {
       if (!timelineRef.current) return;
       const elements = timelineRef.current.querySelectorAll('.timeline-step');
       
+      let currentActive = 0;
       elements.forEach((el, index) => {
         const rect = el.getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.6) {
-          setActiveStep(index);
+        if (rect.top <= window.innerHeight * 0.55) {
+          currentActive = index;
         }
       });
+
+      if (currentActive !== lastActive) {
+        lastActive = currentActive;
+        setActiveStep(currentActive);
+        setOpenStep(currentActive);
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -96,7 +101,6 @@ export default function ScrollTimeline() {
   return (
     <section id="capas" className="w-full max-w-5xl mx-auto pt-2 sm:pt-4 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8" ref={timelineRef}>
       <div className="text-center space-y-3 mb-10 sm:mb-12">
-        {/* Descriptor en Open Sans tipografía normal */}
         <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
           Recorrido de Implantación
         </span>
@@ -108,25 +112,26 @@ export default function ScrollTimeline() {
         </p>
       </div>
 
-      {/* List of Steps with Perfectly Aligned Left Modular Blocks */}
+      {/* List of Steps */}
       <div className="space-y-8">
         {steps.map((step, index) => {
-          const isActive = activeStep >= index;
-          const isExpanded = !!expandedSteps[index];
+          const isActive = activeStep === index;
+          const isExpanded = openStep === index;
 
           return (
             <div
               key={index}
               className={`timeline-step flex gap-5 sm:gap-8 items-stretch transition-all duration-500 ${
-                isActive ? 'opacity-100' : 'opacity-50'
+                isActive || isExpanded ? 'opacity-100' : 'opacity-50 hover:opacity-80'
               }`}
             >
-              {/* Barra lateral con color limpio plano sin efectos de iluminación */}
+              {/* Barra lateral con indicador de color */}
               <div
                 onClick={() => toggleExpand(index)}
-                className="w-5 sm:w-7 shrink-0 rounded-sm cursor-pointer self-stretch transition-opacity duration-300"
+                className="w-5 sm:w-7 shrink-0 rounded-sm cursor-pointer self-stretch transition-all duration-300"
                 style={{
                   backgroundColor: step.color,
+                  boxShadow: isExpanded ? `0 0 15px ${step.color}88` : 'none',
                 }}
                 title={step.title}
               />
@@ -188,7 +193,7 @@ export default function ScrollTimeline() {
                     </ul>
                   </div>
 
-                  {/* Botón de enlace Explorar (sin +, con verde corporativo más oscuro y márgenes reducidos) */}
+                  {/* Botón de enlace Explorar */}
                   {step.exploreUrl && (
                     <div className="pt-2">
                       <Link
