@@ -11,91 +11,118 @@ export default function StickyScrollVideoSection({
   src,
   children,
 }: StickyScrollVideoSectionProps) {
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [duration, setDuration] = useState<number>(0);
-  const targetTimeRef = useRef<number>(0);
-  const animationFrameRef = useRef<number | null>(null);
-
-  const handleLoadedMetadata = () => {
-    if (videoRef.current) {
-      setDuration(videoRef.current.duration);
-    }
-  };
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [ready, setReady] = useState(false);
+  const targetTimeRef = useRef(0);
+  const currentTimeRef = useRef(0);
+  const rafRef = useRef<number | null>(null);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    video.pause();
-
-    const updateScrub = () => {
-      if (!sectionRef.current || !videoRef.current || !videoRef.current.duration) return;
-
-      const rect = sectionRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      // Distancia de recorrido del scroll en la sección
-      const totalScrollable = rect.height - windowHeight;
-      if (totalScrollable <= 0) return;
-
-      const scrolled = -rect.top;
-      const progress = Math.min(1, Math.max(0, scrolled / totalScrollable));
-
-      targetTimeRef.current = progress * videoRef.current.duration;
+    const onReady = () => {
+      video.pause();
+      video.currentTime = 0;
+      setReady(true);
     };
 
-    const renderLoop = () => {
-      if (videoRef.current && videoRef.current.duration) {
-        const diff = targetTimeRef.current - videoRef.current.currentTime;
-        if (Math.abs(diff) > 0.0005) {
-          videoRef.current.currentTime += diff * 0.25;
-        }
-      }
-      animationFrameRef.current = requestAnimationFrame(renderLoop);
-    };
-
-    window.addEventListener('scroll', updateScrub, { passive: true });
-    updateScrub();
-    animationFrameRef.current = requestAnimationFrame(renderLoop);
+    if (video.readyState >= 1) {
+      onReady();
+    } else {
+      video.addEventListener('loadedmetadata', onReady, { once: true });
+    }
 
     return () => {
-      window.removeEventListener('scroll', updateScrub);
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
+      video.removeEventListener('loadedmetadata', onReady);
     };
-  }, [duration]);
+  }, []);
+
+  useEffect(() => {
+    if (!ready) return;
+    const video = videoRef.current;
+    const wrapper = wrapperRef.current;
+    if (!video || !wrapper || !video.duration) return;
+
+    const onScroll = () => {
+      const rect = wrapper.getBoundingClientRect();
+      const wh = window.innerHeight;
+      // progress goes 0→1 as the section scrolls through the viewport
+      // 0 = section top hits viewport bottom, 1 = section bottom hits viewport top
+      const scrollDistance = rect.height + wh;
+      const scrolled = wh - rect.top;
+      const progress = Math.max(0, Math.min(1, scrolled / scrollDistance));
+      targetTimeRef.current = progress * video.duration;
+    };
+
+    // Smooth interpolation loop for video scrubbing
+    const loop = () => {
+      if (video.duration) {
+        const diff = targetTimeRef.current - currentTimeRef.current;
+        if (Math.abs(diff) > 0.01) {
+          currentTimeRef.current += diff * 0.15;
+          video.currentTime = currentTimeRef.current;
+        }
+      }
+      rafRef.current = requestAnimationFrame(loop);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    rafRef.current = requestAnimationFrame(loop);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, [ready]);
 
   return (
-    <div
-      ref={sectionRef}
-      className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] min-h-[220vh] overflow-x-hidden"
+    // Wrapper: breaks out of parent max-w container to be full viewport width.
+    // Height is tall enough to give ample scroll distance for the video timeline.
+    <section
+      ref={wrapperRef}
+      className="relative w-[100vw] -ml-[50vw] left-[50%]"
+      style={{ minHeight: '300vh' }}
     >
-      {/* Vídeo de fondo: 100% de lado a lado de la pantalla (w-screen h-screen) anclado al scroll */}
-      <div className="sticky top-0 w-screen h-screen overflow-hidden pointer-events-none z-0">
+      {/* STICKY layer: video + overlay + text all pinned together */}
+      <div className="sticky top-0 h-screen w-full overflow-hidden">
+        {/* Background video: full viewport, edge to edge */}
         <video
           ref={videoRef}
-          onLoadedMetadata={handleLoadedMetadata}
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ willChange: 'transform' }}
         >
           <source src={src} type="video/mp4" />
         </video>
 
-        {/* Capa de contraste transparente para asegurar la legibilidad del texto en blanco */}
-        <div className="absolute inset-0 bg-[#0B0E14]/65 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-[#0B0E14] pointer-events-none" />
-      </div>
+        {/* Dark overlay for text legibility */}
+        <div className="absolute inset-0 bg-[#0B0E14]/55" />
 
-      {/* Texto flotante encima con transparencia completa */}
-      <div className="relative z-10 -mt-[100vh] min-h-screen flex items-center justify-center pointer-events-auto py-20 px-4 sm:px-6">
-        <div className="w-full max-w-4xl mx-auto bg-transparent text-white space-y-6 drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
-          {children}
+        {/* Top and bottom gradient fades into dark background */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              'linear-gradient(to bottom, #0B0E14 0%, transparent 18%, transparent 82%, #0B0E14 100%)',
+          }}
+        />
+
+        {/* Text content: centered on the viewport, fully transparent background */}
+        <div
+          ref={contentRef}
+          className="absolute inset-0 flex items-center justify-center px-4 sm:px-8"
+        >
+          <div className="w-full max-w-4xl mx-auto text-white space-y-6">
+            {children}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
