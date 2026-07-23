@@ -1,19 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { Layers, Database, Wrench, CheckCircle2, ArrowRight, Sparkles, Compass } from 'lucide-react';
+import { Layers, Compass, Database, Wrench, CheckCircle2, ArrowRight, Sparkles, ShieldCheck, RefreshCw, Palette } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Base Digital · Los Cimientos | iARTESANA',
-  description: 'Ordenamos la marca, el conocimiento, los datos vivos y las herramientas conectadas sobre los que operará la Inteligencia Artificial.',
+  title: 'Base Digital · Capa 01 | iARTESANA',
+  description: 'Ordenamos el contexto estable, los datos vivos y las herramientas conectadas sobre los que operan las personas y la inteligencia artificial.',
 };
 
 export default function BaseDigitalPage() {
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 pb-24 text-[#E2E8F0]">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24 pt-6 pb-24 text-[#E2E8F0]">
       {/* Header Section */}
-      <div className="text-center space-y-6 pt-8">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#86BF58]/10 border border-[#86BF58]/30 text-xs font-mono text-[#86BF58] font-bold">
+      <div className="text-center space-y-6 pt-4">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#86BF58]/10 border border-[#86BF58]/30 text-xs sm:text-sm font-mono text-[#86BF58] font-bold">
           <Layers className="w-4 h-4" />
           <span>CAPA 01 · LOS CIMIENTOS</span>
         </div>
@@ -22,108 +22,242 @@ export default function BaseDigitalPage() {
           Base digital
         </h1>
 
-        <p className="text-xl sm:text-2xl text-[#86BF58] font-semibold italic">
-          "Primero ordenamos. Después automatizamos."
+        <p className="text-xl sm:text-3xl text-[#86BF58] font-semibold italic">
+          Primero ordenamos. Después automatizamos.
         </p>
 
-        <p className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-          Marca, conocimiento, datos y herramientas conectadas. La estructura digital estable sobre la que trabajan las personas y la inteligencia artificial.
+        <p className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-normal">
+          Marca, conocimiento, datos vivos y herramientas conectadas. La estructura digital estable sobre la que trabajan las personas y la inteligencia artificial sin generar caos.
         </p>
       </div>
 
-      {/* Tesis Central / Promesa */}
-      <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-[#86BF58]/15 via-surface-card to-surface-card border-l-8 border-l-[#86BF58] border border-surface-border space-y-6 shadow-xl">
-        <h2 className="text-2xl sm:text-3xl font-bold text-white">Dos certezas fundamentales sobre la Base Digital:</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-base text-gray-200">
-          <div className="space-y-3">
-            <h3 className="font-bold text-[#86BF58] text-lg flex items-center gap-2">
-              <CheckCircle2 className="w-6 h-6 shrink-0" />
-              1. Sirve al equipo humano desde el primer día
-            </h3>
-            <p className="leading-relaxed text-gray-200">
-              Un manual de buenas prácticas, un inventario claro y un protocolo de incidencias son útiles hoy mismo para tus empleados, aunque nunca se implantase un agente. No preparas cosas para un futuro incierto: ganas orden de inmediato.
+      {/* Frase clave & Regla en voz alta */}
+      <div className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-[#86BF58]/30 shadow-2xl relative overflow-hidden space-y-6">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#86BF58]/5 rounded-full blur-3xl pointer-events-none" />
+        
+        <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-[#86BF58] font-semibold block">
+          Principio de implantación
+        </span>
+
+        <blockquote className="text-2xl sm:text-3xl font-extrabold text-white leading-snug tracking-tight">
+          "No sustituimos todo lo que ya tienes. Revisamos qué funciona, qué puede conectarse y qué necesita ordenarse."
+        </blockquote>
+
+        <div className="pt-2 border-t border-surface-border/60 flex items-center gap-3 text-base text-gray-300 font-normal">
+          <ShieldCheck className="w-5 h-5 text-[#86BF58] shrink-0" />
+          <span><strong className="text-white font-semibold">La regla iARTESANA:</strong> No se implanta Inteligencia Artificial hasta que la Base Digital está sana.</span>
+        </div>
+      </div>
+
+      {/* Dos Certezas Fundamentales */}
+      <div className="space-y-6">
+        <div className="text-center space-y-2">
+          <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
+            Garantías operativas
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Dos certezas sobre la Base Digital</h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="p-8 rounded-2xl bg-surface-card border border-surface-border space-y-4 hover:border-[#86BF58]/50 transition-all duration-300">
+            <div className="w-12 h-12 rounded-xl bg-[#86BF58]/10 border border-[#86BF58]/30 flex items-center justify-center text-[#86BF58]">
+              <CheckCircle2 className="w-6 h-6" />
+            </div>
+            <h3 className="text-xl font-bold text-white">1. Sirve al equipo humano desde el primer día</h3>
+            <p className="text-base text-gray-300 leading-relaxed font-normal">
+              Un manual de buenas prácticas, un inventario claro y un protocolo de incidencias son útiles hoy mismo para tus empleados, aunque nunca se implantase un agente de IA. No preparas cosas para un futuro incierto: ganas orden operativo de inmediato.
             </p>
           </div>
 
-          <div className="space-y-3">
-            <h3 className="font-bold text-[#86BF58] text-lg flex items-center gap-2">
-              <CheckCircle2 className="w-6 h-6 shrink-0" />
-              2. No hay que rehacer la empresa desde cero
-            </h3>
-            <p className="leading-relaxed text-gray-200">
-              No sustituimos todo lo que ya tienes. Revisamos qué funciona, qué puede conectarse y qué necesita ordenarse. Aprovechamos tus herramientas actuales y creamos los puentes necesarios.
+          <div className="p-8 rounded-2xl bg-surface-card border border-surface-border space-y-4 hover:border-[#86BF58]/50 transition-all duration-300">
+            <div className="w-12 h-12 rounded-xl bg-[#86BF58]/10 border border-[#86BF58]/30 flex items-center justify-center text-[#86BF58]">
+              <RefreshCw className="w-6 h-6" />
+            </div>
+            <h3 className="text-xl font-bold text-white">2. No hay que rehacer la empresa desde cero</h3>
+            <p className="text-base text-gray-300 leading-relaxed font-normal">
+              Aprovechamos las herramientas que tu plantilla ya domina (correo, CRM, hojas de cálculo, calendarios) y construimos las pasarelas de conexión necesarias en lugar de obligarte a cambiar de software.
             </p>
           </div>
         </div>
       </div>
 
       {/* Las 3 Piezas de la Base Digital */}
-      <div className="space-y-8">
-        <div className="text-center space-y-2">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Las 3 piezas que componen la Base Digital</h2>
-          <p className="text-base text-gray-300">Cómo se estructuran los cimientos de tu empresa.</p>
+      <div className="space-y-10">
+        <div className="text-center space-y-3">
+          <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
+            Estructura modular
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+            Las 3 piezas de los cimientos
+          </h2>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto font-normal">
+            Todo lo que construimos se traduce en soluciones concretas para el negocio, nunca en tecnología abstracta.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Piece 1 */}
-          <div className="p-8 rounded-3xl bg-surface-card border border-surface-border space-y-4 shadow-lg">
-            <div className="w-14 h-14 rounded-2xl bg-[#86BF58]/15 border border-[#86BF58]/30 flex items-center justify-center text-[#86BF58]">
-              <Compass className="w-7 h-7" />
+        <div className="space-y-8">
+          {/* Pieza 01: Contexto estable (destacado arriba con mayor peso) */}
+          <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-surface-card via-surface-card to-[#86BF58]/10 border-2 border-[#86BF58]/40 shadow-xl space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 rounded-2xl bg-[#86BF58]/20 border border-[#86BF58]/40 flex items-center justify-center text-[#86BF58] shrink-0">
+                  <Compass className="w-7 h-7" />
+                </div>
+                <div>
+                  <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider">Pieza 01 · La diferencia iARTESANA</span>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white">Contexto estable</h3>
+                </div>
+              </div>
+              <span className="px-3.5 py-1 rounded-full text-xs font-semibold bg-[#86BF58]/20 text-[#86BF58] border border-[#86BF58]/30 self-start sm:self-auto">
+                Prioridad estructural
+              </span>
             </div>
-            <h3 className="text-xl font-bold text-white">1. Contexto estable</h3>
-            <p className="text-xs text-[#86BF58] font-mono font-bold">Sistema Base & Identidad</p>
-            <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
-              Quién sois, cómo habláis, cómo trabajáis y qué criterios seguís. Es la identidad codificada que sirve de referencia inmutable para humanos e IA.
+
+            <p className="text-lg text-gray-200 leading-relaxed font-normal">
+              Quién sois, cómo habláis, cómo trabajáis y qué criterios seguís. Es la documentación estratégica que sirve como guía inmutable de referencia tanto para tu equipo como para los sistemas de Inteligencia Artificial.
             </p>
+
+            <div className="border-t border-surface-border/60 pt-6 space-y-3">
+              <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-400 font-semibold">Lo que queda construido:</h4>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-base text-gray-200">
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                  <span><strong>Identidad verbal y visual:</strong> cómo sois y cómo se os reconoce.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                  <span><strong>Tono y criterios de comunicación:</strong> aplicables por personas y por IA.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                  <span><strong>Buenas prácticas y forma de trabajar:</strong> redactadas y accesibles.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                  <span><strong>Protocolos de incidencias:</strong> respuesta clara cuando algo falla sin depender de quién esté ese día.</span>
+                </li>
+                <li className="flex items-start gap-2.5 sm:col-span-2">
+                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                  <span><strong>Procesos documentados:</strong> criterios claros de decisión operativa para toda la empresa.</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          {/* Piece 2 */}
-          <div className="p-8 rounded-3xl bg-surface-card border border-surface-border space-y-4 shadow-lg">
-            <div className="w-14 h-14 rounded-2xl bg-[#86BF58]/15 border border-[#86BF58]/30 flex items-center justify-center text-[#86BF58]">
-              <Database className="w-7 h-7" />
+          {/* Pieza 02: Datos vivos */}
+          <div className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-surface-border shadow-lg space-y-6">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-[#86BF58]/15 border border-[#86BF58]/30 flex items-center justify-center text-[#86BF58] shrink-0">
+                <Database className="w-7 h-7" />
+              </div>
+              <div>
+                <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider">Pieza 02</span>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white">Datos vivos</h3>
+              </div>
             </div>
-            <h3 className="text-xl font-bold text-white">2. Datos vivos</h3>
-            <p className="text-xs text-[#86BF58] font-mono font-bold">Base de datos estructurada</p>
-            <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
-              Lo que cambia cada día: clientes, operaciones, incidencias, disponibilidad e histórico. Datos limpios, aislados y exportables.
+
+            <p className="text-lg text-gray-200 leading-relaxed font-normal">
+              Lo que cambia cada día: clientes, operaciones, incidencias, disponibilidad e histórico. Una arquitectura de datos limpia, aislada y preparada para nutrir a la IA.
             </p>
+
+            <div className="border-t border-surface-border/60 pt-6 space-y-3">
+              <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-400 font-semibold">Lo que queda construido:</h4>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-base text-gray-200">
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                  <span><strong>Fuente única de verdad:</strong> se acabaron las hojas de cálculo paralelas y los datos aislados.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                  <span><strong>Estructura escalable:</strong> diseñada para crecer con el negocio, no un apaño temporal.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                  <span><strong>Histórico utilizable:</strong> conocimiento valioso listo para consulta y análisis automático.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                  <span><strong>Sincronización en tiempo real:</strong> lo que se modifica en un sitio se actualiza en todos.</span>
+                </li>
+                <li className="flex items-start gap-2.5 sm:col-span-2">
+                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                  <span><strong>Información 100% exportable y tuya:</strong> datos documentados sin quedar atrapado en software propietario.</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          {/* Piece 3 */}
-          <div className="p-8 rounded-3xl bg-surface-card border border-surface-border space-y-4 shadow-lg">
-            <div className="w-14 h-14 rounded-2xl bg-[#86BF58]/15 border border-[#86BF58]/30 flex items-center justify-center text-[#86BF58]">
-              <Wrench className="w-7 h-7" />
+          {/* Pieza 03: Herramientas conectadas */}
+          <div className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-surface-border shadow-lg space-y-6">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-[#86BF58]/15 border border-[#86BF58]/30 flex items-center justify-center text-[#86BF58] shrink-0">
+                <Wrench className="w-7 h-7" />
+              </div>
+              <div>
+                <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider">Pieza 03</span>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white">Herramientas conectadas</h3>
+              </div>
             </div>
-            <h3 className="text-xl font-bold text-white">3. Herramientas conectadas</h3>
-            <p className="text-xs text-[#86BF58] font-mono font-bold">Aplicaciones & Integraciones</p>
-            <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
-              Por donde el equipo consulta, introduce y utiliza la información diaria sin fricción ni datos duplicados.
+
+            <p className="text-lg text-gray-200 leading-relaxed font-normal">
+              Las aplicaciones por las que tu equipo consulta, introduce y utiliza la información diaria sin duplicar tareas ni introducir datos a mano.
             </p>
+
+            <div className="border-t border-surface-border/60 pt-6 space-y-3">
+              <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-400 font-semibold">Lo que queda construido:</h4>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-base text-gray-200">
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                  <span><strong>Web y captación conectadas:</strong> cada nuevo contacto entra ya clasificado en la base de datos.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                  <span><strong>Panel de gestión unificado:</strong> las métricas que importan en una sola pantalla clara.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                  <span><strong>Reservas y agenda sincronizadas:</strong> gestión de reuniones y calendario automatizada.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                  <span><strong>Tienda y cobros:</strong> integraciones de pago y catálogo cuando el modelo lo requiere.</span>
+                </li>
+                <li className="flex items-start gap-2.5 sm:col-span-2">
+                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                  <span><strong>Integración nativa:</strong> conexión fluida con correo, CRM, ERP y formularios habituales.</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Legado de comunicación */}
+      {/* Legado de comunicación y diseño */}
       <div className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-surface-border space-y-4">
-        <h3 className="text-xl font-bold text-white">Sobre diseño, identidad de marca y comunicación</h3>
-        <p className="text-base text-gray-200 leading-relaxed">
-          iARTESANA nació ofreciendo diseño, identidad visual y estrategia de comunicación. Esos servicios no han desaparecido: se han integrado dentro de la Base Digital. Entendemos la marca como la primera capa de un sistema mayor. Si necesitas renovar tu imagen, protocolo de diseño o presencia, queda integrado desde el primer paso.
+        <div className="flex items-center gap-3 text-[#86BF58]">
+          <Palette className="w-6 h-6" />
+          <h3 className="text-xl font-bold text-white">Diseño, marca y comunicación dentro de la Base Digital</h3>
+        </div>
+        <p className="text-base sm:text-lg text-gray-200 leading-relaxed font-normal">
+          iARTESANA nació diseñando marcas e identidades visuales. Esos servicios no se han eliminado: se han absorbido de forma natural dentro de la Base Digital. Entendemos la comunicación y el diseño como la primera capa del contexto estable. Si tu empresa necesita renovar su imagen, su web corporativa o su protocolo de diseño, queda integrado directamente desde el primer paso.
         </p>
       </div>
 
-      {/* CTA Box */}
-      <div className="text-center p-12 rounded-3xl bg-gradient-to-r from-surface-card via-surface-hover to-surface-card border border-[#86BF58]/40 space-y-6 shadow-2xl">
-        <h3 className="text-3xl font-extrabold text-white">¿Quieres ordenar la base de tu negocio?</h3>
-        <p className="text-base text-gray-200 max-w-lg mx-auto">
-          Comenzamos con una conversación de 45 minutos para entender tu punto de partida.
+      {/* CTA final */}
+      <div className="text-center p-10 sm:p-14 rounded-3xl bg-gradient-to-r from-surface-card via-surface-hover to-surface-card border border-[#86BF58]/40 space-y-6 shadow-2xl">
+        <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          ¿Quieres construir la Base Digital de tu empresa?
+        </h3>
+        <p className="text-lg text-gray-200 max-w-xl mx-auto font-normal">
+          Comenzamos con una conversación directa de 45 minutos para auditar tu punto de partida sin coste ni compromiso.
         </p>
         <Link
           href="/agendar"
-          className="inline-flex items-center gap-3 px-9 py-4 rounded-full text-base font-bold text-white bg-[#86BF58] hover:bg-[#86BF58]/90 transition-all shadow-lg shadow-[#86BF58]/20"
+          className="inline-flex items-center gap-3 px-9 py-4 rounded-lg text-lg font-bold text-white bg-[#0A3D62] hover:bg-[#009DF8] hover:shadow-[0_0_35px_rgba(0,157,248,1)] hover:scale-[1.03] transition-all duration-300 shadow-xl"
         >
-          <Sparkles className="w-5 h-5" />
-          <span>Reservar primera sesión</span>
-          <ArrowRight className="w-5 h-5" />
+          <Sparkles className="w-5 h-5 text-white" />
+          <span>Reserva primera reunión</span>
+          <ArrowRight className="w-5 h-5 text-white" />
         </Link>
       </div>
     </div>

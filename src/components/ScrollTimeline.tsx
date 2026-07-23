@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
-import { Check, ChevronDown, ChevronUp } from 'lucide-react';
+import Link from 'next/link';
+import { Check, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 
 export default function ScrollTimeline() {
   const [activeStep, setActiveStep] = useState<number>(0);
@@ -14,6 +15,7 @@ export default function ScrollTimeline() {
       color: '#86BF58',
       mainIdea: 'Ordenamos el conocimiento, los datos y las herramientas de la empresa.',
       description: 'Construimos el contexto estable y la base de datos viva sobre la que operan las personas y la inteligencia artificial sin generar caos.',
+      exploreUrl: '/base-digital',
       results: [
         'Contexto estable e identidad codificada',
         'Base de datos viva estructurada y exportable',
@@ -25,6 +27,7 @@ export default function ScrollTimeline() {
       color: '#38A8E0',
       mainIdea: 'Inteligencia artificial que conoce tu empresa antes de actuar.',
       description: 'Agentes, asistentes y automatizaciones operativas integradas sobre tu Base Digital con niveles transparentes de autonomía e intervención.',
+      exploreUrl: '/ia-aplicada',
       results: [
         'Escala de intervención (Asiste, Automatiza, Actúa, Aprueba)',
         'Agentes verificados con tu conocimiento real',
@@ -36,6 +39,7 @@ export default function ScrollTimeline() {
       color: '#7361A8',
       mainIdea: 'Construimos para que la empresa conserve el control de lo suyo.',
       description: 'Garantía de portabilidad absoluta, trazabilidad forense de cada acción de IA y preparación estructural ante la normativa europea (EU AI Act).',
+      exploreUrl: '/seguridad-control',
       results: [
         'Datos estructurados y portables',
         'Trazabilidad y explicabilidad en cada respuesta',
@@ -47,6 +51,7 @@ export default function ScrollTimeline() {
       color: '#E15A9C',
       mainIdea: 'No vendemos software y nos vamos. Garantizamos que el sistema se use de verdad.',
       description: 'Formación para el equipo, soporte directo con David y Gerard y evolución continua del sistema a medida que el negocio crece.',
+      exploreUrl: '/acompanamiento',
       results: [
         'Trato humano directo sin sistemas de tickets anónimos',
         'Formación práctica para la autonomía de tu plantilla',
@@ -99,7 +104,6 @@ export default function ScrollTimeline() {
       <div className="space-y-8">
         {steps.map((step, index) => {
           const isActive = activeStep >= index;
-          const isCurrent = activeStep === index;
           const isExpanded = !!expandedSteps[index];
 
           return (
@@ -175,6 +179,22 @@ export default function ScrollTimeline() {
                       ))}
                     </ul>
                   </div>
+
+                  {/* Botón de enlace Explorar + */}
+                  {step.exploreUrl && (
+                    <div className="pt-2">
+                      <Link
+                        href={step.exploreUrl}
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm sm:text-base font-bold text-white transition-all duration-300 hover:scale-[1.03] shadow-md hover:shadow-lg"
+                        style={{
+                          backgroundColor: step.color,
+                        }}
+                      >
+                        <span>Explorar +</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
