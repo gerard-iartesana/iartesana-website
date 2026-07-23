@@ -90,8 +90,9 @@ export default function ScrollTimeline() {
   }, []);
 
   return (
-    <section id="capas" className="w-full max-w-5xl mx-auto py-16 px-4 sm:px-6 lg:px-8" ref={timelineRef}>
-      <div className="text-center space-y-4 mb-16">
+    <section id="capas" className="w-full max-w-5xl mx-auto py-8 sm:py-12 px-4 sm:px-6 lg:px-8 border-t border-b border-surface-border/50" ref={timelineRef}>
+      <div className="text-center space-y-3 mb-10 sm:mb-12">
+        {/* Descriptor en Open Sans tipografía normal */}
         <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
           Recorrido de Implantación
         </span>
@@ -162,7 +163,7 @@ export default function ScrollTimeline() {
                     </button>
                   </div>
 
-                  {/* Texto de debajo en REGULAR */}
+                  {/* Texto de debajo en REGULAR / NORMAL */}
                   <p className="text-xl sm:text-2xl font-normal text-gray-200 max-w-3xl leading-relaxed">
                     {step.mainIdea}
                   </p>

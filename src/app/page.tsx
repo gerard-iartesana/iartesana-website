@@ -6,9 +6,9 @@ import ScrollTimeline from '@/components/ScrollTimeline';
 
 export default function HomePage() {
   return (
-    <div className="space-y-24 pb-24 text-[#E2E8F0] bg-[#080A0E]">
+    <div className="space-y-12 sm:space-y-16 pb-16 text-[#E2E8F0] bg-[#080A0E]">
       {/* 1. HERO (LIMPIO Y CONTUNDENTE) */}
-      <section className="pt-16 sm:pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center space-y-8">
+      <section className="pt-6 sm:pt-10 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center space-y-6">
         {/* Descriptor en Open Sans tipografía normal */}
         <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
           MÉTODO iARTESANA
@@ -20,13 +20,13 @@ export default function HomePage() {
           <span className="text-[#38A8E0]">trabaje mejor.</span>
         </h1>
 
-        {/* Explicación breve (máximo dos líneas) */}
+        {/* Explicación breve */}
         <p className="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-normal">
           Menos tareas repetidas y mejores decisiones ordenando primero el conocimiento, los datos y los procesos de tu negocio.
         </p>
 
-        {/* Único CTA principal con texto más grande y menor margen interior */}
-        <div className="pt-4 flex items-center justify-center">
+        {/* Único CTA principal */}
+        <div className="pt-2 flex items-center justify-center">
           <Link
             href="/agendar"
             className="inline-flex items-center justify-center gap-2.5 px-7 py-3 rounded-lg text-base sm:text-lg font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-colors shadow-none"
@@ -36,15 +36,14 @@ export default function HomePage() {
           </Link>
         </div>
 
-        {/* Frase discreta aclarando que la primera conversación es gratuita */}
-        <p className="text-base text-gray-400 font-normal pt-2 font-['Open_Sans',sans-serif]">
+        {/* Frase discreta */}
+        <p className="text-base text-gray-400 font-normal pt-1 font-['Open_Sans',sans-serif]">
           Una primera conversación de 45 minutos, sin coste ni compromiso.
         </p>
       </section>
 
-      {/* 2. PRINCIPIO DE LA CASA (TRANSICIÓN CENTRADA SIN TARJETA) */}
-      <section id="metodo" className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-6 py-12 border-t border-b border-surface-border/50">
-        {/* Descriptor en Open Sans tipografía normal */}
+      {/* 2. PRINCIPIO DE LA CASA */}
+      <section id="metodo" className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-5 py-8 sm:py-12 border-t border-b border-surface-border/50">
         <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
           Principio fundamental
         </span>
@@ -59,13 +58,12 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/* 3. RECORRIDO DE LAS 4 CAPAS (SCROLL TIMELINE CONTINUO UNIFICADO) */}
+      {/* 3. RECORRIDO DE LAS 4 CAPAS */}
       <ScrollTimeline />
 
-      {/* 4. EQUIPO HUMANO (GERARD A LA IZQUIERDA, DAVID A LA DERECHA, SIN CONTORNOS) */}
-      <section id="equipo" className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-12 space-y-12 border-t border-surface-border/50">
+      {/* 4. EQUIPO HUMANO */}
+      <section id="equipo" className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-surface-border/50">
         <div className="text-center space-y-3">
-          {/* Descriptor en Open Sans tipografía normal */}
           <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
             Acompañamiento humano
           </span>
@@ -77,9 +75,9 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Gerard a la izquierda, David a la derecha */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* Gerard (Izquierda) */}
+        {/* Perfiles de equipo */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Gerard */}
           <div className="flex flex-col sm:flex-row items-start gap-6 p-6 rounded-2xl bg-surface-card border border-surface-border">
             <div className="relative w-32 h-32 rounded-xl overflow-hidden shrink-0">
               <Image src="/team/gerard.jpg" alt="Gerard" fill className="object-cover" />
@@ -95,7 +93,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* David (Derecha) */}
+          {/* David */}
           <div className="flex flex-col sm:flex-row items-start gap-6 p-6 rounded-2xl bg-surface-card border border-surface-border">
             <div className="relative w-32 h-32 rounded-xl overflow-hidden shrink-0">
               <Image src="/team/david.jpg" alt="David" fill className="object-cover" />
@@ -113,10 +111,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. PROCESO COMERCIAL (3 PASOS CLAROS CON UN SOLO CTA PRINCIPAL AL PIE) */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-12 space-y-12 border-t border-surface-border/50">
+      {/* 5. PROCESO COMERCIAL */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-surface-border/50">
         <div className="text-center space-y-3">
-          {/* Descriptor en Open Sans tipografía normal */}
           <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
             Paso a Paso
           </span>
@@ -160,8 +157,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Un solo CTA principal bajo la secuencia */}
-        <div className="text-center pt-4">
+        {/* CTA principal */}
+        <div className="text-center pt-2">
           <Link
             href="/agendar"
             className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-lg text-base sm:text-lg font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-colors shadow-none"
