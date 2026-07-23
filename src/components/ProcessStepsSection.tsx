@@ -44,7 +44,7 @@ export default function ProcessStepsSection() {
       title: 'Diagnóstico iARTESANA',
       subtitle: (
         <>
-          <strong className="font-bold text-white text-base">360 €</strong> (Descontables al 100%)
+          <strong className="font-bold text-white text-lg sm:text-xl">360 €</strong> (Descontables al 100%)
         </>
       ),
       text: 'Análisis detallado de tu operativa, oportunidades de automatización y hoja de ruta con presupuesto cerrado.',
@@ -83,16 +83,16 @@ export default function ProcessStepsSection() {
           return (
             <div
               key={idx}
-              className={`space-y-3 p-6 rounded-2xl bg-surface-card border ${step.border} transition-all duration-700 ease-out transform ${
+              className={`space-y-4 p-7 sm:p-8 rounded-2xl bg-surface-card border ${step.border} transition-all duration-700 ease-out transform ${
                 isCardVisible
                   ? 'opacity-100 translate-x-0'
                   : 'opacity-0 -translate-x-16'
               }`}
             >
-              <span className="text-4xl sm:text-5xl font-bold text-gray-400 font-['Open_Sans',sans-serif] block">{step.num}</span>
-              <h3 className="text-xl sm:text-2xl font-bold text-white">{step.title}</h3>
-              <p className="text-sm font-normal text-gray-300 font-['Open_Sans',sans-serif]">{step.subtitle}</p>
-              <p className="text-base text-gray-200 leading-relaxed font-normal">
+              <span className="text-5xl sm:text-6xl font-extrabold text-gray-400 font-['Open_Sans',sans-serif] block">{step.num}</span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">{step.title}</h3>
+              <p className="text-base sm:text-lg font-medium text-gray-300 font-['Open_Sans',sans-serif]">{step.subtitle}</p>
+              <p className="text-lg sm:text-xl text-gray-200 leading-relaxed font-normal pt-1">
                 {step.text}
               </p>
             </div>
