@@ -107,15 +107,15 @@ export default function TeamSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <TeamCard
           name="Gerard"
-          role="Ingeniería de Sistemas & Datos"
-          text="Desarrolla la base de datos, la seguridad y los agentes autónomos. Garantiza el rendimiento técnico, la explicabilidad y la soberanía de los datos."
+          role="Sistemas y datos"
+          text="Construye la infraestructura técnica, la seguridad y los agentes."
           image="/team/gerard.jpg"
           delay={100}
         />
         <TeamCard
           name="David"
-          role="Estrategia y Contexto IA"
-          text="Estructura los procesos, el conocimiento y el tono de marca. Garantiza que la IA refleje fielmente la cultura y criterios de tu empresa."
+          role="Estrategia y contexto"
+          text="Ordena procesos, conocimiento y cultura para que la IA entienda la empresa"
           image="/team/david.jpg"
           delay={400}
         />
