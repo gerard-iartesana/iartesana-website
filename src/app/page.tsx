@@ -8,8 +8,8 @@ import HeroVideo from '@/components/HeroVideo';
 export default function HomePage() {
   return (
     <div className="space-y-12 sm:space-y-16 pb-16 text-[#E2E8F0] bg-[#080A0E] overflow-hidden">
-      {/* 1. HERO (CON VÍDEO DE FONDO EN CÁMARA LENTA Y DEGRADADO INFERIOR) */}
-      <section className="relative pt-10 sm:pt-16 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center space-y-6 min-h-[75vh] flex flex-col justify-center items-center">
+      {/* 1. HERO (CON VÍDEO DE FONDO EN CÁMARA LENTA Y MARGEN SUPERIOR REDUCIDO) */}
+      <section className="relative pt-4 sm:pt-6 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center space-y-6 flex flex-col justify-center items-center">
         {/* Vídeo de fondo a cámara lenta y difuminado */}
         <HeroVideo />
 
@@ -46,7 +46,7 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/* 2. PRINCIPIO DE LA CASA (DIVISOR ELEGANTE Y VISIBLE) */}
+      {/* 2. PRINCIPIO DE LA CASA */}
       <section id="metodo" className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-5 py-8 sm:py-12 border-t border-white/15">
         <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
           Principio fundamental
@@ -65,7 +65,7 @@ export default function HomePage() {
       {/* 3. RECORRIDO DE LAS 4 CAPAS */}
       <ScrollTimeline />
 
-      {/* 4. EQUIPO HUMANO (DIVISOR ELEGANTE Y VISIBLE) */}
+      {/* 4. EQUIPO HUMANO */}
       <section id="equipo" className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-white/15">
         <div className="text-center space-y-3">
           <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
@@ -115,7 +115,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. PROCESO COMERCIAL (DIVISOR ELEGANTE Y VISIBLE) */}
+      {/* 5. PROCESO COMERCIAL */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-white/15">
         <div className="text-center space-y-3">
           <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
