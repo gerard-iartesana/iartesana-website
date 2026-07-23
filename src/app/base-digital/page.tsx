@@ -114,7 +114,7 @@ export default function BaseDigitalPage() {
           Quién sois, cómo habláis, cómo trabajáis y qué criterios seguís. Es la documentación estratégica que sirve como guía inmutable de referencia tanto para tu equipo como para los sistemas de Inteligencia Artificial.
         </p>
 
-        <div className="border-t border-white/20 pt-8 space-y-4 mt-4">
+        <div className="space-y-5 mt-6">
           <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-300 font-semibold">Lo que queda construido:</h4>
           <ul className="grid grid-cols-1 gap-4 text-base sm:text-lg text-gray-100">
             <li className="flex items-start gap-3">
@@ -157,7 +157,7 @@ export default function BaseDigitalPage() {
           Lo que cambia cada día: clientes, operaciones, incidencias, disponibilidad e histórico. Una arquitectura de datos limpia, aislada y preparada para nutrir a la IA.
         </p>
 
-        <div className="border-t border-white/20 pt-8 space-y-4 mt-4">
+        <div className="space-y-5 mt-6">
           <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-300 font-semibold">Lo que queda construido:</h4>
           <ul className="grid grid-cols-1 gap-4 text-base sm:text-lg text-gray-100">
             <li className="flex items-start gap-3">
@@ -200,7 +200,7 @@ export default function BaseDigitalPage() {
           Las aplicaciones por las que tu equipo consulta, introduce y utiliza la información diaria sin duplicar tareas ni introducir datos a mano.
         </p>
 
-        <div className="border-t border-white/20 pt-8 space-y-4 mt-4">
+        <div className="space-y-5 mt-6">
           <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-300 font-semibold">Lo que queda construido:</h4>
           <ul className="grid grid-cols-1 gap-4 text-base sm:text-lg text-gray-100">
             <li className="flex items-start gap-3">

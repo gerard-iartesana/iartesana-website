@@ -13,7 +13,6 @@ export default function StickyScrollVideoSection({
 }: StickyScrollVideoSectionProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
   const [ready, setReady] = useState(false);
   const targetTimeRef = useRef(0);
   const currentTimeRef = useRef(0);
@@ -49,15 +48,12 @@ export default function StickyScrollVideoSection({
     const onScroll = () => {
       const rect = wrapper.getBoundingClientRect();
       const wh = window.innerHeight;
-      // progress goes 0→1 as the section scrolls through the viewport
-      // 0 = section top hits viewport bottom, 1 = section bottom hits viewport top
       const scrollDistance = rect.height + wh;
       const scrolled = wh - rect.top;
       const progress = Math.max(0, Math.min(1, scrolled / scrollDistance));
       targetTimeRef.current = progress * video.duration;
     };
 
-    // Smooth interpolation loop for video scrubbing
     const loop = () => {
       if (video.duration) {
         const diff = targetTimeRef.current - currentTimeRef.current;
@@ -80,16 +76,13 @@ export default function StickyScrollVideoSection({
   }, [ready]);
 
   return (
-    // Wrapper: breaks out of parent max-w container to be full viewport width.
-    // Height is tall enough to give ample scroll distance for the video timeline.
     <section
       ref={wrapperRef}
       className="relative w-[100vw] -ml-[50vw] left-[50%]"
-      style={{ minHeight: '300vh' }}
+      style={{ minHeight: '400vh' }}
     >
-      {/* STICKY layer: video + overlay + text all pinned together */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
-        {/* Background video: full viewport, edge to edge */}
+      {/* Video de fondo: fijo en pantalla, 100% edge-to-edge */}
+      <div className="sticky top-0 h-screen w-full overflow-hidden pointer-events-none z-0">
         <video
           ref={videoRef}
           muted
@@ -101,24 +94,23 @@ export default function StickyScrollVideoSection({
           <source src={src} type="video/mp4" />
         </video>
 
-        {/* Dark overlay for text legibility */}
+        {/* Overlay oscuro para legibilidad */}
         <div className="absolute inset-0 bg-[#0B0E14]/55" />
 
-        {/* Top and bottom gradient fades into dark background */}
+        {/* Gradientes de entrada/salida */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'linear-gradient(to bottom, #0B0E14 0%, transparent 18%, transparent 82%, #0B0E14 100%)',
+              'linear-gradient(to bottom, #0B0E14 0%, transparent 15%, transparent 85%, #0B0E14 100%)',
           }}
         />
+      </div>
 
-        {/* Text content: centered on the viewport, fully transparent background */}
-        <div
-          ref={contentRef}
-          className="absolute inset-0 flex items-center justify-center px-4 sm:px-8"
-        >
-          <div className="w-full max-w-4xl mx-auto text-white space-y-6">
+      {/* Texto que se desplaza sobre el vídeo fijo */}
+      <div className="relative z-10 -mt-[100vh] pointer-events-auto">
+        <div className="min-h-screen flex items-center justify-center px-4 sm:px-8 py-[25vh]">
+          <div className="w-full max-w-4xl mx-auto text-white space-y-8">
             {children}
           </div>
         </div>
