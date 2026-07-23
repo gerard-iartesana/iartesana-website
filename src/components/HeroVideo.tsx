@@ -16,7 +16,7 @@ export default function HeroVideo() {
 
   return (
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[120%] min-h-[90vh] overflow-hidden pointer-events-none z-0">
-      {/* Vídeo al 100% de intensidad constante sin fade in/out de opacidad ni bucle */}
+      {/* Vídeo a pantalla completa */}
       <video
         ref={videoRef}
         autoPlay
@@ -28,7 +28,15 @@ export default function HeroVideo() {
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
 
-      {/* Exclusivamente degradado inferior para integrarse con el fondo negro #080A0E */}
+      {/* Máscara radial: atenúa el vídeo al ~50% en el centro (detrás del texto) y se abre al 100% de intensidad hacia los bordes */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse 65% 55% at 50% 40%, rgba(8, 10, 14, 0.55) 0%, rgba(8, 10, 14, 0.25) 50%, rgba(8, 10, 14, 0) 100%)'
+        }}
+      />
+
+      {/* Degradado exclusivamente en la parte inferior para integrarse suavemente con el fondo negro #080A0E */}
       <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-b from-transparent to-[#080A0E]" />
     </div>
   );
