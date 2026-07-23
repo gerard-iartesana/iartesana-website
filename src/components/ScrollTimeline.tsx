@@ -40,7 +40,7 @@ export default function ScrollTimeline() {
       title: 'Seguridad y control',
       color: '#7361A8',
       mainIdea: 'Construimos para que la empresa conserve el control de lo suyo.',
-      description: 'Garantía de portabilidad absoluta, trazabilidad forense de cada acción de IA y preparación structural ante la normativa europea (EU AI Act).',
+      description: 'Garantía de portabilidad absoluta, trazabilidad forense de cada acción de IA y preparación estructural ante la normativa europea (EU AI Act).',
       results: [
         'Datos estructurados y portables sin software cerrado',
         'Trazabilidad y explicabilidad en cada respuesta',
@@ -92,7 +92,6 @@ export default function ScrollTimeline() {
   return (
     <section id="capas" className="w-full max-w-5xl mx-auto py-16 px-4 sm:px-6 lg:px-8" ref={timelineRef}>
       <div className="text-center space-y-4 mb-16">
-        {/* Descriptor en gris y más grande */}
         <span className="text-sm sm:text-base font-mono uppercase tracking-widest text-gray-400 font-semibold block">
           Recorrido de Implantación
         </span>
@@ -155,10 +154,10 @@ export default function ScrollTimeline() {
                   onClick={() => toggleExpand(index)}
                 >
                   <div className="flex items-center justify-between">
-                    <h3 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight group-hover:text-gray-100 transition-colors">
+                    {/* Título en tipografía normal (font-normal / font-medium) */}
+                    <h3 className="text-3xl sm:text-5xl font-normal text-white tracking-tight group-hover:text-gray-200 transition-colors">
                       {step.title}
                     </h3>
-                    {/* Botón de Saber más en gris neutro */}
                     <button
                       type="button"
                       className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-medium px-3.5 py-1.5 rounded-full border border-gray-800 bg-surface-card/60 text-gray-400 hover:text-white hover:border-gray-500 transition-all shrink-0"
@@ -168,7 +167,8 @@ export default function ScrollTimeline() {
                     </button>
                   </div>
 
-                  <p className="text-xl sm:text-2xl font-bold text-white max-w-3xl leading-snug">
+                  {/* Texto de debajo en BOLD / EXTRA BOLD */}
+                  <p className="text-xl sm:text-3xl font-extrabold text-white max-w-3xl leading-snug">
                     {step.mainIdea}
                   </p>
                 </div>
@@ -179,12 +179,12 @@ export default function ScrollTimeline() {
                     isExpanded ? 'max-h-[600px] opacity-100 pt-3 space-y-5' : 'max-h-0 opacity-0 pt-0 space-y-0'
                   }`}
                 >
-                  {/* Description con texto más grande */}
+                  {/* Description */}
                   <p className="text-lg sm:text-xl text-gray-200 max-w-3xl leading-relaxed border-t border-surface-border/40 pt-4">
                     {step.description}
                   </p>
 
-                  {/* Results con texto más grande */}
+                  {/* Results */}
                   <div className="space-y-2.5">
                     <span className="text-sm font-mono text-gray-400 uppercase tracking-wider block font-semibold">Resultados concretos:</span>
                     <ul className="space-y-2.5 text-base sm:text-lg text-gray-200">
