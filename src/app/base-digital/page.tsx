@@ -38,7 +38,7 @@ export default function BaseDigitalPage() {
   return (
     <div className="text-[#E2E8F0] bg-[#080A0E]">
       {/* ── Secciones con ancho limitado ── */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24 pt-28 sm:pt-36 pb-16">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24 pt-28 sm:pt-36 pb-4">
         {/* Header */}
         <div className="text-center space-y-4">
           <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
@@ -139,7 +139,7 @@ export default function BaseDigitalPage() {
       </StickyScrollVideoSection>
 
       {/* ── PIEZA 02: Cabecera + descripción ── */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-5">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-5">
         <div className="flex items-center gap-4">
           <div className="w-14 h-14 rounded-2xl bg-[#86BF58]/15 border border-[#86BF58]/30 flex items-center justify-center text-[#86BF58] shrink-0">
             <Database className="w-7 h-7" />
@@ -161,7 +161,7 @@ export default function BaseDigitalPage() {
       </StickyScrollVideoSection>
 
       {/* ── PIEZA 03: Cabecera + descripción ── */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-5">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-5">
         <div className="flex items-center gap-4">
           <div className="w-14 h-14 rounded-2xl bg-[#86BF58]/15 border border-[#86BF58]/30 flex items-center justify-center text-[#86BF58] shrink-0">
             <Wrench className="w-7 h-7" />
