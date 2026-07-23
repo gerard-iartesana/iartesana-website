@@ -35,18 +35,15 @@ export default function StickyScrollVideoSection({
       const rect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Distancia total de scroll disponible mientras la sección está fija
       const totalScrollable = rect.height - windowHeight;
       if (totalScrollable <= 0) return;
 
-      // Progreso del scroll dentro de esta sección fija (0 a 1)
       const scrolled = -rect.top;
       const progress = Math.min(1, Math.max(0, scrolled / totalScrollable));
 
       targetTimeRef.current = progress * videoRef.current.duration;
     };
 
-    // Bucle de aceleración por hardware ultra fluido a 60fps
     const renderLoop = () => {
       if (videoRef.current && videoRef.current.duration) {
         const diff = targetTimeRef.current - videoRef.current.currentTime;
@@ -72,10 +69,10 @@ export default function StickyScrollVideoSection({
   return (
     <div
       ref={sectionRef}
-      className="relative min-h-[170vh] sm:min-h-[200vh] w-full"
+      className="relative min-h-[160vh] sm:min-h-[190vh] w-full"
     >
-      {/* Vídeo fijo en el viewport mientras haces scroll por esta sección */}
-      <div className="sticky top-0 h-screen w-screen relative left-1/2 -translate-x-1/2 overflow-hidden pointer-events-none z-0">
+      {/* Vídeo fijo que ocupa el 100% del ancho de la pantalla (Edge-to-Edge) */}
+      <div className="sticky top-0 h-screen w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden pointer-events-none z-0">
         <video
           ref={videoRef}
           onLoadedMetadata={handleLoadedMetadata}
@@ -87,14 +84,15 @@ export default function StickyScrollVideoSection({
           <source src={src} type="video/mp4" />
         </video>
 
-        {/* Degradados de integración de fondo transparente a oscuro #0B0E14 */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-[#0B0E14]/90 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0E14]/90 via-transparent to-[#0B0E14] pointer-events-none" />
+        {/* Velo oscuro sutil e integración con fondo para asegurar máxima legibilidad de las letras */}
+        <div className="absolute inset-0 bg-[#0B0E14]/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-[#0B0E14] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0E14] via-transparent to-[#0B0E14] pointer-events-none" />
       </div>
 
-      {/* Contenido flotante sobre el vídeo fijo (se desplaza sobre el vídeo mientras este avanza) */}
+      {/* Contenido flotante 100% TRANSPARENTE: sin fondo de tarjeta, solo las letras e iconos */}
       <div className="relative z-10 -mt-[85vh] sm:-mt-[90vh] pb-32 max-w-4xl mx-auto px-4 sm:px-6">
-        <div className="bg-[#0B0E14]/85 backdrop-blur-xl border border-white/15 p-8 sm:p-12 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.8)] space-y-6">
+        <div className="bg-transparent border-none shadow-none p-0 space-y-6 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
           {children}
         </div>
       </div>
