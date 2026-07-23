@@ -56,11 +56,11 @@ export default function Navbar() {
             </Link>
           </nav>
 
-          {/* Botón con texto más grande y menor margen interior */}
+          {/* Botón CTA con azul corporativo más oscuro e iluminación azul 100% intensa al hover */}
           <div className="hidden sm:flex items-center gap-4 shrink-0">
             <Link
               href="/agendar"
-              className="inline-flex items-center justify-center px-5 py-2 rounded-lg text-base font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-colors shadow-none"
+              className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-base font-bold text-white bg-[#1864A6] hover:bg-[#009DF8] hover:shadow-[0_0_25px_rgba(0,157,248,0.75)] hover:scale-[1.03] transition-all duration-300"
             >
               <span>Reserva primera reunión</span>
             </Link>
@@ -115,7 +115,7 @@ export default function Navbar() {
             <Link
               href="/agendar"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center py-2.5 rounded-lg text-base font-bold text-white bg-[#38A8E0]"
+              className="w-full flex items-center justify-center py-3 rounded-lg text-base font-bold text-white bg-[#1864A6] hover:bg-[#009DF8] hover:shadow-[0_0_25px_rgba(0,157,248,0.75)] transition-all duration-300"
             >
               <span>Reserva primera reunión</span>
             </Link>

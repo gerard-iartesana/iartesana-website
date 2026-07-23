@@ -29,11 +29,11 @@ export default function HomePage() {
           Menos tareas repetidas y mejores decisiones ordenando primero el conocimiento, los datos y los procesos de tu negocio.
         </p>
 
-        {/* Único CTA principal */}
+        {/* Único CTA principal con azul corporativo oscuro e iluminación azul 100% intensa al hover */}
         <div className="relative z-10 pt-2 flex items-center justify-center">
           <Link
             href="/agendar"
-            className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-lg text-base sm:text-lg font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-all shadow-[0_8px_25px_rgba(0,0,0,0.7)] hover:scale-[1.02]"
+            className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-lg text-base sm:text-lg font-bold text-white bg-[#1864A6] hover:bg-[#009DF8] hover:shadow-[0_0_30px_rgba(0,157,248,0.85)] hover:scale-[1.03] transition-all duration-300 shadow-[0_8px_25px_rgba(0,0,0,0.7)]"
           >
             <span>Reserva primera reunión</span>
             <ArrowRight className="w-5 h-5" />
@@ -166,7 +166,7 @@ export default function HomePage() {
         <div className="text-center pt-2">
           <Link
             href="/agendar"
-            className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-lg text-base sm:text-lg font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-colors shadow-none"
+            className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-lg text-base sm:text-lg font-bold text-white bg-[#1864A6] hover:bg-[#009DF8] hover:shadow-[0_0_30px_rgba(0,157,248,0.85)] hover:scale-[1.03] transition-all duration-300"
           >
             <span>Reserva primera reunión</span>
             <ArrowRight className="w-5 h-5" />
