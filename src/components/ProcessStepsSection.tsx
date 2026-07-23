@@ -5,27 +5,30 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 export default function ProcessStepsSection() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+      // Calcular el avance exacto del scroll a medida que la sección baja por la pantalla
+      const start = windowHeight * 0.88;
+      const end = windowHeight * 0.30;
 
-    return () => observer.disconnect();
+      const current = rect.top;
+      let p = (start - current) / (start - end);
+      p = Math.max(0, Math.min(1, p));
+
+      setScrollProgress(p);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const steps = [
@@ -35,6 +38,7 @@ export default function ProcessStepsSection() {
       subtitle: 'Gratuita · 45 minutos',
       text: 'Sesión sin coste para conocernos, escuchar tus necesidades y evaluar si existe encaje técnico.',
       border: 'border-surface-border',
+      triggerAt: 0.1,
     },
     {
       num: '02',
@@ -42,6 +46,7 @@ export default function ProcessStepsSection() {
       subtitle: '350 € (Descontables al 100%)',
       text: 'Análisis detallado de tu operativa, oportunidades de automatización y hoja de ruta con presupuesto cerrado.',
       border: 'border-white/30',
+      triggerAt: 0.4,
     },
     {
       num: '03',
@@ -49,6 +54,7 @@ export default function ProcessStepsSection() {
       subtitle: 'Presupuesto personalizado',
       text: 'Construcción progresiva de tu Base Digital, agentes de IA, seguridad y formación continua a tu equipo.',
       border: 'border-surface-border',
+      triggerAt: 0.7,
     },
   ];
 
@@ -66,29 +72,32 @@ export default function ProcessStepsSection() {
         </p>
       </div>
 
-      {/* Tarjetas monocromas que aparecen en secuencia de izquierda a derecha al hacer scroll */}
+      {/* Tarjetas monocromas que van apareciendo progresivamente a medida que el usuario hace scroll hacia abajo */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {steps.map((step, idx) => (
-          <div
-            key={idx}
-            className={`space-y-3 p-6 rounded-2xl bg-surface-card border ${step.border} transition-all duration-700 transform ${
-              isVisible
-                ? 'opacity-100 translate-x-0 shadow-lg'
-                : 'opacity-0 -translate-x-12 shadow-none'
-            }`}
-            style={{ transitionDelay: `${idx * 200}ms` }}
-          >
-            <span className="text-4xl sm:text-5xl font-bold text-gray-400 font-['Open_Sans',sans-serif] block">{step.num}</span>
-            <h3 className="text-xl sm:text-2xl font-bold text-white">{step.title}</h3>
-            <p className="text-sm font-normal text-gray-300 font-['Open_Sans',sans-serif]">{step.subtitle}</p>
-            <p className="text-base text-gray-200 leading-relaxed font-normal">
-              {step.text}
-            </p>
-          </div>
-        ))}
+        {steps.map((step, idx) => {
+          const isCardVisible = scrollProgress >= step.triggerAt;
+
+          return (
+            <div
+              key={idx}
+              className={`space-y-3 p-6 rounded-2xl bg-surface-card border ${step.border} transition-all duration-700 ease-out transform ${
+                isCardVisible
+                  ? 'opacity-100 translate-x-0 shadow-lg'
+                  : 'opacity-0 -translate-x-16 shadow-none'
+              }`}
+            >
+              <span className="text-4xl sm:text-5xl font-bold text-gray-400 font-['Open_Sans',sans-serif] block">{step.num}</span>
+              <h3 className="text-xl sm:text-2xl font-bold text-white">{step.title}</h3>
+              <p className="text-sm font-normal text-gray-300 font-['Open_Sans',sans-serif]">{step.subtitle}</p>
+              <p className="text-base text-gray-200 leading-relaxed font-normal">
+                {step.text}
+              </p>
+            </div>
+          );
+        })}
       </div>
 
-      {/* CTA principal con azul oscuro en reposo e iluminación 100% intensa al hover */}
+      {/* CTA principal con azul oscuro corporativo e iluminación 100% intensa al hover */}
       <div className="text-center pt-2">
         <Link
           href="/agendar"
