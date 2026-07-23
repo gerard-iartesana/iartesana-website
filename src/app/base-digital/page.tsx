@@ -36,7 +36,7 @@ const pieza03Items = [
 
 export default function BaseDigitalPage() {
   return (
-    <div className="text-[#E2E8F0]">
+    <div className="text-[#E2E8F0] bg-[#080A0E]">
       {/* ── Secciones con ancho limitado ── */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24 pt-28 sm:pt-36 pb-16">
         {/* Header */}

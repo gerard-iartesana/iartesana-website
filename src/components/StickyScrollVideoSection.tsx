@@ -98,14 +98,14 @@ export default function StickyScrollVideoSection({
         </video>
 
         {/* Overlay oscuro para legibilidad del texto */}
-        <div className="absolute inset-0 bg-[#0B0E14]/50" />
+        <div className="absolute inset-0 bg-[#080A0E]/50" />
 
         {/* Gradientes superior e inferior para integrar con fondo */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'linear-gradient(to bottom, #0B0E14 0%, transparent 20%, transparent 80%, #0B0E14 100%)',
+              'linear-gradient(to bottom, #080A0E 0%, transparent 20%, transparent 80%, #080A0E 100%)',
           }}
         />
 
