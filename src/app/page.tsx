@@ -5,6 +5,7 @@ import ScrollTimeline from '@/components/ScrollTimeline';
 import HeroVideo from '@/components/HeroVideo';
 import ConvergenceLines from '@/components/ConvergenceLines';
 import TeamSection from '@/components/TeamSection';
+import ProcessStepsSection from '@/components/ProcessStepsSection';
 
 export default function HomePage() {
   return (
@@ -34,7 +35,7 @@ export default function HomePage() {
         <div className="relative z-10 pt-2 flex items-center justify-center">
           <Link
             href="/agendar"
-            className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-lg text-base sm:text-lg font-bold text-white bg-[#1864A6] hover:bg-[#009DF8] hover:shadow-[0_0_30px_rgba(0,157,248,0.85)] hover:scale-[1.03] transition-all duration-300 shadow-[0_8px_25px_rgba(0,0,0,0.7)]"
+            className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-lg text-base sm:text-lg font-bold text-white bg-[#0A3D62] hover:bg-[#009DF8] hover:shadow-[0_0_35px_rgba(0,157,248,1)] hover:scale-[1.03] transition-all duration-300 shadow-[0_8px_25px_rgba(0,0,0,0.7)]"
           >
             <span>Reserva primera reunión</span>
             <ArrowRight className="w-5 h-5" />
@@ -72,64 +73,8 @@ export default function HomePage() {
       {/* 4. EQUIPO HUMANO (CON ANIMACIÓN DE ENTRADA Y MECANOGRAFÍA) */}
       <TeamSection />
 
-      {/* 5. PROCESO COMERCIAL (#pasos) */}
-      <section id="pasos" className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-white/15">
-        <div className="text-center space-y-3">
-          <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
-            Paso a Paso
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Cómo empezar a trabajar juntos
-          </h2>
-          <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto font-normal">
-            Un recorrido transparente en 3 etapas sin sorpresas ni costes ocultos.
-          </p>
-        </div>
-
-        {/* Tarjetas monocromas con números más grandes en Open Sans gris */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Step 1 */}
-          <div className="space-y-3 p-6 rounded-2xl bg-surface-card border border-surface-border">
-            <span className="text-4xl sm:text-5xl font-bold text-gray-400 font-['Open_Sans',sans-serif] block">01</span>
-            <h3 className="text-xl sm:text-2xl font-bold text-white">Primera conversación</h3>
-            <p className="text-sm font-normal text-gray-300 font-['Open_Sans',sans-serif]">Gratuita · 45 minutos</p>
-            <p className="text-base text-gray-200 leading-relaxed font-normal">
-              Sesión sin coste para conocernos, escuchar tus necesidades y evaluar si existe encaje técnico.
-            </p>
-          </div>
-
-          {/* Step 2 */}
-          <div className="space-y-3 p-6 rounded-2xl bg-surface-card border border-white/30">
-            <span className="text-4xl sm:text-5xl font-bold text-gray-400 font-['Open_Sans',sans-serif] block">02</span>
-            <h3 className="text-xl sm:text-2xl font-bold text-white">Diagnóstico iARTESANA</h3>
-            <p className="text-sm font-normal text-gray-300 font-['Open_Sans',sans-serif]">350 € (Descontables al 100%)</p>
-            <p className="text-base text-gray-200 leading-relaxed font-normal">
-              Análisis detallado de tu operativa, oportunidades de automatización y hoja de ruta con presupuesto cerrado.
-            </p>
-          </div>
-
-          {/* Step 3 */}
-          <div className="space-y-3 p-6 rounded-2xl bg-surface-card border border-surface-border">
-            <span className="text-4xl sm:text-5xl font-bold text-gray-400 font-['Open_Sans',sans-serif] block">03</span>
-            <h3 className="text-xl sm:text-2xl font-bold text-white">Implantación por capas</h3>
-            <p className="text-sm font-normal text-gray-300 font-['Open_Sans',sans-serif]">Presupuesto personalizado</p>
-            <p className="text-base text-gray-200 leading-relaxed font-normal">
-              Construcción progresiva de tu Base Digital, agentes de IA, seguridad y formación continua a tu equipo.
-            </p>
-          </div>
-        </div>
-
-        {/* CTA principal */}
-        <div className="text-center pt-2">
-          <Link
-            href="/agendar"
-            className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-lg text-base sm:text-lg font-bold text-white bg-[#1864A6] hover:bg-[#009DF8] hover:shadow-[0_0_30px_rgba(0,157,248,0.85)] hover:scale-[1.03] transition-all duration-300"
-          >
-            <span>Reserva primera reunión</span>
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-        </div>
-      </section>
+      {/* 5. PROCESO COMERCIAL (#pasos) CON ANIMACIÓN DE ENTRADA DE IZQUIERDA A DERECHA */}
+      <ProcessStepsSection />
     </div>
   );
 }

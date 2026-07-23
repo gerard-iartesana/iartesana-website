@@ -26,7 +26,7 @@ export default function Footer() {
 
           <Link
             href="/agendar"
-            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg text-base font-bold text-white bg-[#1864A6] hover:bg-[#009DF8] hover:shadow-[0_0_25px_rgba(0,157,248,0.75)] hover:scale-[1.03] transition-all duration-300 shrink-0"
+            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg text-base font-bold text-white bg-[#0A3D62] hover:bg-[#009DF8] hover:shadow-[0_0_35px_rgba(0,157,248,1)] hover:scale-[1.03] transition-all duration-300 shrink-0"
           >
             <span>Reserva primera reunión</span>
             <ArrowUpRight className="w-4 h-4" />
@@ -41,7 +41,7 @@ export default function Footer() {
               <li><Link href="#metodo" className="text-gray-300 hover:text-white transition-colors">Método iARTESANA</Link></li>
               <li><Link href="#capas" className="text-gray-300 hover:text-white transition-colors">Las 4 capas</Link></li>
               <li><Link href="#equipo" className="text-gray-300 hover:text-white transition-colors">Equipo humano</Link></li>
-              <li><Link href="/diagnostico" className="text-gray-300 hover:text-white transition-colors">Diagnóstico 350 €</Link></li>
+              <li><Link href="#pasos" className="text-gray-300 hover:text-white transition-colors">Pasos</Link></li>
             </ul>
           </div>
 

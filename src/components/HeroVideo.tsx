@@ -16,7 +16,7 @@ export default function HeroVideo() {
 
   return (
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[120%] min-h-[90vh] overflow-hidden pointer-events-none z-0">
-      {/* Vídeo ajustado al 100% del ancho de la pantalla (full width) con fundido a transparente en la parte inferior */}
+      {/* Vídeo al 100% de intensidad constante sin fade in/out de opacidad ni bucle */}
       <video
         ref={videoRef}
         autoPlay
@@ -24,16 +24,12 @@ export default function HeroVideo() {
         muted
         playsInline
         className="w-full h-full object-cover opacity-100"
-        style={{
-          maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 95%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 95%)',
-        }}
       >
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
 
-      {/* Capa de degradado inferior para integración suave e impecable con el fondo #080A0E */}
-      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent via-[#080A0E]/60 to-[#080A0E]" />
+      {/* Exclusivamente degradado inferior para integrarse con el fondo negro #080A0E */}
+      <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-b from-transparent to-[#080A0E]" />
     </div>
   );
 }

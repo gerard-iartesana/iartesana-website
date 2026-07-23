@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Sparkles, Calendar, ArrowRight, ShieldCheck, CheckCircle, AlertCircle } from 'lucide-react';
+import { Sparkles, Calendar, ArrowRight, ShieldCheck, AlertCircle } from 'lucide-react';
 import { registrarLead } from '@/lib/supabase';
 
 export default function AgendarPage() {
@@ -167,7 +167,7 @@ export default function AgendarPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-4 rounded-xl text-base font-bold text-white bg-[#1864A6] hover:bg-[#009DF8] hover:shadow-[0_0_30px_rgba(0,157,248,0.85)] hover:scale-[1.01] transition-all duration-300 flex items-center justify-center gap-2.5 disabled:opacity-50"
+            className="w-full py-4 rounded-xl text-base font-bold text-white bg-[#0A3D62] hover:bg-[#009DF8] hover:shadow-[0_0_35px_rgba(0,157,248,1)] hover:scale-[1.01] transition-all duration-300 flex items-center justify-center gap-2.5 disabled:opacity-50"
           >
             {loading ? (
               <span>Procesando...</span>
