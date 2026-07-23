@@ -109,23 +109,15 @@ export default function ScrollTimeline() {
                 isActive ? 'opacity-100' : 'opacity-50'
               }`}
             >
-              {/* Left Modular Block linked strictly to this step */}
+              {/* Barra lateral con color limpio plano sin efectos de iluminación */}
               <div
                 onClick={() => toggleExpand(index)}
-                className={`w-5 sm:w-7 shrink-0 rounded-sm border transition-all duration-500 cursor-pointer relative overflow-hidden self-stretch ${
-                  isActive ? 'shadow-lg' : 'opacity-30'
-                }`}
+                className="w-5 sm:w-7 shrink-0 rounded-sm cursor-pointer self-stretch transition-opacity duration-300"
                 style={{
-                  backgroundColor: isActive ? step.color : '#161B26',
-                  borderColor: isActive ? step.color : 'rgba(255, 255, 255, 0.15)',
-                  boxShadow: isCurrent ? `0 0 15px ${step.color}80` : 'none',
+                  backgroundColor: step.color,
                 }}
                 title={step.title}
-              >
-                {isCurrent && (
-                  <div className="absolute inset-0 bg-white/25 animate-pulse pointer-events-none" />
-                )}
-              </div>
+              />
 
               {/* Right Content Block for this step */}
               <div className="flex-1 space-y-3 pt-0.5">
