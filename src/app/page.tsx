@@ -3,33 +3,37 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import ScrollTimeline from '@/components/ScrollTimeline';
+import HeroVideo from '@/components/HeroVideo';
 
 export default function HomePage() {
   return (
-    <div className="space-y-12 sm:space-y-16 pb-16 text-[#E2E8F0] bg-[#080A0E]">
-      {/* 1. HERO (LIMPIO Y CONTUNDENTE) */}
-      <section className="pt-6 sm:pt-10 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center space-y-6">
+    <div className="space-y-12 sm:space-y-16 pb-16 text-[#E2E8F0] bg-[#080A0E] overflow-hidden">
+      {/* 1. HERO (CON VÍDEO DE FONDO EN CÁMARA LENTA Y DEGRADADO INFERIOR) */}
+      <section className="relative pt-10 sm:pt-16 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center space-y-6 min-h-[75vh] flex flex-col justify-center items-center">
+        {/* Vídeo de fondo a cámara lenta y difuminado */}
+        <HeroVideo />
+
         {/* Descriptor en Open Sans tipografía normal */}
-        <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
+        <span className="relative z-10 text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-300 font-normal block drop-shadow-md">
           MÉTODO iARTESANA
         </span>
 
         {/* Gran titular con color SOLO en una frase clave */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.15] max-w-4xl mx-auto">
+        <h1 className="relative z-10 text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.15] max-w-4xl mx-auto drop-shadow-lg">
           Implantamos inteligencia artificial para que tu empresa{' '}
           <span className="text-[#38A8E0]">trabaje mejor.</span>
         </h1>
 
         {/* Explicación breve */}
-        <p className="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-normal">
+        <p className="relative z-10 text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-normal drop-shadow">
           Menos tareas repetidas y mejores decisiones ordenando primero el conocimiento, los datos y los procesos de tu negocio.
         </p>
 
         {/* Único CTA principal */}
-        <div className="pt-2 flex items-center justify-center">
+        <div className="relative z-10 pt-2 flex items-center justify-center">
           <Link
             href="/agendar"
-            className="inline-flex items-center justify-center gap-2.5 px-7 py-3 rounded-lg text-base sm:text-lg font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-colors shadow-none"
+            className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-lg text-base sm:text-lg font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-all shadow-xl hover:scale-[1.02]"
           >
             <span>Reserva primera reunión</span>
             <ArrowRight className="w-5 h-5" />
@@ -37,12 +41,12 @@ export default function HomePage() {
         </div>
 
         {/* Frase discreta */}
-        <p className="text-base text-gray-400 font-normal pt-1 font-['Open_Sans',sans-serif]">
+        <p className="relative z-10 text-base text-gray-300 font-normal pt-1 font-['Open_Sans',sans-serif] drop-shadow-sm">
           Una primera conversación de 45 minutos, sin coste ni compromiso.
         </p>
       </section>
 
-      {/* 2. PRINCIPIO DE LA CASA (DIVISOR MUY SUTIL) */}
+      {/* 2. PRINCIPIO DE LA CASA */}
       <section id="metodo" className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-5 py-8 sm:py-12 border-t border-white/[0.07]">
         <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
           Principio fundamental
@@ -61,7 +65,7 @@ export default function HomePage() {
       {/* 3. RECORRIDO DE LAS 4 CAPAS */}
       <ScrollTimeline />
 
-      {/* 4. EQUIPO HUMANO (DIVISOR MUY SUTIL) */}
+      {/* 4. EQUIPO HUMANO */}
       <section id="equipo" className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-white/[0.07]">
         <div className="text-center space-y-3">
           <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
@@ -111,7 +115,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. PROCESO COMERCIAL (DIVISOR MUY SUTIL) */}
+      {/* 5. PROCESO COMERCIAL */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-white/[0.07]">
         <div className="text-center space-y-3">
           <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
