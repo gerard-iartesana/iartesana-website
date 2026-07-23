@@ -13,6 +13,8 @@ export default function ScrollTimeline() {
     {
       title: 'Base digital',
       color: '#86BF58',
+      darkColor: '#2A5222',
+      hoverColor: '#86BF58',
       mainIdea: 'Ordenamos el conocimiento, los datos y las herramientas de la empresa.',
       description: 'Construimos el contexto estable y la base de datos viva sobre la que operan las personas y la inteligencia artificial sin generar caos.',
       exploreUrl: '/base-digital',
@@ -25,6 +27,8 @@ export default function ScrollTimeline() {
     {
       title: 'IA aplicada',
       color: '#38A8E0',
+      darkColor: '#0A3D62',
+      hoverColor: '#009DF8',
       mainIdea: 'Inteligencia artificial que conoce tu empresa antes de actuar.',
       description: 'Agentes, asistentes y automatizaciones operativas integradas sobre tu Base Digital con niveles transparentes de autonomía e intervención.',
       exploreUrl: '/ia-aplicada',
@@ -37,6 +41,8 @@ export default function ScrollTimeline() {
     {
       title: 'Seguridad y control',
       color: '#7361A8',
+      darkColor: '#3A2D5C',
+      hoverColor: '#8B76C6',
       mainIdea: 'Construimos para que la empresa conserve el control de lo suyo.',
       description: 'Garantía de portabilidad absoluta, trazabilidad forense de cada acción de IA y preparación estructural ante la normativa europea (EU AI Act).',
       exploreUrl: '/seguridad-control',
@@ -49,6 +55,8 @@ export default function ScrollTimeline() {
     {
       title: 'Acompañamiento humano',
       color: '#E15A9C',
+      darkColor: '#6A1E43',
+      hoverColor: '#F56FB2',
       mainIdea: 'No vendemos software y nos vamos. Garantizamos que el sistema se use de verdad.',
       description: 'Formación para el equipo, soporte directo con David y Gerard y evolución continua del sistema a medida que el negocio crece.',
       exploreUrl: '/acompanamiento',
@@ -180,17 +188,25 @@ export default function ScrollTimeline() {
                     </ul>
                   </div>
 
-                  {/* Botón de enlace Explorar + */}
+                  {/* Botón de enlace Explorar (sin +, con verde corporativo más oscuro y márgenes reducidos) */}
                   {step.exploreUrl && (
                     <div className="pt-2">
                       <Link
                         href={step.exploreUrl}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm sm:text-base font-bold text-white transition-all duration-300 hover:scale-[1.03] shadow-md hover:shadow-lg"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-sm font-bold text-white transition-all duration-300 hover:scale-[1.03]"
                         style={{
-                          backgroundColor: step.color,
+                          backgroundColor: step.darkColor,
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = step.hoverColor;
+                          e.currentTarget.style.boxShadow = `0 0 25px ${step.hoverColor}bb`;
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = step.darkColor;
+                          e.currentTarget.style.boxShadow = 'none';
                         }}
                       >
-                        <span>Explorar +</span>
+                        <span>Explorar</span>
                         <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
