@@ -10,7 +10,6 @@ export default function CustomCursor() {
   const [isTouch, setIsTouch] = useState(false);
 
   useEffect(() => {
-    // Si el dispositivo es táctil, no activar cursor
     if (window.matchMedia('(pointer: coarse)').matches) {
       setIsTouch(true);
       return;
@@ -20,7 +19,6 @@ export default function CustomCursor() {
       setPosition({ x: e.clientX, y: e.clientY });
       if (!isVisible) setIsVisible(true);
 
-      // Detectar si el puntero está sobre un elemento interactivo
       const target = e.target as HTMLElement | null;
       if (target) {
         const interactive = target.closest(
@@ -44,7 +42,6 @@ export default function CustomCursor() {
     };
   }, [isVisible]);
 
-  // Animación de seguimiento fluida (lerp)
   useEffect(() => {
     if (isTouch) return;
     let animationFrameId: number;
@@ -61,17 +58,16 @@ export default function CustomCursor() {
     return () => cancelAnimationFrame(animationFrameId);
   }, [position, isTouch]);
 
-  // Si es pantalla táctil, no visible o NO está sobre elemento interactivo, no mostrar nada
   if (isTouch || !isVisible || !isHovered) return null;
 
   return (
     <div
-      className="fixed top-0 left-0 w-14 h-14 rounded-full pointer-events-none z-[9998] transition-all duration-300 ease-out border-2 border-[#009DF8] bg-[#009DF8]/15 shadow-[0_0_30px_rgba(0,157,248,0.7)] flex items-center justify-center animate-pulse"
+      className="fixed top-0 left-0 w-14 h-14 rounded-full pointer-events-none z-[9998] transition-all duration-300 ease-out border-2 border-white bg-white/10 shadow-[0_0_30px_rgba(255,255,255,0.7)] flex items-center justify-center animate-pulse"
       style={{
         transform: `translate3d(${trailingPos.x - 28}px, ${trailingPos.y - 28}px, 0)`,
       }}
     >
-      <div className="w-8 h-8 rounded-full border border-white/40 animate-ping opacity-60 pointer-events-none" />
+      <div className="w-8 h-8 rounded-full border border-white/50 animate-ping opacity-60 pointer-events-none" />
     </div>
   );
 }
