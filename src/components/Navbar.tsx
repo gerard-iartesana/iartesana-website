@@ -19,9 +19,9 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#080A0E]/95 border-b border-surface-border py-2.5 backdrop-blur-md'
+          ? 'bg-[#080A0E]/65 border-b border-white/10 py-2.5 backdrop-blur-xl shadow-2xl'
           : 'bg-transparent py-4'
       }`}
     >
@@ -81,7 +81,7 @@ export default function Navbar() {
 
       {/* Menú Móvil desplegable */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#080A0E] border-b border-surface-border px-6 pt-4 pb-6 space-y-4">
+        <div className="lg:hidden bg-[#080A0E]/95 border-b border-surface-border px-6 pt-4 pb-6 space-y-4 backdrop-blur-2xl">
           <Link
             href="#metodo"
             onClick={() => setMobileMenuOpen(false)}
