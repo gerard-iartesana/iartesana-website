@@ -21,13 +21,13 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         scrolled
-          ? 'bg-[#080A0E]/95 border-b border-surface-border py-3 backdrop-blur-md'
-          : 'bg-transparent py-5'
+          ? 'bg-[#080A0E]/95 border-b border-surface-border py-2.5 backdrop-blur-md'
+          : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo iARTESANA a la izquierda con tamaño prominente aumentado */}
+          {/* Logo iARTESANA a la izquierda con tamaño prominente */}
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <div className="relative w-64 sm:w-80 h-14 sm:h-16">
               <Image
@@ -42,31 +42,31 @@ export default function Navbar() {
 
           {/* Navegación limpia a la derecha */}
           <nav className="hidden lg:flex items-center gap-8">
-            <Link href="#metodo" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+            <Link href="#metodo" className="text-base font-medium text-gray-300 hover:text-white transition-colors">
               Método
             </Link>
-            <Link href="#capas" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+            <Link href="#capas" className="text-base font-medium text-gray-300 hover:text-white transition-colors">
               Las 4 capas
             </Link>
-            <Link href="#equipo" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+            <Link href="#equipo" className="text-base font-medium text-gray-300 hover:text-white transition-colors">
               Equipo
             </Link>
-            <Link href="/diagnostico" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+            <Link href="/diagnostico" className="text-base font-medium text-gray-300 hover:text-white transition-colors">
               Diagnóstico
             </Link>
           </nav>
 
-          {/* Un único botón principal sólido en azul/cian sin degradado */}
+          {/* Botón con texto más grande y menor margen interior */}
           <div className="hidden sm:flex items-center gap-4 shrink-0">
             <Link
               href="/agendar"
-              className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-colors shadow-none"
+              className="inline-flex items-center justify-center px-5 py-2 rounded-lg text-base font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-colors shadow-none"
             >
               <span>Reserva primera reunión</span>
             </Link>
           </div>
 
-          {/* Menú móvil sencillo */}
+          {/* Menú móvil */}
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -79,34 +79,34 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Menú Móvil desplegable sencillo */}
+      {/* Menú Móvil desplegable */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#080A0E] border-b border-surface-border px-6 pt-4 pb-6 space-y-4">
           <Link
             href="#metodo"
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-base font-medium text-gray-200 py-2 border-b border-surface-border/50"
+            className="block text-lg font-medium text-gray-200 py-2 border-b border-surface-border/50"
           >
             Método
           </Link>
           <Link
             href="#capas"
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-base font-medium text-gray-200 py-2 border-b border-surface-border/50"
+            className="block text-lg font-medium text-gray-200 py-2 border-b border-surface-border/50"
           >
             Las 4 capas
           </Link>
           <Link
             href="#equipo"
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-base font-medium text-gray-200 py-2 border-b border-surface-border/50"
+            className="block text-lg font-medium text-gray-200 py-2 border-b border-surface-border/50"
           >
             Equipo
           </Link>
           <Link
             href="/diagnostico"
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-base font-medium text-gray-200 py-2 border-b border-surface-border/50"
+            className="block text-lg font-medium text-gray-200 py-2 border-b border-surface-border/50"
           >
             Diagnóstico
           </Link>
@@ -115,7 +115,7 @@ export default function Navbar() {
             <Link
               href="/agendar"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center py-3 rounded-lg text-sm font-bold text-white bg-[#38A8E0]"
+              className="w-full flex items-center justify-center py-2.5 rounded-lg text-base font-bold text-white bg-[#38A8E0]"
             >
               <span>Reserva primera reunión</span>
             </Link>

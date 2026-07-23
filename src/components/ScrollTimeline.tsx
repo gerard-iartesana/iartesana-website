@@ -6,13 +6,11 @@ import { ArrowRight, Check, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function ScrollTimeline() {
   const [activeStep, setActiveStep] = useState<number>(0);
-  // Expandable state: Track expanded index (set of indices or boolean per index)
   const [expandedSteps, setExpandedSteps] = useState<Record<number, boolean>>({});
   const timelineRef = useRef<HTMLDivElement>(null);
 
   const steps = [
     {
-      capa: 'CAPA 01',
       title: 'Base digital',
       color: '#86BF58',
       mainIdea: 'Ordenamos el conocimiento, los datos y las herramientas de la empresa.',
@@ -26,7 +24,6 @@ export default function ScrollTimeline() {
       href: '/base-digital',
     },
     {
-      capa: 'CAPA 02',
       title: 'IA aplicada',
       color: '#38A8E0',
       mainIdea: 'Inteligencia artificial que conoce tu empresa antes de actuar.',
@@ -40,11 +37,10 @@ export default function ScrollTimeline() {
       href: '/ia-aplicada',
     },
     {
-      capa: 'CAPA 03',
       title: 'Seguridad y control',
       color: '#7361A8',
       mainIdea: 'Construimos para que la empresa conserve el control de lo suyo.',
-      description: 'Garantía de portabilidad absoluta, trazabilidad forense de cada acción de IA y preparación estructural ante la normativa europea (EU AI Act).',
+      description: 'Garantía de portabilidad absoluta, trazabilidad forense de cada acción de IA y preparación structural ante la normativa europea (EU AI Act).',
       results: [
         'Datos estructurados y portables sin software cerrado',
         'Trazabilidad y explicabilidad en cada respuesta',
@@ -54,7 +50,6 @@ export default function ScrollTimeline() {
       href: '/seguridad-control',
     },
     {
-      capa: 'CAPA 04',
       title: 'Acompañamiento humano',
       color: '#E15A9C',
       mainIdea: 'No vendemos software y nos vamos. Garantizamos que el sistema se use de verdad.',
@@ -97,13 +92,14 @@ export default function ScrollTimeline() {
   return (
     <section id="capas" className="w-full max-w-5xl mx-auto py-16 px-4 sm:px-6 lg:px-8" ref={timelineRef}>
       <div className="text-center space-y-4 mb-16">
-        <span className="text-xs font-mono uppercase tracking-widest text-[#38A8E0] font-bold">
+        {/* Descriptor en gris y más grande */}
+        <span className="text-sm sm:text-base font-mono uppercase tracking-widest text-gray-400 font-semibold block">
           Recorrido de Implantación
         </span>
         <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
           Cómo se construye el sistema
         </h2>
-        <p className="text-base sm:text-lg text-gray-300 max-w-xl mx-auto">
+        <p className="text-lg sm:text-xl text-gray-300 max-w-xl mx-auto">
           Haz clic en cada capa para desplegar los detalles de implantación.
         </p>
       </div>
@@ -155,66 +151,64 @@ export default function ScrollTimeline() {
               >
                 {/* Always Visible Header Block */}
                 <div 
-                  className="cursor-pointer space-y-2 group"
+                  className="cursor-pointer space-y-2.5 group"
                   onClick={() => toggleExpand(index)}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono font-bold tracking-wider uppercase block" style={{ color: step.color }}>
-                      {step.capa}
-                    </span>
+                    <h3 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight group-hover:text-gray-100 transition-colors">
+                      {step.title}
+                    </h3>
+                    {/* Botón de Saber más en gris neutro */}
                     <button
                       type="button"
-                      className="inline-flex items-center gap-1 text-xs font-mono font-semibold px-3 py-1 rounded-full border border-surface-border transition-colors hover:border-white"
-                      style={{ color: step.color }}
+                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-medium px-3.5 py-1.5 rounded-full border border-gray-800 bg-surface-card/60 text-gray-400 hover:text-white hover:border-gray-500 transition-all shrink-0"
                     >
                       <span>{isExpanded ? 'Menos detalles' : 'Saber más'}</span>
-                      {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                      {isExpanded ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
                     </button>
                   </div>
 
-                  <h3 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight group-hover:text-gray-100 transition-colors">
-                    {step.title}
-                  </h3>
-
-                  <p className="text-lg sm:text-2xl font-bold text-white max-w-2xl leading-snug">
+                  <p className="text-xl sm:text-2xl font-bold text-white max-w-3xl leading-snug">
                     {step.mainIdea}
                   </p>
                 </div>
 
-                {/* Expandable Details Block */}
-                {isExpanded && (
-                  <div className="pt-3 space-y-5 animate-fadeIn">
-                    {/* Description */}
-                    <p className="text-base text-gray-300 max-w-2xl leading-relaxed border-t border-surface-border/40 pt-4">
-                      {step.description}
-                    </p>
+                {/* Expandable Details Block con animación suave */}
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    isExpanded ? 'max-h-[600px] opacity-100 pt-3 space-y-5' : 'max-h-0 opacity-0 pt-0 space-y-0'
+                  }`}
+                >
+                  {/* Description con texto más grande */}
+                  <p className="text-lg sm:text-xl text-gray-200 max-w-3xl leading-relaxed border-t border-surface-border/40 pt-4">
+                    {step.description}
+                  </p>
 
-                    {/* Results */}
-                    <div className="space-y-2">
-                      <span className="text-xs font-mono text-gray-400 uppercase tracking-wider block">Resultados concretos:</span>
-                      <ul className="space-y-2 text-sm text-gray-200">
-                        {step.results.map((res, rIdx) => (
-                          <li key={rIdx} className="flex items-start gap-2.5">
-                            <Check className="w-4 h-4 shrink-0 mt-0.5" style={{ color: step.color }} />
-                            <span>{res}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Link */}
-                    <div className="pt-2">
-                      <Link
-                        href={step.href}
-                        className="inline-flex items-center gap-2 text-sm font-bold transition-colors hover:underline"
-                        style={{ color: step.color }}
-                      >
-                        <span>{step.linkText}</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
+                  {/* Results con texto más grande */}
+                  <div className="space-y-2.5">
+                    <span className="text-sm font-mono text-gray-400 uppercase tracking-wider block font-semibold">Resultados concretos:</span>
+                    <ul className="space-y-2.5 text-base sm:text-lg text-gray-200">
+                      {step.results.map((res, rIdx) => (
+                        <li key={rIdx} className="flex items-start gap-3">
+                          <Check className="w-5 h-5 shrink-0 mt-0.5" style={{ color: step.color }} />
+                          <span>{res}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                )}
+
+                  {/* Link */}
+                  <div className="pt-2">
+                    <Link
+                      href={step.href}
+                      className="inline-flex items-center gap-2 text-base sm:text-lg font-bold transition-colors hover:underline"
+                      style={{ color: step.color }}
+                    >
+                      <span>{step.linkText}</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           );
