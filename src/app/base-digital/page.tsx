@@ -141,11 +141,7 @@ export default function BaseDigitalPage() {
           </div>
 
           {/* Vídeo 1: Contexto estable */}
-          <ScrollVideoBanner
-            src="/videos/video-base.mp4"
-            accentColor="#86BF58"
-            label="01 · CONTEXTO ESTABLE"
-          />
+          <ScrollVideoBanner src="/videos/video-base.mp4" />
 
           {/* Pieza 02: Datos vivos */}
           <div className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-surface-border shadow-lg space-y-6">
@@ -191,11 +187,7 @@ export default function BaseDigitalPage() {
           </div>
 
           {/* Vídeo 2: Datos vivos */}
-          <ScrollVideoBanner
-            src="/videos/video-bbdd.mp4"
-            accentColor="#86BF58"
-            label="02 · DATOS VIVOS"
-          />
+          <ScrollVideoBanner src="/videos/video-bbdd.mp4" />
 
           {/* Pieza 03: Herramientas conectadas */}
           <div className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-surface-border shadow-lg space-y-6">
@@ -241,11 +233,7 @@ export default function BaseDigitalPage() {
           </div>
 
           {/* Vídeo 3: Herramientas conectadas */}
-          <ScrollVideoBanner
-            src="/videos/video-apps.mp4"
-            accentColor="#86BF58"
-            label="03 · HERRAMIENTAS CONECTADAS"
-          />
+          <ScrollVideoBanner src="/videos/video-apps.mp4" />
         </div>
       </div>
 

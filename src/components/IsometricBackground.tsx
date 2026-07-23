@@ -1,13 +1,19 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 interface Props {
   activeState?: number; // 0 to 6
 }
 
 export default function IsometricBackground({ activeState }: Props) {
+  const pathname = usePathname();
   const [scrollState, setScrollState] = useState<number>(activeState ?? 0);
+
+  if (pathname !== '/') {
+    return null;
+  }
 
   useEffect(() => {
     if (activeState !== undefined) {
