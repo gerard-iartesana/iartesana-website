@@ -62,13 +62,13 @@ function TeamCard({ name, role, text, image, delay = 0 }: TeamMemberProps) {
   return (
     <div
       ref={cardRef}
-      className={`flex flex-col sm:flex-row items-start gap-6 p-6 rounded-2xl bg-surface-card border border-surface-border transition-all duration-700 ${
+      className={`flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6 p-6 rounded-2xl bg-surface-card border border-surface-border transition-all duration-700 ${
         isVisible
           ? 'opacity-100 translate-y-0 shadow-xl'
           : 'opacity-0 translate-y-10 shadow-none'
       }`}
     >
-      <div className="relative w-32 h-32 rounded-xl overflow-hidden shrink-0">
+      <div className="relative w-32 h-32 rounded-xl overflow-hidden shrink-0 mx-auto sm:mx-0">
         <Image src={image} alt={name} fill className="object-cover" />
       </div>
 
