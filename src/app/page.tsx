@@ -55,8 +55,8 @@ export default function HomePage() {
         </span>
 
         <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-snug">
-          "Primero ordenamos.{' '}
-          <span className="text-[#38A8E0]">Después automatizamos."</span>
+          Primero ordenamos.{' '}
+          <span className="text-[#38A8E0]">Después automatizamos.</span>
         </h2>
 
         <p className="text-lg sm:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto font-normal">
