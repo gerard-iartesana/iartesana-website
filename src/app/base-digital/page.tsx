@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { Layers, Compass, Database, Wrench, CheckCircle2, ArrowRight, Sparkles, ShieldCheck, RefreshCw, Palette } from 'lucide-react';
+import ScrollVideoBanner from '@/components/ScrollVideoBanner';
 
 export const metadata: Metadata = {
   title: 'Base Digital · Capa 01 | iARTESANA',
@@ -76,8 +77,8 @@ export default function BaseDigitalPage() {
         </div>
       </div>
 
-      {/* Las 3 Piezas de la Base Digital */}
-      <div className="space-y-10">
+      {/* Las 3 Piezas de la Base Digital con Vídeos de Fondo Animados al Scroll */}
+      <div className="space-y-12">
         <div className="text-center space-y-3">
           <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
             Estructura modular
@@ -90,8 +91,8 @@ export default function BaseDigitalPage() {
           </p>
         </div>
 
-        <div className="space-y-8">
-          {/* Pieza 01: Contexto estable (destacado arriba con mayor peso) */}
+        <div className="space-y-12">
+          {/* Pieza 01: Contexto estable */}
           <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-surface-card via-surface-card to-[#86BF58]/10 border-2 border-[#86BF58]/40 shadow-xl space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-center gap-4">
@@ -139,6 +140,13 @@ export default function BaseDigitalPage() {
             </div>
           </div>
 
+          {/* Vídeo 1: Contexto estable */}
+          <ScrollVideoBanner
+            src="/videos/video-base.mp4"
+            accentColor="#86BF58"
+            label="01 · CONTEXTO ESTABLE"
+          />
+
           {/* Pieza 02: Datos vivos */}
           <div className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-surface-border shadow-lg space-y-6">
             <div className="flex items-center gap-4">
@@ -182,6 +190,13 @@ export default function BaseDigitalPage() {
             </div>
           </div>
 
+          {/* Vídeo 2: Datos vivos */}
+          <ScrollVideoBanner
+            src="/videos/video-bbdd.mp4"
+            accentColor="#86BF58"
+            label="02 · DATOS VIVOS"
+          />
+
           {/* Pieza 03: Herramientas conectadas */}
           <div className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-surface-border shadow-lg space-y-6">
             <div className="flex items-center gap-4">
@@ -224,6 +239,13 @@ export default function BaseDigitalPage() {
               </ul>
             </div>
           </div>
+
+          {/* Vídeo 3: Herramientas conectadas */}
+          <ScrollVideoBanner
+            src="/videos/video-apps.mp4"
+            accentColor="#86BF58"
+            label="03 · HERRAMIENTAS CONECTADAS"
+          />
         </div>
       </div>
 
