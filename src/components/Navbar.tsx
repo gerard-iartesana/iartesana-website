@@ -60,7 +60,7 @@ export default function Navbar() {
           <div className="hidden sm:flex items-center gap-4 shrink-0">
             <Link
               href="/agendar"
-              className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-base font-bold text-white bg-[#0A3D62] hover:bg-[#009DF8] hover:shadow-[0_0_35px_rgba(0,157,248,1)] hover:scale-[1.03] transition-all duration-300"
+              className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-base font-bold text-gray-950 bg-gray-200 hover:bg-white hover:text-black hover:shadow-[0_0_35px_rgba(255,255,255,1)] hover:scale-[1.03] transition-all duration-300"
             >
               <span>Reserva primera reunión</span>
             </Link>
@@ -115,7 +115,7 @@ export default function Navbar() {
             <Link
               href="/agendar"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center py-3 rounded-lg text-base font-bold text-white bg-[#0A3D62] hover:bg-[#009DF8] hover:shadow-[0_0_35px_rgba(0,157,248,1)] transition-all duration-300"
+              className="w-full flex items-center justify-center py-3 rounded-lg text-base font-bold text-gray-950 bg-gray-200 hover:bg-white hover:text-black hover:shadow-[0_0_35px_rgba(255,255,255,1)] transition-all duration-300"
             >
               <span>Reserva primera reunión</span>
             </Link>

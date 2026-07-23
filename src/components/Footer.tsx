@@ -26,7 +26,7 @@ export default function Footer() {
 
           <Link
             href="/agendar"
-            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg text-base font-bold text-white bg-[#0A3D62] hover:bg-[#009DF8] hover:shadow-[0_0_35px_rgba(0,157,248,1)] hover:scale-[1.03] transition-all duration-300 shrink-0"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-base font-bold text-gray-950 bg-gray-200 hover:bg-white hover:text-black hover:shadow-[0_0_35px_rgba(255,255,255,1)] hover:scale-[1.03] transition-all duration-300 shrink-0"
           >
             <span>Reserva primera reunión</span>
             <ArrowUpRight className="w-4 h-4" />

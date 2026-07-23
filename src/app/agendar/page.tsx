@@ -167,7 +167,7 @@ export default function AgendarPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-4 rounded-xl text-base font-bold text-white bg-[#0A3D62] hover:bg-[#009DF8] hover:shadow-[0_0_35px_rgba(0,157,248,1)] hover:scale-[1.01] transition-all duration-300 flex items-center justify-center gap-2.5 disabled:opacity-50"
+            className="w-full flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-lg font-bold text-gray-950 bg-gray-200 hover:bg-white hover:text-black hover:shadow-[0_0_35px_rgba(255,255,255,1)] hover:scale-[1.02] transition-all duration-300 cursor-pointer disabled:opacity-50"
           >
             {loading ? (
               <span>Procesando...</span>
