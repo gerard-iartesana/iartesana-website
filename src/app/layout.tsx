@@ -111,7 +111,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col justify-between antialiased selection:bg-[#38A8E0]/30 selection:text-white">
         <IsometricBackground />
         <Navbar />
-        <main className="relative z-10 flex-grow pt-24">{children}</main>
+        <main className="relative z-10 flex-grow">{children}</main>
         <Footer />
       </body>
     </html>

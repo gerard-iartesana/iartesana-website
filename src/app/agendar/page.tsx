@@ -54,7 +54,7 @@ export default function AgendarPage() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20 space-y-12">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 pb-20 space-y-12">
       <div className="text-center space-y-4">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#38A8E0]/10 border border-[#38A8E0]/30 text-xs font-mono text-[#38A8E0]">
           <Calendar className="w-3.5 h-3.5" />
