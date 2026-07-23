@@ -108,14 +108,14 @@ export default function TeamSection() {
         <TeamCard
           name="Gerard"
           role="Sistemas y datos"
-          text="Construye la infraestructura técnica, la seguridad y los agentes."
+          text="Construye la infraestructura técnica, la base de datos viva, la seguridad y los agentes."
           image="/team/gerard.jpg"
           delay={100}
         />
         <TeamCard
           name="David"
           role="Estrategia y contexto"
-          text="Ordena procesos, conocimiento y cultura para que la IA entienda la empresa"
+          text="Ordena procesos, conocimiento y cultura para que la IA entienda la empresa."
           image="/team/david.jpg"
           delay={400}
         />
