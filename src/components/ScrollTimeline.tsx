@@ -8,6 +8,7 @@ export default function ScrollTimeline() {
   const [activeStep, setActiveStep] = useState<number>(0);
   const [openStep, setOpenStep] = useState<number | null>(0);
   const timelineRef = useRef<HTMLDivElement>(null);
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const steps = [
     {
@@ -68,8 +69,22 @@ export default function ScrollTimeline() {
     },
   ];
 
+  const scrollToStep = (index: number) => {
+    if (stepRefs.current[index]) {
+      setTimeout(() => {
+        stepRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 60);
+    }
+  };
+
   const toggleExpand = (index: number) => {
-    setOpenStep((prev) => (prev === index ? null : index));
+    setOpenStep((prev) => {
+      const next = prev === index ? null : index;
+      if (next !== null) {
+        scrollToStep(next);
+      }
+      return next;
+    });
   };
 
   useEffect(() => {
@@ -81,7 +96,7 @@ export default function ScrollTimeline() {
       let currentActive = 0;
       elements.forEach((el, index) => {
         const rect = el.getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.55) {
+        if (rect.top <= window.innerHeight * 0.5) {
           currentActive = index;
         }
       });
@@ -90,6 +105,7 @@ export default function ScrollTimeline() {
         lastActive = currentActive;
         setActiveStep(currentActive);
         setOpenStep(currentActive);
+        scrollToStep(currentActive);
       }
     };
 
@@ -121,7 +137,8 @@ export default function ScrollTimeline() {
           return (
             <div
               key={index}
-              className={`timeline-step flex gap-5 sm:gap-8 items-stretch transition-all duration-500 ${
+              ref={(el) => { stepRefs.current[index] = el; }}
+              className={`timeline-step scroll-mt-24 sm:scroll-mt-28 flex gap-5 sm:gap-8 items-stretch transition-all duration-500 ${
                 isActive || isExpanded ? 'opacity-100' : 'opacity-50 hover:opacity-80'
               }`}
             >
