@@ -115,8 +115,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. PROCESO COMERCIAL */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-white/15">
+      {/* 5. PROCESO COMERCIAL (#pasos) */}
+      <section id="pasos" className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-white/15">
         <div className="text-center space-y-3">
           <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
             Paso a Paso

@@ -51,8 +51,8 @@ export default function Navbar() {
             <Link href="#equipo" className="text-base font-medium text-gray-300 hover:text-white transition-colors">
               Equipo
             </Link>
-            <Link href="/diagnostico" className="text-base font-medium text-gray-300 hover:text-white transition-colors">
-              Diagnóstico
+            <Link href="#pasos" className="text-base font-medium text-gray-300 hover:text-white transition-colors">
+              Pasos
             </Link>
           </nav>
 
@@ -104,11 +104,11 @@ export default function Navbar() {
             Equipo
           </Link>
           <Link
-            href="/diagnostico"
+            href="#pasos"
             onClick={() => setMobileMenuOpen(false)}
             className="block text-lg font-medium text-gray-200 py-2 border-b border-surface-border/50"
           >
-            Diagnóstico
+            Pasos
           </Link>
 
           <div className="pt-2">
