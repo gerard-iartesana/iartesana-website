@@ -35,7 +35,7 @@ export default function HomePage() {
         <div className="relative z-10 pt-2 flex items-center justify-center">
           <Link
             href="/agendar"
-            className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-lg sm:text-xl font-extrabold text-gray-950 bg-gray-200 hover:bg-white hover:text-black hover:shadow-[0_0_35px_rgba(255,255,255,1)] hover:scale-[1.03] transition-all duration-300 shadow-[0_8px_25px_rgba(0,0,0,0.7)]"
+            className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-lg sm:text-xl font-extrabold text-white bg-[#0A3D62] hover:bg-[#009DF8] hover:shadow-[0_0_35px_rgba(0,157,248,1)] hover:scale-[1.03] transition-all duration-300 shadow-[0_8px_25px_rgba(0,0,0,0.7)]"
           >
             <span>Reserva primera reunión</span>
             <ArrowRight className="w-5 h-5" />

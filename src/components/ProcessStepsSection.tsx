@@ -104,7 +104,7 @@ export default function ProcessStepsSection() {
       <div className="text-center pt-2">
         <Link
           href="/agendar"
-          className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-lg text-base sm:text-lg font-bold text-gray-950 bg-gray-200 hover:bg-white hover:text-black hover:shadow-[0_0_35px_rgba(255,255,255,1)] hover:scale-[1.03] transition-all duration-300"
+          className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-lg text-base sm:text-lg font-bold text-white bg-[#0A3D62] hover:bg-[#009DF8] hover:shadow-[0_0_35px_rgba(0,157,248,1)] hover:scale-[1.03] transition-all duration-300"
         >
           <span>Reserva primera reunión</span>
           <ArrowRight className="w-5 h-5" />
