@@ -3,11 +3,36 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { Compass, Database, Wrench, CheckCircle2, ArrowRight, Sparkles, ShieldCheck, RefreshCw, Palette } from 'lucide-react';
 import StickyScrollVideoSection from '@/components/StickyScrollVideoSection';
+import ScrollRevealChecklist from '@/components/ScrollRevealChecklist';
 
 export const metadata: Metadata = {
   title: 'Base Digital · Capa 01 | iARTESANA',
   description: 'Ordenamos el contexto estable, los datos vivos y las herramientas conectadas sobre los que operan las personas y la inteligencia artificial.',
 };
+
+const pieza01Items = [
+  { title: 'Identidad verbal y visual:', description: 'cómo sois y cómo se os reconoce.' },
+  { title: 'Tono y criterios de comunicación:', description: 'aplicables por personas y por IA.' },
+  { title: 'Buenas prácticas y forma de trabajar:', description: 'redactadas y accesibles.' },
+  { title: 'Protocolos de incidencias:', description: 'respuesta clara cuando algo falla sin depender de quién esté ese día.' },
+  { title: 'Procesos documentados:', description: 'criterios claros de decisión operativa para toda la empresa.' },
+];
+
+const pieza02Items = [
+  { title: 'Fuente única de verdad:', description: 'se acabaron las hojas de cálculo paralelas y los datos aislados.' },
+  { title: 'Estructura escalable:', description: 'diseñada para crecer con el negocio, no un apaño temporal.' },
+  { title: 'Histórico utilizable:', description: 'conocimiento valioso listo para consulta y análisis automático.' },
+  { title: 'Sincronización en tiempo real:', description: 'lo que se modifica en un sitio se actualiza en todos.' },
+  { title: 'Información 100% exportable y tuya:', description: 'datos documentados sin quedar atrapado en software propietario.' },
+];
+
+const pieza03Items = [
+  { title: 'Web y captación conectadas:', description: 'cada nuevo contacto entra ya clasificado en la base de datos.' },
+  { title: 'Panel de gestión unificado:', description: 'las métricas que importan en una sola pantalla clara.' },
+  { title: 'Reservas y agenda sincronizadas:', description: 'gestión de reuniones y calendario automatizada.' },
+  { title: 'Tienda y cobros:', description: 'integraciones de pago y catálogo cuando el modelo lo requiere.' },
+  { title: 'Integración nativa:', description: 'conexión fluida con correo, CRM, ERP y formularios habituales.' },
+];
 
 export default function BaseDigitalPage() {
   return (
@@ -85,7 +110,7 @@ export default function BaseDigitalPage() {
           </p>
         </div>
 
-        {/* ── PIEZA 01: Cabecera + descripción (flujo normal) ── */}
+        {/* ── PIEZA 01: Cabecera + descripción ── */}
         <div className="space-y-5">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-4">
@@ -107,31 +132,10 @@ export default function BaseDigitalPage() {
         </div>
       </div>
 
-      {/* ── PIEZA 01: Vídeo a pantalla completa con checklist encima ── */}
+      {/* ── PIEZA 01: Vídeo con checklist animado ── */}
       <StickyScrollVideoSection src="/videos/video-base.mp4">
-        <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-300 font-semibold">Lo que queda construido:</h4>
-        <ul className="grid grid-cols-1 gap-5 text-base sm:text-lg text-gray-100">
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-1" />
-            <span><strong className="text-white">Identidad verbal y visual:</strong> cómo sois y cómo se os reconoce.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-1" />
-            <span><strong className="text-white">Tono y criterios de comunicación:</strong> aplicables por personas y por IA.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-1" />
-            <span><strong className="text-white">Buenas prácticas y forma de trabajar:</strong> redactadas y accesibles.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-1" />
-            <span><strong className="text-white">Protocolos de incidencias:</strong> respuesta clara cuando algo falla sin depender de quién esté ese día.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-1" />
-            <span><strong className="text-white">Procesos documentados:</strong> criterios claros de decisión operativa para toda la empresa.</span>
-          </li>
-        </ul>
+        <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-300 font-semibold mb-2">Lo que queda construido:</h4>
+        <ScrollRevealChecklist items={pieza01Items} />
       </StickyScrollVideoSection>
 
       {/* ── PIEZA 02: Cabecera + descripción ── */}
@@ -152,29 +156,8 @@ export default function BaseDigitalPage() {
 
       {/* ── PIEZA 02: Vídeo ── */}
       <StickyScrollVideoSection src="/videos/video-bbdd.mp4">
-        <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-300 font-semibold">Lo que queda construido:</h4>
-        <ul className="grid grid-cols-1 gap-5 text-base sm:text-lg text-gray-100">
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-1" />
-            <span><strong className="text-white">Fuente única de verdad:</strong> se acabaron las hojas de cálculo paralelas y los datos aislados.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-1" />
-            <span><strong className="text-white">Estructura escalable:</strong> diseñada para crecer con el negocio, no un apaño temporal.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-1" />
-            <span><strong className="text-white">Histórico utilizable:</strong> conocimiento valioso listo para consulta y análisis automático.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-1" />
-            <span><strong className="text-white">Sincronización en tiempo real:</strong> lo que se modifica en un sitio se actualiza en todos.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-1" />
-            <span><strong className="text-white">Información 100% exportable y tuya:</strong> datos documentados sin quedar atrapado en software propietario.</span>
-          </li>
-        </ul>
+        <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-300 font-semibold mb-2">Lo que queda construido:</h4>
+        <ScrollRevealChecklist items={pieza02Items} />
       </StickyScrollVideoSection>
 
       {/* ── PIEZA 03: Cabecera + descripción ── */}
@@ -195,29 +178,8 @@ export default function BaseDigitalPage() {
 
       {/* ── PIEZA 03: Vídeo ── */}
       <StickyScrollVideoSection src="/videos/video-apps.mp4">
-        <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-300 font-semibold">Lo que queda construido:</h4>
-        <ul className="grid grid-cols-1 gap-5 text-base sm:text-lg text-gray-100">
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-1" />
-            <span><strong className="text-white">Web y captación conectadas:</strong> cada nuevo contacto entra ya clasificado en la base de datos.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-1" />
-            <span><strong className="text-white">Panel de gestión unificado:</strong> las métricas que importan en una sola pantalla clara.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-1" />
-            <span><strong className="text-white">Reservas y agenda sincronizadas:</strong> gestión de reuniones y calendario automatizada.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-1" />
-            <span><strong className="text-white">Tienda y cobros:</strong> integraciones de pago y catálogo cuando el modelo lo requiere.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-1" />
-            <span><strong className="text-white">Integración nativa:</strong> conexión fluida con correo, CRM, ERP y formularios habituales.</span>
-          </li>
-        </ul>
+        <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-300 font-semibold mb-2">Lo que queda construido:</h4>
+        <ScrollRevealChecklist items={pieza03Items} />
       </StickyScrollVideoSection>
 
       {/* ── Secciones finales ── */}

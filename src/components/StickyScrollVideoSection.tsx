@@ -104,7 +104,7 @@ export default function StickyScrollVideoSection({
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'linear-gradient(to bottom, #0B0E14 0%, transparent 12%, transparent 88%, #0B0E14 100%)',
+              'linear-gradient(to bottom, #0B0E14 0%, transparent 20%, transparent 80%, #0B0E14 100%)',
           }}
         />
 
