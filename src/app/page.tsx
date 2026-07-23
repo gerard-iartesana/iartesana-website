@@ -49,17 +49,17 @@ export default function HomePage() {
       </section>
 
       {/* 2. PRINCIPIO DE LA CASA */}
-      <section id="metodo" className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-5 pt-8 sm:pt-12 pb-2 sm:pb-4">
-        <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
+      <section id="metodo" className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-5 pt-8 sm:pt-12 pb-2 sm:pb-4">
+        <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block [text-shadow:_0_2px_10px_rgba(0,0,0,0.95)]">
           Principio fundamental
         </span>
 
-        <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-snug">
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-snug [text-shadow:_0_4px_24px_rgba(0,0,0,0.98)]">
           Primero ordenamos.{' '}
-          <span className="text-[#38A8E0]">Después automatizamos.</span>
+          <span className="text-[#38A8E0] [text-shadow:_0_4px_24px_rgba(0,0,0,0.98)]">Después automatizamos.</span>
         </h2>
 
-        <p className="text-lg sm:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto font-normal">
+        <p className="text-lg sm:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto font-normal [text-shadow:_0_2px_16px_rgba(0,0,0,0.98)]">
           Intentar automatizar sobre información desordenada solo genera errores a mayor velocidad. Construimos primero la base limpia sobre la que operan las personas y la inteligencia artificial.
         </p>
 

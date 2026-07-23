@@ -15,7 +15,7 @@ export default function HeroVideo() {
   }, []);
 
   return (
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[120%] min-h-[90vh] overflow-hidden pointer-events-none z-0">
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full min-h-[100%] overflow-hidden pointer-events-none z-0">
       {/* Vídeo a pantalla completa */}
       <video
         ref={videoRef}
@@ -37,7 +37,7 @@ export default function HeroVideo() {
       />
 
       {/* Degradado exclusivamente en la parte inferior para integrarse suavemente con el fondo negro #080A0E */}
-      <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-b from-transparent to-[#080A0E]" />
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-[#080A0E]" />
     </div>
   );
 }
