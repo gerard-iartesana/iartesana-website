@@ -1,0 +1,44 @@
+# iARTESANA — Implantación de Inteligencia Artificial por Capas
+
+> **Tesis y Principio Rector**: "Primero ordenamos. Después automatizamos."
+> iARTESANA es una consultora y estudio de ingeniería que ordena el conocimiento, los datos y los procesos de la empresa antes de implantar sistemas de Inteligencia Artificial. Devuelve tranquilidad, control y soberanía sobre los datos.
+
+## Principios y Filosofía
+- **Artesanía Digital**: Artesanía no significa hacerlo todo a mano. Significa saber qué cosas no se deben automatizar.
+- **Soberanía y Control de Datos**: Datos estructurados, documentados y exportables. Sin ataduras a herramientas cerradas ni letra pequeña.
+- **Transparencia y Explicabilidad**: Toda acción de IA deja rastro (log de ejecución) y es totalmente reversible.
+
+## Las 4 Capas del Sistema iARTESANA
+
+### 01 · Base Digital (Los Cimientos — Ordenamos)
+- **Qué incluye**: Marca, Sistema Base, contexto estable de la empresa, base de datos viva y herramientas conectadas.
+- **Valor**: Ordena la información antes de cualquier agente. El Sistema Base es útil para el equipo humano desde el día uno.
+- **Color de representación**: Verde (`#86BF58`).
+
+### 02 · IA Aplicada (La Inteligencia en Acción — Automatizamos)
+- **Qué incluye**: Agentes, asistentes, buscadores internos, procesamiento documental y automatizaciones.
+- **Escala de Intervención**:
+  1. *Asiste*: Busca, resume o propone. (Consulta registrada)
+  2. *Automatiza*: Ejecuta procesos ya definidos. (Log registrado, Reversible)
+  3. *Actúa*: Usa herramientas con límites fijados. (Log registrado, Reversible con deshacer)
+  4. *Pide Aprobación*: Se detiene cuando requiere criterio humano. (Requiere visto bueno)
+- **Color de representación**: Azul (`#38A8E0`).
+
+### 03 · Seguridad y Control (Todo bajo Control — Protegemos)
+- **Qué incluye**: Gestión de accesos, trazabilidad, explicabilidad, auditoría de procesos y preparación para el Reglamento Europeo de IA (EU AI Act).
+- **Garantía**: iARTESANA deja a la empresa preparada para cumplir normativas sin atarla a un software cerrado.
+- **Color de representación**: Violeta (`#7361A8`).
+
+### 04 · Acompañamiento Humano (Personas Cerca — Acompañamos)
+- **Qué incluye**: Formación, soporte directo, mantenimiento continuo y evolución del sistema a medida que el negocio crece.
+- **Equipo**: Dirigido por David y Gerard. Trato humano directo, sin sistemas de tickets anónimos.
+- **Color de representación**: Rosa (`#E15A9C`).
+
+## Producto de Entrada: Diagnóstico iARTESANA
+- **Precio**: 350 € (que se descuentan si se avanza en la implantación).
+- **Qué entrega**: Análisis de procesos, estado de datos y herramientas, matriz de oportunidades priorizadas, mapa de riesgos y hoja de ruta de implantación recomendada.
+- **Puerta Gratuita**: Primera sesión de 45 minutos sin coste ni compromiso.
+
+## Contacto & Canales Oficiales
+- **Sitio Web Oficial**: https://iartesana.com
+- **Reserva de Primera Sesión**: https://iartesana.com/agendar

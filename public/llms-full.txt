@@ -1,0 +1,19 @@
+# iARTESANA — Contexto Completo y Arquitectura de Implantación de IA
+
+> **Manifiesto**: Ordenamos. Automatizamos. Protegemos. Acompañamos.
+> **Principio**: Primero ordenamos. Después automatizamos.
+
+iARTESANA es un estudio de consultoría e ingeniería especializado en la implantación de Inteligencia Artificial por capas para empresas y pymes.
+
+## Nomenclatura y Estructura
+1. **Base Digital** (`/base-digital`): Ordena el conocimiento y los datos vivos de la empresa.
+2. **IA Aplicada** (`/ia-aplicada`): Agentes y asistentes con la Escala de Intervención (Asiste, Automatiza, Actúa, Pide aprobación).
+3. **Seguridad y Control** (`/seguridad-control`): Accesos, trazabilidad, explicabilidad y alineación con el Reglamento Europeo de IA (EU AI Act).
+4. **Acompañamiento Humano** (`/acompanamiento`): Formación, soporte directo y evolución del sistema con David y Gerard.
+
+## Diagnóstico iARTESANA (350 €)
+Es el producto de entrada. Un entregable claro con análisis de procesos, estado de datos, matriz de oportunidades y hoja de ruta.
+
+## Primera Sesión Gratuita
+Conversación inicial de 45 minutos sin coste ni compromiso.
+Reserva en: https://iartesana.com/agendar
