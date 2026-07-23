@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { Compass, Database, Wrench, CheckCircle2, ArrowRight, Sparkles, ShieldCheck, RefreshCw, Palette } from 'lucide-react';
+import { Compass, Database, Wrench, CheckCircle2, ArrowRight, Sparkles, RefreshCw } from 'lucide-react';
 import StickyScrollVideoSection from '@/components/StickyScrollVideoSection';
 import ScrollRevealChecklist from '@/components/ScrollRevealChecklist';
 
@@ -37,11 +37,11 @@ const pieza03Items = [
 export default function BaseDigitalPage() {
   return (
     <div className="text-[#E2E8F0] bg-[#080A0E]">
-      {/* ── Secciones con ancho limitado ── */}
+      {/* ── Secciones principales sin marcos ni pastillas ── */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24 pt-28 sm:pt-36 pb-4">
         {/* Header */}
         <div className="text-center space-y-4">
-          <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
+          <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
             CAPA 01 · LOS CIMIENTOS
           </span>
           <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
@@ -53,44 +53,42 @@ export default function BaseDigitalPage() {
         </div>
 
         {/* Frase clave */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-[#86BF58]/30 shadow-2xl relative overflow-hidden space-y-6">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#86BF58]/5 rounded-full blur-3xl pointer-events-none" />
-          <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-[#86BF58] font-semibold block">
-            Principio de implantación
+        <div className="text-center space-y-5 max-w-3xl mx-auto py-2">
+          <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
+            PRINCIPIO DE IMPLANTACIÓN
           </span>
-          <blockquote className="text-2xl sm:text-3xl font-extrabold text-white leading-snug tracking-tight">
-            &ldquo;No sustituimos todo lo que ya tienes. Revisamos qué funciona, qué puede conectarse y qué necesita ordenarse.&rdquo;
-          </blockquote>
-          <div className="pt-2 border-t border-surface-border/60 flex items-center gap-3 text-base text-gray-300 font-normal">
-            <ShieldCheck className="w-5 h-5 text-[#86BF58] shrink-0" />
-            <span><strong className="text-white font-semibold">La regla iARTESANA:</strong> No se implanta Inteligencia Artificial hasta que la Base Digital está sana.</span>
-          </div>
+          <p className="text-2xl sm:text-3xl font-extrabold text-white leading-snug tracking-tight">
+            Revisamos lo que ya te funciona, qué puede conectarse y qué necesita ordenarse.
+          </p>
+          <p className="text-base sm:text-lg text-[#86BF58] font-semibold pt-1">
+            Cuando la Base Digital es sana se implanta la Inteligencia Artificial.
+          </p>
         </div>
 
         {/* Dos Certezas */}
-        <div className="space-y-6">
+        <div className="space-y-8">
           <div className="text-center space-y-2">
-            <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
-              Garantías operativas
+            <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
+              GARANTÍAS OPERATIVAS
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Dos certezas sobre la Base Digital</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-8 rounded-2xl bg-surface-card border border-surface-border space-y-4 hover:border-[#86BF58]/50 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-[#86BF58]/10 border border-[#86BF58]/30 flex items-center justify-center text-[#86BF58]">
-                <CheckCircle2 className="w-6 h-6" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <CheckCircle2 className="w-6 h-6 text-[#86BF58] shrink-0" />
+                <h3 className="text-xl font-bold text-white">1. Sirve al equipo humano desde el primer día</h3>
               </div>
-              <h3 className="text-xl font-bold text-white">1. Sirve al equipo humano desde el primer día</h3>
-              <p className="text-base text-gray-300 leading-relaxed font-normal">
+              <p className="text-base text-gray-300 leading-relaxed font-normal pl-9">
                 Un manual de buenas prácticas, un inventario claro y un protocolo de incidencias son útiles hoy mismo para tus empleados, aunque nunca se implantase un agente de IA.
               </p>
             </div>
-            <div className="p-8 rounded-2xl bg-surface-card border border-surface-border space-y-4 hover:border-[#86BF58]/50 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-[#86BF58]/10 border border-[#86BF58]/30 flex items-center justify-center text-[#86BF58]">
-                <RefreshCw className="w-6 h-6" />
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <RefreshCw className="w-6 h-6 text-[#86BF58] shrink-0" />
+                <h3 className="text-xl font-bold text-white">2. No hay que rehacer la empresa desde cero</h3>
               </div>
-              <h3 className="text-xl font-bold text-white">2. No hay que rehacer la empresa desde cero</h3>
-              <p className="text-base text-gray-300 leading-relaxed font-normal">
+              <p className="text-base text-gray-300 leading-relaxed font-normal pl-9">
                 Aprovechamos las herramientas que tu plantilla ya domina y construimos las pasarelas de conexión necesarias en lugar de obligarte a cambiar de software.
               </p>
             </div>
@@ -99,8 +97,8 @@ export default function BaseDigitalPage() {
 
         {/* Título de sección */}
         <div className="text-center space-y-3">
-          <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
-            Estructura modular
+          <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
+            ESTRUCTURA MODULAR
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             Las 3 piezas de los cimientos
@@ -117,15 +115,15 @@ export default function BaseDigitalPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-8 pb-2 pt-8">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-[#86BF58]/20 border border-[#86BF58]/40 flex items-center justify-center text-[#86BF58] shrink-0">
-              <Compass className="w-7 h-7" />
+            <div className="w-12 h-12 rounded-xl bg-[#86BF58]/15 flex items-center justify-center text-[#86BF58] shrink-0">
+              <Compass className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider">Pieza 01 · La diferencia iARTESANA</span>
+              <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider block">Pieza 01 · La diferencia iARTESANA</span>
               <h3 className="text-2xl sm:text-4xl font-extrabold text-white">Contexto estable</h3>
             </div>
           </div>
-          <span className="px-3.5 py-1 rounded-full text-xs font-semibold bg-[#86BF58]/20 text-[#86BF58] border border-[#86BF58]/30 self-start sm:self-auto">
+          <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider">
             Prioridad estructural
           </span>
         </div>
@@ -143,11 +141,11 @@ export default function BaseDigitalPage() {
       {/* ── PIEZA 02: Cabecera ── */}
       <div className="max-w-4xl mx-auto px-4 sm:px-8 pb-2 pt-8">
         <div className="flex items-center gap-4 mb-4">
-          <div className="w-14 h-14 rounded-2xl bg-[#86BF58]/15 border border-[#86BF58]/30 flex items-center justify-center text-[#86BF58] shrink-0">
-            <Database className="w-7 h-7" />
+          <div className="w-12 h-12 rounded-xl bg-[#86BF58]/15 flex items-center justify-center text-[#86BF58] shrink-0">
+            <Database className="w-6 h-6" />
           </div>
           <div>
-            <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider">Pieza 02</span>
+            <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider block">Pieza 02</span>
             <h3 className="text-2xl sm:text-4xl font-extrabold text-white">Datos vivos</h3>
           </div>
         </div>
@@ -165,11 +163,11 @@ export default function BaseDigitalPage() {
       {/* ── PIEZA 03: Cabecera ── */}
       <div className="max-w-4xl mx-auto px-4 sm:px-8 pb-2 pt-8">
         <div className="flex items-center gap-4 mb-4">
-          <div className="w-14 h-14 rounded-2xl bg-[#86BF58]/15 border border-[#86BF58]/30 flex items-center justify-center text-[#86BF58] shrink-0">
-            <Wrench className="w-7 h-7" />
+          <div className="w-12 h-12 rounded-xl bg-[#86BF58]/15 flex items-center justify-center text-[#86BF58] shrink-0">
+            <Wrench className="w-6 h-6" />
           </div>
           <div>
-            <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider">Pieza 03</span>
+            <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider block">Pieza 03</span>
             <h3 className="text-2xl sm:text-4xl font-extrabold text-white">Herramientas conectadas</h3>
           </div>
         </div>
@@ -185,32 +183,36 @@ export default function BaseDigitalPage() {
       </StickyScrollVideoSection>
 
       {/* ── Secciones finales ── */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24 pt-16 pb-24">
-        <div className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-surface-border space-y-4">
-          <div className="flex items-center gap-3 text-[#86BF58]">
-            <Palette className="w-6 h-6" />
-            <h3 className="text-xl font-bold text-white">Diseño, marca y comunicación dentro de la Base Digital</h3>
-          </div>
-          <p className="text-base sm:text-lg text-gray-200 leading-relaxed font-normal">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24 pt-16 pb-24 text-center">
+        <div className="space-y-4 max-w-3xl mx-auto">
+          <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
+            SERVICIOS INTEGRADORES
+          </span>
+          <h3 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Diseño, marca y comunicación dentro de la Base Digital
+          </h3>
+          <p className="text-base sm:text-lg text-gray-200 leading-relaxed font-normal pt-1">
             iARTESANA nació diseñando marcas e identidades visuales. Esos servicios no se han eliminado: se han absorbido de forma natural dentro de la Base Digital. Entendemos la comunicación y el diseño como la primera capa del contexto estable.
           </p>
         </div>
 
-        <div className="text-center p-10 sm:p-14 rounded-3xl bg-gradient-to-r from-surface-card via-surface-hover to-surface-card border border-[#86BF58]/40 space-y-6 shadow-2xl">
-          <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        <div className="space-y-6 max-w-3xl mx-auto pt-4">
+          <h3 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             ¿Quieres construir la Base Digital de tu empresa?
           </h3>
-          <p className="text-lg text-gray-200 max-w-xl mx-auto font-normal">
+          <p className="text-lg text-gray-200 font-normal max-w-xl mx-auto">
             Comenzamos con una conversación directa de 45 minutos para auditar tu punto de partida sin coste ni compromiso.
           </p>
-          <Link
-            href="/agendar"
-            className="inline-flex items-center gap-3 px-9 py-4 rounded-lg text-lg font-bold text-white bg-[#0A3D62] hover:bg-[#009DF8] hover:shadow-[0_0_35px_rgba(0,157,248,1)] hover:scale-[1.03] transition-all duration-300 shadow-xl"
-          >
-            <Sparkles className="w-5 h-5 text-white" />
-            <span>Reserva primera reunión</span>
-            <ArrowRight className="w-5 h-5 text-white" />
-          </Link>
+          <div className="pt-2">
+            <Link
+              href="/agendar"
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-lg sm:text-xl font-extrabold text-white bg-[#0A3D62] hover:bg-[#009DF8] hover:shadow-[0_0_35px_rgba(0,157,248,1)] hover:scale-[1.03] transition-all duration-300 shadow-[0_8px_25px_rgba(0,0,0,0.7)]"
+            >
+              <Sparkles className="w-5 h-5 text-white" />
+              <span>Reserva primera reunión</span>
+              <ArrowRight className="w-5 h-5 text-white" />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
