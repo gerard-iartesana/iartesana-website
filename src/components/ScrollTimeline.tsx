@@ -128,17 +128,18 @@ export default function ScrollTimeline() {
                 isActive ? 'opacity-100' : 'opacity-60'
               }`}
             >
-              {/* Step indicator node */}
+              {/* Step indicator node: Modular Square inspired by iARTESANA logo */}
               <div
-                className="absolute -left-6 sm:-left-12 top-1.5 w-6 h-6 rounded-full border-2 bg-[#080A0E] flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="absolute -left-6 sm:-left-12 top-2 w-5 h-5 rounded-sm border bg-[#080A0E] flex items-center justify-center transition-all duration-300 cursor-pointer"
                 onClick={() => toggleExpand(index)}
                 style={{
                   borderColor: isActive ? step.color : 'rgba(255, 255, 255, 0.2)',
-                  boxShadow: isActive ? `0 0 12px ${step.color}60` : 'none',
+                  boxShadow: isActive ? `0 0 10px ${step.color}80` : 'none',
+                  backgroundColor: isActive ? `${step.color}25` : '#080A0E',
                 }}
               >
                 <div
-                  className="w-2 h-2 rounded-full transition-transform"
+                  className="w-2 h-2 rounded-xs transition-all duration-300"
                   style={{ backgroundColor: isActive ? step.color : 'transparent' }}
                 />
               </div>
@@ -154,20 +155,26 @@ export default function ScrollTimeline() {
                   onClick={() => toggleExpand(index)}
                 >
                   <div className="flex items-center justify-between">
-                    {/* Título de la capa en BOLD / EXTRA BOLD */}
+                    {/* Título de la capa en BOLD */}
                     <h3 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight group-hover:text-gray-200 transition-colors">
                       {step.title}
                     </h3>
+                    
+                    {/* Indicador minimalista sólo con flecha (sin texto "Saber más") */}
                     <button
                       type="button"
-                      className="inline-flex items-center gap-1.5 text-sm sm:text-base font-medium text-gray-400 group-hover:text-white transition-colors shrink-0"
+                      className="p-2 text-gray-400 hover:text-white transition-colors shrink-0 focus:outline-none"
+                      aria-label={isExpanded ? 'Plegar detalles' : 'Desplegar detalles'}
                     >
-                      <span>{isExpanded ? 'Menos detalles' : 'Saber más'}</span>
-                      {isExpanded ? <ChevronUp className="w-4 h-4 text-gray-400 group-hover:text-white" /> : <ChevronDown className="w-4 h-4 text-gray-400 group-hover:text-white" />}
+                      {isExpanded ? (
+                        <ChevronUp className="w-6 h-6 text-gray-400 group-hover:text-white transition-transform duration-300" />
+                      ) : (
+                        <ChevronDown className="w-6 h-6 text-gray-400 group-hover:text-white transition-transform duration-300" />
+                      )}
                     </button>
                   </div>
 
-                  {/* Texto de debajo en tipografía NORMAL / REGULAR */}
+                  {/* Texto de debajo en REGULAR */}
                   <p className="text-xl sm:text-2xl font-normal text-gray-200 max-w-3xl leading-relaxed">
                     {step.mainIdea}
                   </p>
