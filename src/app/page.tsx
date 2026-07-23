@@ -8,24 +8,24 @@ import HeroVideo from '@/components/HeroVideo';
 export default function HomePage() {
   return (
     <div className="space-y-12 sm:space-y-16 pb-16 text-[#E2E8F0] bg-[#080A0E] overflow-hidden">
-      {/* 1. HERO (CON VÍDEO DE FONDO EN CÁMARA LENTA Y MARGEN SUPERIOR REDUCIDO) */}
+      {/* 1. HERO (CON VÍDEO AL 100% INTENSIDAD, LOOP FADE Y TEXTO CON SOMBRAS DE ALTO CONTRASTE) */}
       <section className="relative pt-4 sm:pt-6 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center space-y-6 flex flex-col justify-center items-center">
-        {/* Vídeo de fondo a cámara lenta y difuminado */}
+        {/* Vídeo de fondo al 100% de intensidad con fade en el bucle */}
         <HeroVideo />
 
-        {/* Descriptor en Open Sans tipografía normal */}
-        <span className="relative z-10 text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-300 font-normal block drop-shadow-md">
+        {/* Descriptor en Open Sans con sombra para alto contraste */}
+        <span className="relative z-10 text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-100 font-semibold block [text-shadow:_0_2px_10px_rgba(0,0,0,0.95)]">
           MÉTODO iARTESANA
         </span>
 
-        {/* Gran titular con color SOLO en una frase clave */}
-        <h1 className="relative z-10 text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.15] max-w-4xl mx-auto drop-shadow-lg">
+        {/* Gran titular con sombras potentes para lectura perfecta sobre el vídeo al 100% */}
+        <h1 className="relative z-10 text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.15] max-w-4xl mx-auto [text-shadow:_0_4px_24px_rgba(0,0,0,0.98)]">
           Implantamos inteligencia artificial para que tu empresa{' '}
-          <span className="text-[#38A8E0]">trabaje mejor.</span>
+          <span className="text-[#38A8E0] [text-shadow:_0_4px_24px_rgba(0,0,0,0.98)]">trabaje mejor.</span>
         </h1>
 
-        {/* Explicación breve */}
-        <p className="relative z-10 text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-normal drop-shadow">
+        {/* Explicación breve con alta legibilidad */}
+        <p className="relative z-10 text-xl sm:text-2xl text-white max-w-3xl mx-auto leading-relaxed font-medium [text-shadow:_0_2px_16px_rgba(0,0,0,0.98)]">
           Menos tareas repetidas y mejores decisiones ordenando primero el conocimiento, los datos y los procesos de tu negocio.
         </p>
 
@@ -33,7 +33,7 @@ export default function HomePage() {
         <div className="relative z-10 pt-2 flex items-center justify-center">
           <Link
             href="/agendar"
-            className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-lg text-base sm:text-lg font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-all shadow-xl hover:scale-[1.02]"
+            className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-lg text-base sm:text-lg font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-all shadow-[0_8px_25px_rgba(0,0,0,0.7)] hover:scale-[1.02]"
           >
             <span>Reserva primera reunión</span>
             <ArrowRight className="w-5 h-5" />
@@ -41,7 +41,7 @@ export default function HomePage() {
         </div>
 
         {/* Frase discreta */}
-        <p className="relative z-10 text-base text-gray-300 font-normal pt-1 font-['Open_Sans',sans-serif] drop-shadow-sm">
+        <p className="relative z-10 text-base text-gray-200 font-normal pt-1 font-['Open_Sans',sans-serif] [text-shadow:_0_2px_8px_rgba(0,0,0,0.95)]">
           Una primera conversación de 45 minutos, sin coste ni compromiso.
         </p>
       </section>
