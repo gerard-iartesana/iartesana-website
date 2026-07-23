@@ -10,23 +10,18 @@ export const metadata: Metadata = {
 
 export default function BaseDigitalPage() {
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24 pt-6 pb-24 text-[#E2E8F0]">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24 pt-28 sm:pt-36 pb-24 text-[#E2E8F0]">
       {/* Header Section */}
-      <div className="text-center space-y-6 pt-4">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#86BF58]/10 border border-[#86BF58]/30 text-xs sm:text-sm font-mono text-[#86BF58] font-bold">
-          <Layers className="w-4 h-4" />
-          <span>CAPA 01 · LOS CIMIENTOS</span>
-        </div>
+      <div className="text-center space-y-4">
+        <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
+          CAPA 01 · LOS CIMIENTOS
+        </span>
 
         <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
           Base digital
         </h1>
 
-        <p className="text-xl sm:text-3xl text-[#86BF58] font-semibold italic">
-          Primero ordenamos. Después automatizamos.
-        </p>
-
-        <p className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-normal">
+        <p className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-normal pt-2">
           Marca, conocimiento, datos vivos y herramientas conectadas. La estructura digital estable sobre la que trabajan las personas y la inteligencia artificial sin generar caos.
         </p>
       </div>
