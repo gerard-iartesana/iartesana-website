@@ -33,7 +33,7 @@ export default function ScrollVideoBanner({ src }: ScrollVideoBannerProps) {
       const rect = containerRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Calcular la posición del scroll respecto a la pantalla (0 a 1)
+      // Calcular el avance del scroll dentro de la ventana (0 a 1)
       const startOffset = windowHeight;
       const endOffset = -rect.height;
       const totalDistance = startOffset - endOffset;
@@ -47,25 +47,26 @@ export default function ScrollVideoBanner({ src }: ScrollVideoBannerProps) {
         targetTimeRef.current = progress * videoRef.current.duration;
       }
 
-      // 2. Cálculo del desplazamiento Parallax vertical (-70px a +70px)
-      const maxParallaxShift = 70;
-      parallaxOffsetRef.current = (progress - 0.5) * maxParallaxShift * 2;
+      // 2. Parallax vertical Intenso y claramente perceptible (-180px a +180px)
+      const maxShift = 180; 
+      // Multiplicamos por (0.5 - progress) para crear el movimiento opuesto al scroll
+      parallaxOffsetRef.current = (0.5 - progress) * maxShift * 2;
     };
 
-    // Bucle de aceleración fluida a 60fps
+    // Bucle de aceleración por hardware ultra fluido (60fps)
     const renderLoop = () => {
       if (videoRef.current) {
-        // Scrubbing de vídeo
+        // Scrubbing de fotogramas del vídeo
         if (videoRef.current.duration) {
           const diff = targetTimeRef.current - videoRef.current.currentTime;
           if (Math.abs(diff) > 0.001) {
-            videoRef.current.currentTime += diff * 0.18;
+            videoRef.current.currentTime += diff * 0.2;
           }
         }
 
-        // Efecto Parallax en el contenedor del vídeo
+        // Aplicar desplazamiento físico Parallax al vídeo
         if (videoContainerRef.current) {
-          videoContainerRef.current.style.transform = `translate3d(0, ${parallaxOffsetRef.current}px, 0) scale(1.08)`;
+          videoContainerRef.current.style.transform = `translate3d(0, ${parallaxOffsetRef.current}px, 0) scale(1.15)`;
         }
       }
       animationFrameRef.current = requestAnimationFrame(renderLoop);
@@ -86,12 +87,12 @@ export default function ScrollVideoBanner({ src }: ScrollVideoBannerProps) {
   return (
     <div
       ref={containerRef}
-      className="w-screen relative left-1/2 -translate-x-1/2 my-10 sm:my-16 h-[320px] sm:h-[480px] md:h-[580px] overflow-hidden bg-[#0B0E14] pointer-events-none"
+      className="w-screen relative left-1/2 -translate-x-1/2 my-12 sm:my-20 h-[360px] sm:h-[520px] md:h-[620px] overflow-hidden bg-[#0B0E14] pointer-events-none"
     >
-      {/* Contenedor con efecto Parallax vertical */}
+      {/* Contenedor ampliado con Parallax profundo de 360px de recorrido */}
       <div
         ref={videoContainerRef}
-        className="relative w-full h-[125%] -top-[12.5%] will-change-transform"
+        className="relative w-full h-[160%] -top-[30%] will-change-transform"
       >
         {/* Reproductor de vídeo de fondo */}
         <video
@@ -106,7 +107,7 @@ export default function ScrollVideoBanner({ src }: ScrollVideoBannerProps) {
         </video>
       </div>
 
-      {/* Degradados de integración perfecta con el fondo #0B0E14 */}
+      {/* Degradados de integración limpia con el fondo oscuro #0B0E14 */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-[#0B0E14] pointer-events-none z-10" />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0B0E14] via-transparent to-[#0B0E14] pointer-events-none z-10" />
     </div>
