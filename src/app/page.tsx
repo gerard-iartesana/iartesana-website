@@ -111,7 +111,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. PROCESO COMERCIAL */}
+      {/* 5. PROCESO COMERCIAL (MONOCROMO / SOLO BLANCO) */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-surface-border/50">
         <div className="text-center space-y-3">
           <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
@@ -125,22 +125,23 @@ export default function HomePage() {
           </p>
         </div>
 
+        {/* Tarjetas monocromas en blanco */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Step 1 */}
           <div className="space-y-3 p-6 rounded-2xl bg-surface-card border border-surface-border">
-            <span className="text-3xl font-extrabold text-[#38A8E0] font-mono">01</span>
+            <span className="text-3xl font-extrabold text-white font-mono">01</span>
             <h3 className="text-xl sm:text-2xl font-bold text-white">Primera conversación</h3>
-            <p className="text-sm font-semibold text-[#38A8E0]">Gratuita · 45 minutos</p>
+            <p className="text-sm font-normal text-gray-300 font-['Open_Sans',sans-serif]">Gratuita · 45 minutos</p>
             <p className="text-base text-gray-200 leading-relaxed font-normal">
               Sesión sin coste para conocernos, escuchar tus necesidades y evaluar si existe encaje técnico.
             </p>
           </div>
 
           {/* Step 2 */}
-          <div className="space-y-3 p-6 rounded-2xl bg-surface-card border-2 border-[#86BF58]">
-            <span className="text-3xl font-extrabold text-[#86BF58] font-mono">02</span>
+          <div className="space-y-3 p-6 rounded-2xl bg-surface-card border border-white/30">
+            <span className="text-3xl font-extrabold text-white font-mono">02</span>
             <h3 className="text-xl sm:text-2xl font-bold text-white">Diagnóstico iARTESANA</h3>
-            <p className="text-sm font-semibold text-[#86BF58]">350 € (Descontables al 100%)</p>
+            <p className="text-sm font-normal text-gray-300 font-['Open_Sans',sans-serif]">350 € (Descontables al 100%)</p>
             <p className="text-base text-gray-200 leading-relaxed font-normal">
               Análisis detallado de tu operativa, oportunidades de automatización y hoja de ruta con presupuesto cerrado.
             </p>
@@ -148,9 +149,9 @@ export default function HomePage() {
 
           {/* Step 3 */}
           <div className="space-y-3 p-6 rounded-2xl bg-surface-card border border-surface-border">
-            <span className="text-3xl font-extrabold text-[#E15A9C] font-mono">03</span>
+            <span className="text-3xl font-extrabold text-white font-mono">03</span>
             <h3 className="text-xl sm:text-2xl font-bold text-white">Implantación por capas</h3>
-            <p className="text-sm font-semibold text-gray-400">Presupuesto personalizado</p>
+            <p className="text-sm font-normal text-gray-300 font-['Open_Sans',sans-serif]">Presupuesto personalizado</p>
             <p className="text-base text-gray-200 leading-relaxed font-normal">
               Construcción progresiva de tu Base Digital, agentes de IA, seguridad y formación continua a tu equipo.
             </p>
