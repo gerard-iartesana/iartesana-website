@@ -9,23 +9,23 @@ export default function HomePage() {
     <div className="space-y-24 pb-24 text-[#E2E8F0] bg-[#080A0E]">
       {/* 1. HERO (LIMPIO Y CONTUNDENTE) */}
       <section className="pt-16 sm:pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center space-y-8">
-        {/* 1. Descriptor en Open Sans tipografía normal */}
+        {/* Descriptor en Open Sans tipografía normal */}
         <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
           MÉTODO iARTESANA
         </span>
 
-        {/* 2. Gran titular con color SOLO en una frase clave */}
+        {/* Gran titular con color SOLO en una frase clave */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.15] max-w-4xl mx-auto">
           Implantamos inteligencia artificial para que tu empresa{' '}
           <span className="text-[#38A8E0]">trabaje mejor.</span>
         </h1>
 
-        {/* 3. Explicación breve (máximo dos líneas) */}
+        {/* Explicación breve (máximo dos líneas) */}
         <p className="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-normal">
           Menos tareas repetidas y mejores decisiones ordenando primero el conocimiento, los datos y los procesos de tu negocio.
         </p>
 
-        {/* 4. Único CTA principal con texto más grande y menor margen interior */}
+        {/* Único CTA principal con texto más grande y menor margen interior */}
         <div className="pt-4 flex items-center justify-center">
           <Link
             href="/agendar"
@@ -36,7 +36,7 @@ export default function HomePage() {
           </Link>
         </div>
 
-        {/* 5. Frase discreta aclarando que la primera conversación es gratuita */}
+        {/* Frase discreta aclarando que la primera conversación es gratuita */}
         <p className="text-base text-gray-400 font-normal pt-2 font-['Open_Sans',sans-serif]">
           Una primera conversación de 45 minutos, sin coste ni compromiso.
         </p>
@@ -62,7 +62,7 @@ export default function HomePage() {
       {/* 3. RECORRIDO DE LAS 4 CAPAS (SCROLL TIMELINE CONTINUO UNIFICADO) */}
       <ScrollTimeline />
 
-      {/* 4. EQUIPO HUMANO (DAVID & GERARD SIMPLIFICADO Y CON PRESENCIA) */}
+      {/* 4. EQUIPO HUMANO (GERARD A LA IZQUIERDA, DAVID A LA DERECHA, SIN CONTORNOS) */}
       <section id="equipo" className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-12 space-y-12 border-t border-surface-border/50">
         <div className="text-center space-y-3">
           {/* Descriptor en Open Sans tipografía normal */}
@@ -77,32 +77,36 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Dos perfiles alineados y equilibrados sin tarjetas dentro de tarjetas */}
+        {/* Gerard a la izquierda, David a la derecha */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* David */}
+          {/* Gerard (Izquierda) */}
           <div className="flex flex-col sm:flex-row items-start gap-6 p-6 rounded-2xl bg-surface-card border border-surface-border">
-            <div className="relative w-32 h-32 rounded-xl overflow-hidden shrink-0 border-2 border-[#86BF58]">
-              <Image src="/team/david.jpg" alt="David" fill className="object-cover" />
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-2xl sm:text-3xl font-bold text-white">David</h3>
-              <p className="text-sm font-mono text-[#86BF58] font-bold">Estrategia & Contexto de Negocio</p>
-              <p className="text-base text-gray-200 leading-relaxed pt-1 font-normal">
-                Estructura los procesos, el conocimiento y el tono de marca. Garantiza que la IA refleje fielmente la cultura y criterios de tu empresa.
-              </p>
-            </div>
-          </div>
-
-          {/* Gerard */}
-          <div className="flex flex-col sm:flex-row items-start gap-6 p-6 rounded-2xl bg-surface-card border border-surface-border">
-            <div className="relative w-32 h-32 rounded-xl overflow-hidden shrink-0 border-2 border-[#38A8E0]">
+            <div className="relative w-32 h-32 rounded-xl overflow-hidden shrink-0">
               <Image src="/team/gerard.jpg" alt="Gerard" fill className="object-cover" />
             </div>
             <div className="space-y-2">
               <h3 className="text-2xl sm:text-3xl font-bold text-white">Gerard</h3>
-              <p className="text-sm font-mono text-[#38A8E0] font-bold">Ingeniería de Sistemas & Datos</p>
+              <p className="text-base text-gray-400 font-['Open_Sans',sans-serif] font-normal">
+                Ingeniería de Sistemas & Datos
+              </p>
               <p className="text-base text-gray-200 leading-relaxed pt-1 font-normal">
                 Desarrolla la base de datos, la seguridad y los agentes autónomos. Garantiza el rendimiento técnico, la explicabilidad y la soberanía de los datos.
+              </p>
+            </div>
+          </div>
+
+          {/* David (Derecha) */}
+          <div className="flex flex-col sm:flex-row items-start gap-6 p-6 rounded-2xl bg-surface-card border border-surface-border">
+            <div className="relative w-32 h-32 rounded-xl overflow-hidden shrink-0">
+              <Image src="/team/david.jpg" alt="David" fill className="object-cover" />
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">David</h3>
+              <p className="text-base text-gray-400 font-['Open_Sans',sans-serif] font-normal">
+                Estrategia y Contexto IA
+              </p>
+              <p className="text-base text-gray-200 leading-relaxed pt-1 font-normal">
+                Estructura los procesos, el conocimiento y el tono de marca. Garantiza que la IA refleje fielmente la cultura y criterios de tu empresa.
               </p>
             </div>
           </div>
