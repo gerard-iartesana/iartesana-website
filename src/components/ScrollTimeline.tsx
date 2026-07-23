@@ -2,10 +2,12 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight, Check, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function ScrollTimeline() {
   const [activeStep, setActiveStep] = useState<number>(0);
+  // Expandable state: Track expanded index (set of indices or boolean per index)
+  const [expandedSteps, setExpandedSteps] = useState<Record<number, boolean>>({});
   const timelineRef = useRef<HTMLDivElement>(null);
 
   const steps = [
@@ -67,6 +69,13 @@ export default function ScrollTimeline() {
     },
   ];
 
+  const toggleExpand = (index: number) => {
+    setExpandedSteps((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (!timelineRef.current) return;
@@ -95,12 +104,12 @@ export default function ScrollTimeline() {
           Cómo se construye el sistema
         </h2>
         <p className="text-base sm:text-lg text-gray-300 max-w-xl mx-auto">
-          Un camino progresivo dividido en 4 etapas complementarias.
+          Haz clic en cada capa para desplegar los detalles de implantación.
         </p>
       </div>
 
       {/* Timeline container */}
-      <div className="relative pl-6 sm:pl-12 space-y-24">
+      <div className="relative pl-6 sm:pl-12 space-y-16">
         {/* Vertical line connecting nodes */}
         <div className="absolute left-2.5 sm:left-5 top-4 bottom-4 w-0.5 bg-surface-border">
           <div
@@ -115,6 +124,8 @@ export default function ScrollTimeline() {
         {/* Steps */}
         {steps.map((step, index) => {
           const isActive = activeStep >= index;
+          const isExpanded = !!expandedSteps[index];
+
           return (
             <div
               key={index}
@@ -124,7 +135,8 @@ export default function ScrollTimeline() {
             >
               {/* Step indicator node */}
               <div
-                className="absolute -left-6 sm:-left-12 top-1.5 w-6 h-6 rounded-full border-2 bg-[#080A0E] flex items-center justify-center transition-all duration-300"
+                className="absolute -left-6 sm:-left-12 top-1.5 w-6 h-6 rounded-full border-2 bg-[#080A0E] flex items-center justify-center transition-all duration-300 cursor-pointer"
+                onClick={() => toggleExpand(index)}
                 style={{
                   borderColor: isActive ? step.color : 'rgba(255, 255, 255, 0.2)',
                   boxShadow: isActive ? `0 0 12px ${step.color}60` : 'none',
@@ -136,55 +148,73 @@ export default function ScrollTimeline() {
                 />
               </div>
 
-              {/* Content block: open format without heavy cards */}
+              {/* Content block */}
               <div 
-                className="pl-4 sm:pl-8 space-y-5 border-l-2 transition-all duration-300"
+                className="pl-4 sm:pl-8 space-y-4 border-l-2 transition-all duration-300"
                 style={{ borderColor: isActive ? `${step.color}40` : 'transparent' }}
               >
-                {/* 1. Small Tag */}
-                <span className="text-xs font-mono font-bold tracking-wider uppercase block" style={{ color: step.color }}>
-                  {step.capa}
-                </span>
+                {/* Always Visible Header Block */}
+                <div 
+                  className="cursor-pointer space-y-2 group"
+                  onClick={() => toggleExpand(index)}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold tracking-wider uppercase block" style={{ color: step.color }}>
+                      {step.capa}
+                    </span>
+                    <button
+                      type="button"
+                      className="inline-flex items-center gap-1 text-xs font-mono font-semibold px-3 py-1 rounded-full border border-surface-border transition-colors hover:border-white"
+                      style={{ color: step.color }}
+                    >
+                      <span>{isExpanded ? 'Menos detalles' : 'Saber más'}</span>
+                      {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                    </button>
+                  </div>
 
-                {/* 2. Title */}
-                <h3 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-                  {step.title}
-                </h3>
+                  <h3 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight group-hover:text-gray-100 transition-colors">
+                    {step.title}
+                  </h3>
 
-                {/* 3. Main Highlighted Idea */}
-                <p className="text-lg sm:text-2xl font-bold text-white max-w-2xl leading-snug">
-                  {step.mainIdea}
-                </p>
-
-                {/* 4. Description (2-3 lines max) */}
-                <p className="text-base text-gray-300 max-w-2xl leading-relaxed">
-                  {step.description}
-                </p>
-
-                {/* 5. Results (3 bullet points) */}
-                <div className="pt-2 space-y-2">
-                  <span className="text-xs font-mono text-gray-400 uppercase tracking-wider block">Resultados concretos:</span>
-                  <ul className="space-y-2 text-sm text-gray-200">
-                    {step.results.map((res, rIdx) => (
-                      <li key={rIdx} className="flex items-start gap-2.5">
-                        <Check className="w-4 h-4 shrink-0 mt-0.5" style={{ color: step.color }} />
-                        <span>{res}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="text-lg sm:text-2xl font-bold text-white max-w-2xl leading-snug">
+                    {step.mainIdea}
+                  </p>
                 </div>
 
-                {/* 6. Link */}
-                <div className="pt-4">
-                  <Link
-                    href={step.href}
-                    className="inline-flex items-center gap-2 text-sm font-bold transition-colors hover:underline"
-                    style={{ color: step.color }}
-                  >
-                    <span>{step.linkText}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
+                {/* Expandable Details Block */}
+                {isExpanded && (
+                  <div className="pt-3 space-y-5 animate-fadeIn">
+                    {/* Description */}
+                    <p className="text-base text-gray-300 max-w-2xl leading-relaxed border-t border-surface-border/40 pt-4">
+                      {step.description}
+                    </p>
+
+                    {/* Results */}
+                    <div className="space-y-2">
+                      <span className="text-xs font-mono text-gray-400 uppercase tracking-wider block">Resultados concretos:</span>
+                      <ul className="space-y-2 text-sm text-gray-200">
+                        {step.results.map((res, rIdx) => (
+                          <li key={rIdx} className="flex items-start gap-2.5">
+                            <Check className="w-4 h-4 shrink-0 mt-0.5" style={{ color: step.color }} />
+                            <span>{res}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Link */}
+                    <div className="pt-2">
+                      <Link
+                        href={step.href}
+                        className="inline-flex items-center gap-2 text-sm font-bold transition-colors hover:underline"
+                        style={{ color: step.color }}
+                      >
+                        <span>{step.linkText}</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           );
