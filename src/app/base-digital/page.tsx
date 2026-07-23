@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { Layers, Compass, Database, Wrench, CheckCircle2, ArrowRight, Sparkles, ShieldCheck, RefreshCw, Palette } from 'lucide-react';
-import ScrollVideoBanner from '@/components/ScrollVideoBanner';
+import { Compass, Database, Wrench, CheckCircle2, ArrowRight, Sparkles, ShieldCheck, RefreshCw, Palette } from 'lucide-react';
+import StickyScrollVideoSection from '@/components/StickyScrollVideoSection';
 
 export const metadata: Metadata = {
   title: 'Base Digital · Capa 01 | iARTESANA',
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function BaseDigitalPage() {
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24 pt-28 sm:pt-36 pb-24 text-[#E2E8F0]">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24 pt-28 sm:pt-36 pb-24 text-[#E2E8F0] overflow-x-hidden">
       {/* Header Section */}
       <div className="text-center space-y-4">
         <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
@@ -77,8 +77,8 @@ export default function BaseDigitalPage() {
         </div>
       </div>
 
-      {/* Las 3 Piezas de la Base Digital con Vídeos de Fondo Animados al Scroll */}
-      <div className="space-y-12">
+      {/* Las 3 Piezas con Vídeos Fijos al Fondo (Scroll-pinned con texto superpuesto) */}
+      <div className="space-y-16">
         <div className="text-center space-y-3">
           <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
             Estructura modular
@@ -91,150 +91,139 @@ export default function BaseDigitalPage() {
           </p>
         </div>
 
-        <div className="space-y-12">
-          {/* Pieza 01: Contexto estable */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-surface-card via-surface-card to-[#86BF58]/10 border-2 border-[#86BF58]/40 shadow-xl space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-[#86BF58]/20 border border-[#86BF58]/40 flex items-center justify-center text-[#86BF58] shrink-0">
-                  <Compass className="w-7 h-7" />
-                </div>
-                <div>
-                  <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider">Pieza 01 · La diferencia iARTESANA</span>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white">Contexto estable</h3>
-                </div>
-              </div>
-              <span className="px-3.5 py-1 rounded-full text-xs font-semibold bg-[#86BF58]/20 text-[#86BF58] border border-[#86BF58]/30 self-start sm:self-auto">
-                Prioridad estructural
-              </span>
-            </div>
-
-            <p className="text-lg text-gray-200 leading-relaxed font-normal">
-              Quién sois, cómo habláis, cómo trabajáis y qué criterios seguís. Es la documentación estratégica que sirve como guía inmutable de referencia tanto para tu equipo como para los sistemas de Inteligencia Artificial.
-            </p>
-
-            <div className="border-t border-surface-border/60 pt-6 space-y-3">
-              <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-400 font-semibold">Lo que queda construido:</h4>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-base text-gray-200">
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
-                  <span><strong>Identidad verbal y visual:</strong> cómo sois y cómo se os reconoce.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
-                  <span><strong>Tono y criterios de comunicación:</strong> aplicables por personas y por IA.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
-                  <span><strong>Buenas prácticas y forma de trabajar:</strong> redactadas y accesibles.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
-                  <span><strong>Protocolos de incidencias:</strong> respuesta clara cuando algo falla sin depender de quién esté ese día.</span>
-                </li>
-                <li className="flex items-start gap-2.5 sm:col-span-2">
-                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
-                  <span><strong>Procesos documentados:</strong> criterios claros de decisión operativa para toda la empresa.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Vídeo 1: Contexto estable */}
-          <ScrollVideoBanner src="/videos/video-base.mp4" />
-
-          {/* Pieza 02: Datos vivos */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-surface-border shadow-lg space-y-6">
+        {/* PIEZA 01: CONTEXTO ESTABLE */}
+        <StickyScrollVideoSection src="/videos/video-base.mp4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-[#86BF58]/15 border border-[#86BF58]/30 flex items-center justify-center text-[#86BF58] shrink-0">
-                <Database className="w-7 h-7" />
+              <div className="w-14 h-14 rounded-2xl bg-[#86BF58]/20 border border-[#86BF58]/40 flex items-center justify-center text-[#86BF58] shrink-0">
+                <Compass className="w-7 h-7" />
               </div>
               <div>
-                <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider">Pieza 02</span>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white">Datos vivos</h3>
+                <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider">Pieza 01 · La diferencia iARTESANA</span>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white">Contexto estable</h3>
               </div>
             </div>
+            <span className="px-3.5 py-1 rounded-full text-xs font-semibold bg-[#86BF58]/20 text-[#86BF58] border border-[#86BF58]/30 self-start sm:self-auto">
+              Prioridad estructural
+            </span>
+          </div>
 
-            <p className="text-lg text-gray-200 leading-relaxed font-normal">
-              Lo que cambia cada día: clientes, operaciones, incidencias, disponibilidad e histórico. Una arquitectura de datos limpia, aislada y preparada para nutrir a la IA.
-            </p>
+          <p className="text-lg text-gray-200 leading-relaxed font-normal">
+            Quién sois, cómo habláis, cómo trabajáis y qué criterios seguís. Es la documentación estratégica que sirve como guía inmutable de referencia tanto para tu equipo como para los sistemas de Inteligencia Artificial.
+          </p>
 
-            <div className="border-t border-surface-border/60 pt-6 space-y-3">
-              <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-400 font-semibold">Lo que queda construido:</h4>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-base text-gray-200">
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
-                  <span><strong>Fuente única de verdad:</strong> se acabaron las hojas de cálculo paralelas y los datos aislados.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
-                  <span><strong>Estructura escalable:</strong> diseñada para crecer con el negocio, no un apaño temporal.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
-                  <span><strong>Histórico utilizable:</strong> conocimiento valioso listo para consulta y análisis automático.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
-                  <span><strong>Sincronización en tiempo real:</strong> lo que se modifica en un sitio se actualiza en todos.</span>
-                </li>
-                <li className="flex items-start gap-2.5 sm:col-span-2">
-                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
-                  <span><strong>Información 100% exportable y tuya:</strong> datos documentados sin quedar atrapado en software propietario.</span>
-                </li>
-              </ul>
+          <div className="border-t border-surface-border/60 pt-6 space-y-3">
+            <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-400 font-semibold">Lo que queda construido:</h4>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-base text-gray-200">
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                <span><strong>Identidad verbal y visual:</strong> cómo sois y cómo se os reconoce.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                <span><strong>Tono y criterios de comunicación:</strong> aplicables por personas y por IA.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                <span><strong>Buenas prácticas y forma de trabajar:</strong> redactadas y accesibles.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                <span><strong>Protocolos de incidencias:</strong> respuesta clara cuando algo falla sin depender de quién esté ese día.</span>
+              </li>
+              <li className="flex items-start gap-2.5 sm:col-span-2">
+                <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                <span><strong>Procesos documentados:</strong> criterios claros de decisión operativa para toda la empresa.</span>
+              </li>
+            </ul>
+          </div>
+        </StickyScrollVideoSection>
+
+        {/* PIEZA 02: DATOS VIVOS */}
+        <StickyScrollVideoSection src="/videos/video-bbdd.mp4">
+          <div className="flex items-center gap-4">
+            <div className="w-14 h-14 rounded-2xl bg-[#86BF58]/15 border border-[#86BF58]/30 flex items-center justify-center text-[#86BF58] shrink-0">
+              <Database className="w-7 h-7" />
+            </div>
+            <div>
+              <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider">Pieza 02</span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white">Datos vivos</h3>
             </div>
           </div>
 
-          {/* Vídeo 2: Datos vivos */}
-          <ScrollVideoBanner src="/videos/video-bbdd.mp4" />
+          <p className="text-lg text-gray-200 leading-relaxed font-normal">
+            Lo que cambia cada día: clientes, operaciones, incidencias, disponibilidad e histórico. Una arquitectura de datos limpia, aislada y preparada para nutrir a la IA.
+          </p>
 
-          {/* Pieza 03: Herramientas conectadas */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-surface-border shadow-lg space-y-6">
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-[#86BF58]/15 border border-[#86BF58]/30 flex items-center justify-center text-[#86BF58] shrink-0">
-                <Wrench className="w-7 h-7" />
-              </div>
-              <div>
-                <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider">Pieza 03</span>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white">Herramientas conectadas</h3>
-              </div>
+          <div className="border-t border-surface-border/60 pt-6 space-y-3">
+            <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-400 font-semibold">Lo que queda construido:</h4>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-base text-gray-200">
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                <span><strong>Fuente única de verdad:</strong> se acabaron las hojas de cálculo paralelas y los datos aislados.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                <span><strong>Estructura escalable:</strong> diseñada para crecer con el negocio, no un apaño temporal.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                <span><strong>Histórico utilizable:</strong> conocimiento valioso listo para consulta y análisis automático.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                <span><strong>Sincronización en tiempo real:</strong> lo que se modifica en un sitio se actualiza en todos.</span>
+              </li>
+              <li className="flex items-start gap-2.5 sm:col-span-2">
+                <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                <span><strong>Información 100% exportable y tuya:</strong> datos documentados sin quedar atrapado en software propietario.</span>
+              </li>
+            </ul>
+          </div>
+        </StickyScrollVideoSection>
+
+        {/* PIEZA 03: HERRAMIENTAS CONECTADAS */}
+        <StickyScrollVideoSection src="/videos/video-apps.mp4">
+          <div className="flex items-center gap-4">
+            <div className="w-14 h-14 rounded-2xl bg-[#86BF58]/15 border border-[#86BF58]/30 flex items-center justify-center text-[#86BF58] shrink-0">
+              <Wrench className="w-7 h-7" />
             </div>
-
-            <p className="text-lg text-gray-200 leading-relaxed font-normal">
-              Las aplicaciones por las que tu equipo consulta, introduce y utiliza la información diaria sin duplicar tareas ni introducir datos a mano.
-            </p>
-
-            <div className="border-t border-surface-border/60 pt-6 space-y-3">
-              <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-400 font-semibold">Lo que queda construido:</h4>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-base text-gray-200">
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
-                  <span><strong>Web y captación conectadas:</strong> cada nuevo contacto entra ya clasificado en la base de datos.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
-                  <span><strong>Panel de gestión unificado:</strong> las métricas que importan en una sola pantalla clara.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
-                  <span><strong>Reservas y agenda sincronizadas:</strong> gestión de reuniones y calendario automatizada.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
-                  <span><strong>Tienda y cobros:</strong> integraciones de pago y catálogo cuando el modelo lo requiere.</span>
-                </li>
-                <li className="flex items-start gap-2.5 sm:col-span-2">
-                  <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
-                  <span><strong>Integración nativa:</strong> conexión fluida con correo, CRM, ERP y formularios habituales.</span>
-                </li>
-              </ul>
+            <div>
+              <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider">Pieza 03</span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white">Herramientas conectadas</h3>
             </div>
           </div>
 
-          {/* Vídeo 3: Herramientas conectadas */}
-          <ScrollVideoBanner src="/videos/video-apps.mp4" />
-        </div>
+          <p className="text-lg text-gray-200 leading-relaxed font-normal">
+            Las aplicaciones por las que tu equipo consulta, introduce y utiliza la información diaria sin duplicar tareas ni introducir datos a mano.
+          </p>
+
+          <div className="border-t border-surface-border/60 pt-6 space-y-3">
+            <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-400 font-semibold">Lo que queda construido:</h4>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-base text-gray-200">
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                <span><strong>Web y captación conectadas:</strong> cada nuevo contacto entra ya clasificado en la base de datos.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                <span><strong>Panel de gestión unificado:</strong> las métricas que importan en una sola pantalla clara.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                <span><strong>Reservas y agenda sincronizadas:</strong> gestión de reuniones y calendario automatizada.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                <span><strong>Tienda y cobros:</strong> integraciones de pago y catálogo cuando el modelo lo requiere.</span>
+              </li>
+              <li className="flex items-start gap-2.5 sm:col-span-2">
+                <CheckCircle2 className="w-5 h-5 text-[#86BF58] shrink-0 mt-0.5" />
+                <span><strong>Integración nativa:</strong> conexión fluida con correo, CRM, ERP y formularios habituales.</span>
+              </li>
+            </ul>
+          </div>
+        </StickyScrollVideoSection>
       </div>
 
       {/* Legado de comunicación y diseño */}
