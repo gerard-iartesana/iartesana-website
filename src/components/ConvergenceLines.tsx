@@ -42,7 +42,7 @@ export default function ConvergenceLines() {
   return (
     <div
       ref={containerRef}
-      className="pt-6 pb-4 flex flex-col items-center justify-center overflow-hidden select-none"
+      className="pt-4 pb-0 flex flex-col items-center justify-center overflow-hidden select-none"
     >
       <div className="relative h-24 sm:h-32 flex items-center justify-center w-full max-w-3xl">
         {Array.from({ length: totalLines }).map((_, index) => {
