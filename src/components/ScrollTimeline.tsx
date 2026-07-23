@@ -5,10 +5,9 @@ import Link from 'next/link';
 import { Check, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 
 export default function ScrollTimeline() {
-  const [activeStep, setActiveStep] = useState<number>(0);
-  const [openStep, setOpenStep] = useState<number | null>(null);
+  const [maxRevealedIndex, setMaxRevealedIndex] = useState<number>(-1);
+  const [openStep, setOpenStep] = useState<number | null>(0);
   const timelineRef = useRef<HTMLDivElement>(null);
-  const hasAutoExpandedRef = useRef<boolean>(false);
 
   const steps = [
     {
@@ -71,28 +70,17 @@ export default function ScrollTimeline() {
 
   const toggleExpand = (index: number) => {
     setOpenStep((prev) => (prev === index ? null : index));
-    setActiveStep(index);
   };
 
   useEffect(() => {
     const handleScroll = () => {
       if (!timelineRef.current) return;
 
-      const rect = timelineRef.current.getBoundingClientRect();
-      
-      // Expand the first layer once when the section enters the viewport
-      if (!hasAutoExpandedRef.current && rect.top <= window.innerHeight * 0.75) {
-        hasAutoExpandedRef.current = true;
-        setOpenStep(0);
-        setActiveStep(0);
-      }
-
-      // Track active step highlighting on scroll
       const elements = timelineRef.current.querySelectorAll('.timeline-step');
       elements.forEach((el, index) => {
-        const elRect = el.getBoundingClientRect();
-        if (elRect.top <= window.innerHeight * 0.6) {
-          setActiveStep(index);
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.85) {
+          setMaxRevealedIndex((prev) => Math.max(prev, index));
         }
       });
     };
@@ -119,23 +107,25 @@ export default function ScrollTimeline() {
       {/* List of Steps */}
       <div className="space-y-8">
         {steps.map((step, index) => {
-          const isActive = activeStep === index;
+          const isRevealed = maxRevealedIndex >= index;
           const isExpanded = openStep === index;
 
           return (
             <div
               key={index}
-              className={`timeline-step flex gap-5 sm:gap-8 items-stretch transition-all duration-500 ${
-                isActive || isExpanded ? 'opacity-100' : 'opacity-50 hover:opacity-80'
+              className={`timeline-step flex gap-5 sm:gap-8 items-stretch transition-all duration-700 ease-out transform ${
+                isRevealed
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-10 pointer-events-none'
               }`}
             >
               {/* Barra lateral con indicador de color */}
               <div
-                onClick={() => toggleExpand(index)}
+                onClick={() => isRevealed && toggleExpand(index)}
                 className="w-5 sm:w-7 shrink-0 rounded-sm cursor-pointer self-stretch transition-all duration-300"
                 style={{
                   backgroundColor: step.color,
-                  boxShadow: isExpanded ? `0 0 15px ${step.color}88` : 'none',
+                  boxShadow: isRevealed ? `0 0 16px ${step.color}aa` : 'none',
                 }}
                 title={step.title}
               />
@@ -145,7 +135,7 @@ export default function ScrollTimeline() {
                 {/* Always Visible Header Block */}
                 <div 
                   className="cursor-pointer space-y-2 group"
-                  onClick={() => toggleExpand(index)}
+                  onClick={() => isRevealed && toggleExpand(index)}
                 >
                   <div className="flex items-center justify-between">
                     {/* Título de la capa en BOLD */}
