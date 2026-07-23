@@ -9,6 +9,7 @@ export default function ScrollTimeline() {
   const [openStep, setOpenStep] = useState<number | null>(0);
   const timelineRef = useRef<HTMLDivElement>(null);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const isLockingRef = useRef<boolean>(false);
 
   const steps = [
     {
@@ -69,19 +70,43 @@ export default function ScrollTimeline() {
     },
   ];
 
-  const scrollToStep = (index: number) => {
-    if (stepRefs.current[index]) {
-      setTimeout(() => {
-        stepRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 60);
-    }
+  // Lock position of target step during accordion height transition so layout does not jump
+  const lockStepPosition = (targetIndex: number) => {
+    const el = stepRefs.current[targetIndex];
+    if (!el || isLockingRef.current) return;
+
+    isLockingRef.current = true;
+    const initialTop = el.getBoundingClientRect().top;
+    const startTime = performance.now();
+    const duration = 520; // Slightly over 500ms CSS transition
+
+    const adjust = (now: number) => {
+      const elapsed = now - startTime;
+      const currentEl = stepRefs.current[targetIndex];
+
+      if (currentEl) {
+        const currentTop = currentEl.getBoundingClientRect().top;
+        const diff = currentTop - initialTop;
+        if (Math.abs(diff) > 0.5) {
+          window.scrollBy(0, diff);
+        }
+      }
+
+      if (elapsed < duration) {
+        requestAnimationFrame(adjust);
+      } else {
+        isLockingRef.current = false;
+      }
+    };
+
+    requestAnimationFrame(adjust);
   };
 
   const toggleExpand = (index: number) => {
     setOpenStep((prev) => {
       const next = prev === index ? null : index;
       if (next !== null) {
-        scrollToStep(next);
+        lockStepPosition(next);
       }
       return next;
     });
@@ -96,7 +121,7 @@ export default function ScrollTimeline() {
       let currentActive = 0;
       elements.forEach((el, index) => {
         const rect = el.getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.5) {
+        if (rect.top <= window.innerHeight * 0.55) {
           currentActive = index;
         }
       });
@@ -105,7 +130,7 @@ export default function ScrollTimeline() {
         lastActive = currentActive;
         setActiveStep(currentActive);
         setOpenStep(currentActive);
-        scrollToStep(currentActive);
+        lockStepPosition(currentActive);
       }
     };
 
