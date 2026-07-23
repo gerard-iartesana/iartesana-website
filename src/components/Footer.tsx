@@ -10,7 +10,8 @@ export default function Footer() {
         {/* Top Header Row */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border-b border-surface-border/60 pb-12">
           <div className="space-y-3">
-            <div className="relative w-44 h-10">
+            {/* Logo iARTESANA más grande, igual al de la barra superior */}
+            <div className="relative w-64 sm:w-80 h-14 sm:h-16">
               <Image
                 src="/logo/Logo iARTESANA.svg"
                 alt="iARTESANA Logo"
@@ -25,7 +26,7 @@ export default function Footer() {
 
           <Link
             href="/agendar"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-colors shrink-0"
+            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg text-base font-bold text-white bg-[#1864A6] hover:bg-[#009DF8] hover:shadow-[0_0_25px_rgba(0,157,248,0.75)] hover:scale-[1.03] transition-all duration-300 shrink-0"
           >
             <span>Reserva primera reunión</span>
             <ArrowUpRight className="w-4 h-4" />
