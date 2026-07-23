@@ -42,8 +42,8 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/* 2. PRINCIPIO DE LA CASA */}
-      <section id="metodo" className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-5 py-8 sm:py-12 border-t border-b border-surface-border/50">
+      {/* 2. PRINCIPIO DE LA CASA (UN SÓLO DIVISOR SUPERIOR) */}
+      <section id="metodo" className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-5 py-8 sm:py-12 border-t border-surface-border/50">
         <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
           Principio fundamental
         </span>
@@ -61,7 +61,7 @@ export default function HomePage() {
       {/* 3. RECORRIDO DE LAS 4 CAPAS */}
       <ScrollTimeline />
 
-      {/* 4. EQUIPO HUMANO */}
+      {/* 4. EQUIPO HUMANO (UN SÓLO DIVISOR SUPERIOR) */}
       <section id="equipo" className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-surface-border/50">
         <div className="text-center space-y-3">
           <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
@@ -111,7 +111,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. PROCESO COMERCIAL (MONOCROMO / SOLO BLANCO) */}
+      {/* 5. PROCESO COMERCIAL (UN SÓLO DIVISOR SUPERIOR) */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-surface-border/50">
         <div className="text-center space-y-3">
           <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
