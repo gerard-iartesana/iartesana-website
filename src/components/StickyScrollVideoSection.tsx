@@ -110,7 +110,7 @@ export default function StickyScrollVideoSection({
         />
 
         {/* Contenido sobre el vídeo */}
-        <div className="absolute inset-0 flex items-start justify-center pt-24 sm:pt-32 px-4 sm:px-8 z-10">
+        <div className="absolute inset-0 flex items-start justify-center pt-12 sm:pt-16 px-4 sm:px-8 z-10">
           <div className="w-full max-w-4xl mx-auto text-white space-y-6">
             {children}
           </div>
