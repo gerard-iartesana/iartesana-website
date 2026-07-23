@@ -6,10 +6,9 @@ import { Check, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 
 export default function ScrollTimeline() {
   const [activeStep, setActiveStep] = useState<number>(0);
-  const [openStep, setOpenStep] = useState<number | null>(0);
+  const [openStep, setOpenStep] = useState<number | null>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
-  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const isLockingRef = useRef<boolean>(false);
+  const hasAutoExpandedRef = useRef<boolean>(false);
 
   const steps = [
     {
@@ -70,68 +69,32 @@ export default function ScrollTimeline() {
     },
   ];
 
-  // Lock position of target step during accordion height transition so layout does not jump
-  const lockStepPosition = (targetIndex: number) => {
-    const el = stepRefs.current[targetIndex];
-    if (!el || isLockingRef.current) return;
-
-    isLockingRef.current = true;
-    const initialTop = el.getBoundingClientRect().top;
-    const startTime = performance.now();
-    const duration = 520; // Slightly over 500ms CSS transition
-
-    const adjust = (now: number) => {
-      const elapsed = now - startTime;
-      const currentEl = stepRefs.current[targetIndex];
-
-      if (currentEl) {
-        const currentTop = currentEl.getBoundingClientRect().top;
-        const diff = currentTop - initialTop;
-        if (Math.abs(diff) > 0.5) {
-          window.scrollBy(0, diff);
-        }
-      }
-
-      if (elapsed < duration) {
-        requestAnimationFrame(adjust);
-      } else {
-        isLockingRef.current = false;
-      }
-    };
-
-    requestAnimationFrame(adjust);
-  };
-
   const toggleExpand = (index: number) => {
-    setOpenStep((prev) => {
-      const next = prev === index ? null : index;
-      if (next !== null) {
-        lockStepPosition(next);
-      }
-      return next;
-    });
+    setOpenStep((prev) => (prev === index ? null : index));
+    setActiveStep(index);
   };
 
   useEffect(() => {
-    let lastActive = -1;
     const handleScroll = () => {
       if (!timelineRef.current) return;
-      const elements = timelineRef.current.querySelectorAll('.timeline-step');
+
+      const rect = timelineRef.current.getBoundingClientRect();
       
-      let currentActive = 0;
+      // Expand the first layer once when the section enters the viewport
+      if (!hasAutoExpandedRef.current && rect.top <= window.innerHeight * 0.75) {
+        hasAutoExpandedRef.current = true;
+        setOpenStep(0);
+        setActiveStep(0);
+      }
+
+      // Track active step highlighting on scroll
+      const elements = timelineRef.current.querySelectorAll('.timeline-step');
       elements.forEach((el, index) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.55) {
-          currentActive = index;
+        const elRect = el.getBoundingClientRect();
+        if (elRect.top <= window.innerHeight * 0.6) {
+          setActiveStep(index);
         }
       });
-
-      if (currentActive !== lastActive) {
-        lastActive = currentActive;
-        setActiveStep(currentActive);
-        setOpenStep(currentActive);
-        lockStepPosition(currentActive);
-      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -162,8 +125,7 @@ export default function ScrollTimeline() {
           return (
             <div
               key={index}
-              ref={(el) => { stepRefs.current[index] = el; }}
-              className={`timeline-step scroll-mt-24 sm:scroll-mt-28 flex gap-5 sm:gap-8 items-stretch transition-all duration-500 ${
+              className={`timeline-step flex gap-5 sm:gap-8 items-stretch transition-all duration-500 ${
                 isActive || isExpanded ? 'opacity-100' : 'opacity-50 hover:opacity-80'
               }`}
             >
