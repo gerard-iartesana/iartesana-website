@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, CheckCircle2, ChevronRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import ScrollTimeline from '@/components/ScrollTimeline';
 
 export default function HomePage() {
@@ -25,22 +25,14 @@ export default function HomePage() {
           Menos tareas repetidas y mejores decisiones ordenando primero el conocimiento, los datos y los procesos de tu negocio.
         </p>
 
-        {/* 4. Dos CTAs (Principal sólido en azul sin degradados) */}
-        <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        {/* 4. Único CTA principal: "Reserva primera reunión" */}
+        <div className="pt-4 flex items-center justify-center">
           <Link
             href="/agendar"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg text-base font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-colors shadow-none"
+            className="inline-flex items-center justify-center gap-2.5 px-9 py-4 rounded-lg text-base font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-colors shadow-none"
           >
-            <span>Reservar primera sesión</span>
+            <span>Reserva primera reunión</span>
             <ArrowRight className="w-5 h-5" />
-          </Link>
-
-          <Link
-            href="/diagnostico"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-lg text-base font-medium text-gray-200 bg-transparent hover:bg-surface-card border border-surface-border transition-colors"
-          >
-            <span>Ver diagnóstico 350 €</span>
-            <ChevronRight className="w-5 h-5 text-gray-400" />
           </Link>
         </div>
 
@@ -167,7 +159,7 @@ export default function HomePage() {
             href="/agendar"
             className="inline-flex items-center justify-center gap-2 px-9 py-4 rounded-lg text-base font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-colors shadow-none"
           >
-            <span>Reservar primera sesión</span>
+            <span>Reserva primera reunión</span>
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

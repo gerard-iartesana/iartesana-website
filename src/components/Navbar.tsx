@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -62,7 +62,7 @@ export default function Navbar() {
               href="/agendar"
               className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-colors shadow-none"
             >
-              <span>Reservar primera sesión</span>
+              <span>Reserva primera reunión</span>
             </Link>
           </div>
 
@@ -117,7 +117,7 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="w-full flex items-center justify-center py-3 rounded-lg text-sm font-bold text-white bg-[#38A8E0]"
             >
-              <span>Reservar primera sesión</span>
+              <span>Reserva primera reunión</span>
             </Link>
           </div>
         </div>
