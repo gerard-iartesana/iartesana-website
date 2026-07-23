@@ -11,10 +11,6 @@ export default function IsometricBackground({ activeState }: Props) {
   const pathname = usePathname();
   const [scrollState, setScrollState] = useState<number>(activeState ?? 0);
 
-  if (pathname !== '/') {
-    return null;
-  }
-
   useEffect(() => {
     if (activeState !== undefined) {
       setScrollState(activeState);
@@ -40,6 +36,11 @@ export default function IsometricBackground({ activeState }: Props) {
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, [activeState]);
+
+  // ALL HOOKS MUST RUN BEFORE ANY CONDITIONAL RETURN (fixes React error #310)
+  if (pathname !== '/') {
+    return null;
+  }
 
   return (
     <div 

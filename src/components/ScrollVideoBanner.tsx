@@ -8,77 +8,86 @@ interface ScrollVideoBannerProps {
 
 export default function ScrollVideoBanner({ src }: ScrollVideoBannerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [duration, setDuration] = useState<number>(0);
+  const targetTimeRef = useRef<number>(0);
+  const animationFrameRef = useRef<number | null>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsInView(true);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+  const handleLoadedMetadata = () => {
+    if (videoRef.current) {
+      setDuration(videoRef.current.duration);
     }
-
-    return () => observer.disconnect();
-  }, []);
+  };
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Pausar el vídeo para que el scroll controle directamente el avance y retroceso del tiempo
+    video.pause();
+
+    const updateVideoTime = () => {
+      if (!containerRef.current || !videoRef.current || !videoRef.current.duration) return;
+
       const rect = containerRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Calcular la posición del scroll dentro del elemento
-      const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
-      setScrollProgress(Math.min(1, Math.max(0, progress)));
+      // Calcular el avance exacto del scroll respecto al vídeo
+      const startOffset = windowHeight * 0.8;
+      const endOffset = -rect.height * 0.8;
+      const totalDistance = startOffset - endOffset;
+      const currentPos = startOffset - rect.top;
+
+      const rawProgress = currentPos / totalDistance;
+      const progress = Math.min(1, Math.max(0, rawProgress));
+
+      targetTimeRef.current = progress * videoRef.current.duration;
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    // Bucle de aceleración por hardware ultra fluido (60fps lerp)
+    const renderLoop = () => {
+      if (videoRef.current && videoRef.current.duration) {
+        const diff = targetTimeRef.current - videoRef.current.currentTime;
+        if (Math.abs(diff) > 0.001) {
+          videoRef.current.currentTime += diff * 0.2;
+        }
+      }
+      animationFrameRef.current = requestAnimationFrame(renderLoop);
+    };
 
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener('scroll', updateVideoTime, { passive: true });
+    updateVideoTime();
+    animationFrameRef.current = requestAnimationFrame(renderLoop);
 
-  // Animación de escala sutil al hacer scroll
-  const scale = 0.96 + Math.min(scrollProgress * 0.08, 0.04);
+    return () => {
+      window.removeEventListener('scroll', updateVideoTime);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [duration]);
 
   return (
     <div
       ref={containerRef}
-      className="w-screen relative left-1/2 -translate-x-1/2 my-10 sm:my-16 overflow-hidden pointer-events-none"
+      className="w-screen relative left-1/2 -translate-x-1/2 my-8 sm:my-14 overflow-hidden bg-[#0B0E14] pointer-events-none"
     >
-      <div
-        className={`w-full transition-all duration-700 ease-out ${
-          isInView ? 'opacity-100' : 'opacity-0'
-        }`}
-        style={{
-          transform: `scale(${scale})`,
-        }}
-      >
-        <div className="relative w-full overflow-hidden">
-          {/* Reproductor de vídeo limpio de fondo sin marcos, bordes ni etiquetas */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-[300px] sm:h-[480px] md:h-[560px] object-cover object-center"
-          >
-            <source src={src} type="video/mp4" />
-          </video>
+      <div className="relative w-full overflow-hidden">
+        {/* Vídeo limpio de fondo controlado por scroll (avanza y retrocede) */}
+        <video
+          ref={videoRef}
+          onLoadedMetadata={handleLoadedMetadata}
+          muted
+          playsInline
+          preload="auto"
+          className="w-full h-[320px] sm:h-[480px] md:h-[580px] object-cover object-center"
+        >
+          <source src={src} type="video/mp4" />
+        </video>
 
-          {/* Degradados de integración limpia arriba y abajo para fundir con el fondo oscuro */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#080A0E] via-transparent to-[#080A0E] pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#080A0E] via-transparent to-[#080A0E] pointer-events-none" />
-        </div>
+        {/* Degradados de integración perfecta con el fondo oscuro #0B0E14 */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-[#0B0E14] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0E14] via-transparent to-[#0B0E14] pointer-events-none" />
       </div>
     </div>
   );
