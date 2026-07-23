@@ -27,7 +27,7 @@ export default function ScrollTimeline() {
       description: 'Agentes, asistentes y automatizaciones operativas integradas sobre tu Base Digital con niveles transparentes de autonomía e intervención.',
       results: [
         'Escala de intervención (Asiste, Automatiza, Actúa, Aprueba)',
-        'Agentes conectados a conocimiento real sin alucinaciones',
+        'Agentes verificados con tu conocimiento real',
         'Procesamiento automático de documentos e información',
       ],
     },
