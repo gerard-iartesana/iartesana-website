@@ -8,9 +8,9 @@ import HeroVideo from '@/components/HeroVideo';
 export default function HomePage() {
   return (
     <div className="space-y-12 sm:space-y-16 pb-16 text-[#E2E8F0] bg-[#080A0E] overflow-hidden">
-      {/* 1. HERO (CON VÍDEO AL 100% INTENSIDAD, LOOP FADE Y TEXTO CON SOMBRAS DE ALTO CONTRASTE) */}
-      <section className="relative pt-4 sm:pt-6 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center space-y-6 flex flex-col justify-center items-center">
-        {/* Vídeo de fondo al 100% de intensidad con fade en el bucle */}
+      {/* 1. HERO (VÍDEO A ANCHO COMPLETO DETRÁS DE LA BOTONERA TRANSPARENTE) */}
+      <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center space-y-6 flex flex-col justify-center items-center">
+        {/* Vídeo a pantalla completa (w-screen) detrás del navbar transparente */}
         <HeroVideo />
 
         {/* Descriptor en Open Sans con sombra para alto contraste */}

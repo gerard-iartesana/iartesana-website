@@ -31,8 +31,8 @@ export default function HeroVideo() {
   };
 
   return (
-    <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
-      {/* Background Video full width, 100% intensity, with smooth loop fade crossfade */}
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[120%] min-h-[90vh] overflow-hidden pointer-events-none z-0">
+      {/* Background Video full viewport width (w-screen), 100% intensity, with smooth loop fade crossfade */}
       <video
         ref={videoRef}
         autoPlay
@@ -44,15 +44,15 @@ export default function HeroVideo() {
           isFading ? 'opacity-0' : 'opacity-100'
         }`}
         style={{
-          maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 95%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 95%)',
+          maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 95%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 95%)',
         }}
       >
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
 
       {/* Subtle bottom gradient mask integrating smoothly with background */}
-      <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-b from-transparent to-[#080A0E]" />
+      <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-b from-transparent to-[#080A0E]" />
     </div>
   );
 }
