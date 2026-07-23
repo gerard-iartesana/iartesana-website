@@ -74,13 +74,13 @@ function TeamCard({ name, role, text, image, delay = 0 }: TeamMemberProps) {
 
       <div className="space-y-2 flex-1">
         <h3 className="text-2xl sm:text-3xl font-bold text-white">{name}</h3>
-        <p className="text-base text-gray-400 font-['Open_Sans',sans-serif] font-normal">
+        <p className="text-base sm:text-lg text-gray-400 font-['Open_Sans',sans-serif] font-normal">
           {role}
         </p>
-        <p className="text-base text-gray-200 leading-relaxed pt-1 font-normal min-h-[5rem]">
+        <p className="text-lg sm:text-xl text-gray-100 leading-relaxed pt-1 font-normal min-h-[6rem]">
           {typedText}
           {!isTypingComplete && isVisible && (
-            <span className="inline-block w-2 h-4 ml-1 bg-[#38A8E0] animate-pulse align-middle" />
+            <span className="inline-block w-2.5 h-5 ml-1 bg-[#38A8E0] animate-pulse align-middle" />
           )}
         </p>
       </div>
