@@ -103,123 +103,124 @@ export default function ScrollTimeline() {
         </p>
       </div>
 
-      {/* Timeline container */}
-      <div className="relative pl-6 sm:pl-12 space-y-16">
-        {/* Vertical line connecting nodes */}
-        <div className="absolute left-2.5 sm:left-5 top-4 bottom-4 w-0.5 bg-surface-border">
-          <div
-            className="w-full transition-all duration-500 ease-out"
-            style={{
-              height: `${((activeStep + 1) / steps.length) * 100}%`,
-              backgroundColor: steps[activeStep]?.color || '#38A8E0',
-            }}
-          />
+      {/* Main container with Left Modular Stack Column inspired by brand reference */}
+      <div className="relative flex gap-6 sm:gap-10">
+        {/* Left Modular Stack Column (Bloques modulares apilados) */}
+        <div className="flex flex-col gap-3 w-5 sm:w-8 shrink-0 pt-1">
+          {steps.map((step, index) => {
+            const isActive = activeStep >= index;
+            const isCurrent = activeStep === index;
+
+            return (
+              <div
+                key={index}
+                onClick={() => toggleExpand(index)}
+                className={`w-full flex-1 rounded-sm border transition-all duration-500 cursor-pointer min-h-[140px] sm:min-h-[160px] relative overflow-hidden ${
+                  isActive ? 'shadow-lg' : 'opacity-40'
+                }`}
+                style={{
+                  backgroundColor: isActive ? step.color : '#161B26',
+                  borderColor: isActive ? step.color : 'rgba(255, 255, 255, 0.15)',
+                  boxShadow: isCurrent ? `0 0 15px ${step.color}80` : 'none',
+                }}
+                title={step.title}
+              >
+                {/* Subtle active pulse line */}
+                {isCurrent && (
+                  <div className="absolute inset-0 bg-white/20 animate-pulse pointer-events-none" />
+                )}
+              </div>
+            );
+          })}
         </div>
 
-        {/* Steps */}
-        {steps.map((step, index) => {
-          const isActive = activeStep >= index;
-          const isExpanded = !!expandedSteps[index];
+        {/* Right Content Steps List */}
+        <div className="flex-1 space-y-12">
+          {steps.map((step, index) => {
+            const isActive = activeStep >= index;
+            const isExpanded = !!expandedSteps[index];
 
-          return (
-            <div
-              key={index}
-              className={`timeline-step relative transition-opacity duration-500 ${
-                isActive ? 'opacity-100' : 'opacity-60'
-              }`}
-            >
-              {/* Step indicator node: Modular Square inspired by iARTESANA logo */}
+            return (
               <div
-                className="absolute -left-6 sm:-left-12 top-2 w-5 h-5 rounded-sm border bg-[#080A0E] flex items-center justify-center transition-all duration-300 cursor-pointer"
-                onClick={() => toggleExpand(index)}
-                style={{
-                  borderColor: isActive ? step.color : 'rgba(255, 255, 255, 0.2)',
-                  boxShadow: isActive ? `0 0 10px ${step.color}80` : 'none',
-                  backgroundColor: isActive ? `${step.color}25` : '#080A0E',
-                }}
+                key={index}
+                className={`timeline-step transition-all duration-500 ${
+                  isActive ? 'opacity-100' : 'opacity-50'
+                }`}
               >
-                <div
-                  className="w-2 h-2 rounded-xs transition-all duration-300"
-                  style={{ backgroundColor: isActive ? step.color : 'transparent' }}
-                />
-              </div>
+                {/* Content block */}
+                <div className="space-y-4">
+                  {/* Always Visible Header Block */}
+                  <div 
+                    className="cursor-pointer space-y-2.5 group"
+                    onClick={() => toggleExpand(index)}
+                  >
+                    <div className="flex items-center justify-between">
+                      {/* Título de la capa en BOLD / EXTRA BOLD */}
+                      <h3 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight group-hover:text-gray-200 transition-colors">
+                        {step.title}
+                      </h3>
+                      
+                      {/* Indicador minimalista sólo con flecha */}
+                      <button
+                        type="button"
+                        className="p-2 text-gray-400 hover:text-white transition-colors shrink-0 focus:outline-none"
+                        aria-label={isExpanded ? 'Plegar detalles' : 'Desplegar detalles'}
+                      >
+                        {isExpanded ? (
+                          <ChevronUp className="w-6 h-6 text-gray-400 group-hover:text-white transition-transform duration-300" />
+                        ) : (
+                          <ChevronDown className="w-6 h-6 text-gray-400 group-hover:text-white transition-transform duration-300" />
+                        )}
+                      </button>
+                    </div>
 
-              {/* Content block */}
-              <div 
-                className="pl-4 sm:pl-8 space-y-4 border-l-2 transition-all duration-300"
-                style={{ borderColor: isActive ? `${step.color}40` : 'transparent' }}
-              >
-                {/* Always Visible Header Block */}
-                <div 
-                  className="cursor-pointer space-y-2.5 group"
-                  onClick={() => toggleExpand(index)}
-                >
-                  <div className="flex items-center justify-between">
-                    {/* Título de la capa en BOLD */}
-                    <h3 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight group-hover:text-gray-200 transition-colors">
-                      {step.title}
-                    </h3>
-                    
-                    {/* Indicador minimalista sólo con flecha (sin texto "Saber más") */}
-                    <button
-                      type="button"
-                      className="p-2 text-gray-400 hover:text-white transition-colors shrink-0 focus:outline-none"
-                      aria-label={isExpanded ? 'Plegar detalles' : 'Desplegar detalles'}
-                    >
-                      {isExpanded ? (
-                        <ChevronUp className="w-6 h-6 text-gray-400 group-hover:text-white transition-transform duration-300" />
-                      ) : (
-                        <ChevronDown className="w-6 h-6 text-gray-400 group-hover:text-white transition-transform duration-300" />
-                      )}
-                    </button>
+                    {/* Texto de debajo en REGULAR */}
+                    <p className="text-xl sm:text-2xl font-normal text-gray-200 max-w-3xl leading-relaxed">
+                      {step.mainIdea}
+                    </p>
                   </div>
 
-                  {/* Texto de debajo en REGULAR */}
-                  <p className="text-xl sm:text-2xl font-normal text-gray-200 max-w-3xl leading-relaxed">
-                    {step.mainIdea}
-                  </p>
-                </div>
+                  {/* Expandable Details Block con animación suave */}
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      isExpanded ? 'max-h-[600px] opacity-100 pt-3 space-y-5' : 'max-h-0 opacity-0 pt-0 space-y-0'
+                    }`}
+                  >
+                    {/* Description */}
+                    <p className="text-lg sm:text-xl text-gray-300 max-w-3xl leading-relaxed border-t border-surface-border/40 pt-4">
+                      {step.description}
+                    </p>
 
-                {/* Expandable Details Block con animación suave */}
-                <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    isExpanded ? 'max-h-[600px] opacity-100 pt-3 space-y-5' : 'max-h-0 opacity-0 pt-0 space-y-0'
-                  }`}
-                >
-                  {/* Description */}
-                  <p className="text-lg sm:text-xl text-gray-300 max-w-3xl leading-relaxed border-t border-surface-border/40 pt-4">
-                    {step.description}
-                  </p>
+                    {/* Results */}
+                    <div className="space-y-2.5">
+                      <span className="text-sm font-mono text-gray-400 uppercase tracking-wider block font-semibold">Resultados concretos:</span>
+                      <ul className="space-y-2.5 text-base sm:text-lg text-gray-200">
+                        {step.results.map((res, rIdx) => (
+                          <li key={rIdx} className="flex items-start gap-3">
+                            <Check className="w-5 h-5 shrink-0 mt-0.5" style={{ color: step.color }} />
+                            <span>{res}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-                  {/* Results */}
-                  <div className="space-y-2.5">
-                    <span className="text-sm font-mono text-gray-400 uppercase tracking-wider block font-semibold">Resultados concretos:</span>
-                    <ul className="space-y-2.5 text-base sm:text-lg text-gray-200">
-                      {step.results.map((res, rIdx) => (
-                        <li key={rIdx} className="flex items-start gap-3">
-                          <Check className="w-5 h-5 shrink-0 mt-0.5" style={{ color: step.color }} />
-                          <span>{res}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Link */}
-                  <div className="pt-2">
-                    <Link
-                      href={step.href}
-                      className="inline-flex items-center gap-2 text-base sm:text-lg font-bold transition-colors hover:underline"
-                      style={{ color: step.color }}
-                    >
-                      <span>{step.linkText}</span>
-                      <ArrowRight className="w-5 h-5" />
-                    </Link>
+                    {/* Link */}
+                    <div className="pt-2">
+                      <Link
+                        href={step.href}
+                        className="inline-flex items-center gap-2 text-base sm:text-lg font-bold transition-colors hover:underline"
+                        style={{ color: step.color }}
+                      >
+                        <span>{step.linkText}</span>
+                        <ArrowRight className="w-5 h-5" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );
