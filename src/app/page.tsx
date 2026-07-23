@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import ScrollTimeline from '@/components/ScrollTimeline';
 import HeroVideo from '@/components/HeroVideo';
 import ConvergenceLines from '@/components/ConvergenceLines';
+import TeamSection from '@/components/TeamSection';
 
 export default function HomePage() {
   return (
@@ -69,55 +69,8 @@ export default function HomePage() {
       {/* 3. RECORRIDO DE LAS 4 CAPAS */}
       <ScrollTimeline />
 
-      {/* 4. EQUIPO HUMANO */}
-      <section id="equipo" className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-white/15">
-        <div className="text-center space-y-3">
-          <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block">
-            Acompañamiento humano
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Quiénes acompañan a tu empresa
-          </h2>
-          <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto font-normal">
-            Trato humano directo con quien diseña e instala tu sistema. Sin intermediarios ni tickets de soporte anónimos.
-          </p>
-        </div>
-
-        {/* Perfiles de equipo */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Gerard */}
-          <div className="flex flex-col sm:flex-row items-start gap-6 p-6 rounded-2xl bg-surface-card border border-surface-border">
-            <div className="relative w-32 h-32 rounded-xl overflow-hidden shrink-0">
-              <Image src="/team/gerard.jpg" alt="Gerard" fill className="object-cover" />
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-2xl sm:text-3xl font-bold text-white">Gerard</h3>
-              <p className="text-base text-gray-400 font-['Open_Sans',sans-serif] font-normal">
-                Ingeniería de Sistemas & Datos
-              </p>
-              <p className="text-base text-gray-200 leading-relaxed pt-1 font-normal">
-                Desarrolla la base de datos, la seguridad y los agentes autónomos. Garantiza el rendimiento técnico, la explicabilidad y la soberanía de los datos.
-              </p>
-            </div>
-          </div>
-
-          {/* David */}
-          <div className="flex flex-col sm:flex-row items-start gap-6 p-6 rounded-2xl bg-surface-card border border-surface-border">
-            <div className="relative w-32 h-32 rounded-xl overflow-hidden shrink-0">
-              <Image src="/team/david.jpg" alt="David" fill className="object-cover" />
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-2xl sm:text-3xl font-bold text-white">David</h3>
-              <p className="text-base text-gray-400 font-['Open_Sans',sans-serif] font-normal">
-                Estrategia y Contexto IA
-              </p>
-              <p className="text-base text-gray-200 leading-relaxed pt-1 font-normal">
-                Estructura los procesos, el conocimiento y el tono de marca. Garantiza que la IA refleje fielmente la cultura y criterios de tu empresa.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 4. EQUIPO HUMANO (CON ANIMACIÓN DE ENTRADA Y MECANOGRAFÍA) */}
+      <TeamSection />
 
       {/* 5. PROCESO COMERCIAL (#pasos) */}
       <section id="pasos" className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-8 sm:py-12 space-y-10 border-t border-white/15">
