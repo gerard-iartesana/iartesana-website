@@ -15,17 +15,27 @@ export default function ScrollRevealChecklist({ items }: ScrollRevealChecklistPr
     if (!el) return;
 
     const onScroll = () => {
-      const rect = el.getBoundingClientRect();
+      // Find the parent StickyScrollVideoSection wrapper (the section with height: 500vh)
+      const section = el.closest('[data-video-section]');
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
       const wh = window.innerHeight;
 
-      // Start revealing when the list enters the viewport
-      const listTop = rect.top;
-      const listHeight = rect.height;
-      // How far into view the list is (0 = just entering, 1 = fully past)
-      const progress = Math.max(0, Math.min(1, (wh - listTop) / (wh * 0.6 + listHeight * 0.5)));
+      // Section scroll progress: 0 = just entered, 1 = fully scrolled past
+      const totalScroll = rect.height - wh;
+      if (totalScroll <= 0) return;
+      const scrolled = -rect.top;
+      const sectionProgress = Math.max(0, Math.min(1, scrolled / totalScroll));
 
-      // Map progress to number of visible items
-      const count = Math.floor(progress * (items.length + 0.5));
+      // Items appear spread across 20%-90% of the section scroll
+      // This gives time for the video to advance between each item
+      const startAt = 0.15;
+      const endAt = 0.85;
+      const itemProgress = Math.max(0, Math.min(1, (sectionProgress - startAt) / (endAt - startAt)));
+
+      // Map to number of visible items
+      const count = Math.floor(itemProgress * (items.length + 0.8));
       setVisibleCount(Math.min(items.length, count));
     };
 
@@ -43,7 +53,7 @@ export default function ScrollRevealChecklist({ items }: ScrollRevealChecklistPr
 
   return (
     <div ref={listRef} className="w-full">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8">
         {items.map((item, i) => {
           const position = getPosition(i, items.length);
           const isVisible = i < visibleCount;
@@ -53,23 +63,22 @@ export default function ScrollRevealChecklist({ items }: ScrollRevealChecklistPr
             <div
               key={i}
               className={`
-                flex items-start gap-4 transition-all duration-700 ease-out
-                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
-                ${isCenter ? 'sm:col-span-2 sm:justify-center sm:max-w-lg sm:mx-auto' : ''}
+                flex items-start gap-4 transition-all duration-1000 ease-out
+                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+                ${isCenter ? 'sm:col-span-2 sm:justify-center sm:max-w-xl sm:mx-auto' : ''}
               `}
-              style={{ transitionDelay: `${i * 80}ms` }}
             >
               {/* Green square indicator */}
               <div
                 className={`
-                  w-3 h-3 rounded-[2px] shrink-0 mt-2 transition-all duration-500
+                  w-3.5 h-3.5 rounded-[2px] shrink-0 mt-2.5 transition-all duration-700
                   ${isVisible
-                    ? 'bg-[#86BF58] shadow-[0_0_12px_rgba(134,191,88,0.6)]'
-                    : 'bg-gray-700'
+                    ? 'bg-[#86BF58] shadow-[0_0_14px_rgba(134,191,88,0.7)]'
+                    : 'bg-gray-700/50'
                   }
                 `}
               />
-              <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
+              <span className="text-lg sm:text-xl lg:text-2xl text-gray-100 leading-relaxed">
                 <strong className="text-white">{item.title}</strong> {item.description}
               </span>
             </div>

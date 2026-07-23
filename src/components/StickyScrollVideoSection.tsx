@@ -81,8 +81,9 @@ export default function StickyScrollVideoSection({
   return (
     <div
       ref={wrapperRef}
+      data-video-section
       className="relative"
-      style={{ height: '350vh' }}
+      style={{ height: '500vh' }}
     >
       {/* Video de fondo: fijo en pantalla mientras se hace scroll por esta sección */}
       <div className="sticky top-0 w-full h-screen overflow-hidden z-0">
