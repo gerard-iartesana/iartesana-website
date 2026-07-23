@@ -122,7 +122,6 @@ export default function AcompanamientoPage() {
           href="/agendar"
           className="inline-flex items-center gap-3 px-9 py-4 rounded-full text-base font-bold text-white bg-[#E15A9C] hover:bg-[#E15A9C]/90 transition-all shadow-lg shadow-[#E15A9C]/20"
         >
-          <Sparkles className="w-5 h-5" />
           <span>Reservar primera sesión</span>
           <ArrowRight className="w-5 h-5" />
         </Link>

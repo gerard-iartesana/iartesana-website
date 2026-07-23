@@ -133,7 +133,6 @@ export default function IaAplicadaPage() {
           href="/agendar"
           className="inline-flex items-center gap-3 px-9 py-4 rounded-full text-base font-bold text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-all shadow-lg shadow-[#38A8E0]/20"
         >
-          <Sparkles className="w-5 h-5" />
           <span>Reservar primera sesión</span>
           <ArrowRight className="w-5 h-5" />
         </Link>
