@@ -83,10 +83,10 @@ export default function StickyScrollVideoSection({
       ref={wrapperRef}
       data-video-section
       className="relative"
-      style={{ height: '400vh', marginTop: '-5rem', paddingTop: '5rem' }}
+      style={{ height: '400vh' }}
     >
       {/* Video de fondo: fijo en pantalla mientras se hace scroll por esta sección */}
-      <div className="sticky top-0 w-full h-screen overflow-hidden z-0">
+      <div className="sticky top-[80px] w-full h-[calc(100vh-80px)] overflow-hidden z-0">
         <video
           ref={videoRef}
           muted
@@ -110,7 +110,7 @@ export default function StickyScrollVideoSection({
         />
 
         {/* Contenido sobre el vídeo */}
-        <div className="absolute inset-0 flex items-start justify-center pt-12 sm:pt-16 px-4 sm:px-8 z-10" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
+        <div className="absolute inset-0 flex items-start justify-center pt-6 sm:pt-8 px-4 sm:px-8 z-10" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
           <div className="w-full max-w-4xl mx-auto text-white space-y-6">
             {children}
           </div>
