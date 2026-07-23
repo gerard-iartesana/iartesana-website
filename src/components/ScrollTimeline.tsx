@@ -182,7 +182,7 @@ export default function ScrollTimeline() {
 
                   {/* Results */}
                   <div className="space-y-2.5">
-                    <span className="text-sm font-mono text-gray-400 uppercase tracking-wider block font-semibold">Resultados concretos:</span>
+                    <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] font-normal text-gray-400 uppercase tracking-wider block">Resultados concretos:</span>
                     <ul className="space-y-2.5 text-base sm:text-lg text-gray-200">
                       {step.results.map((res, rIdx) => (
                         <li key={rIdx} className="flex items-start gap-3">
