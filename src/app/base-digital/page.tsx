@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { Compass, Database, Wrench, CheckCircle2, ArrowRight, RefreshCw } from 'lucide-react';
+import { CheckCircle2, ArrowRight, RefreshCw } from 'lucide-react';
 import StickyScrollVideoSection from '@/components/StickyScrollVideoSection';
 import ScrollRevealChecklist from '@/components/ScrollRevealChecklist';
 import HeroVideo from '@/components/HeroVideo';
@@ -115,22 +115,11 @@ export default function BaseDigitalPage() {
       </div>
 
       {/* ── PIEZA 01 ── */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[#86BF58]/15 flex items-center justify-center text-[#86BF58] shrink-0">
-              <Compass className="w-6 h-6" />
-            </div>
-            <div>
-              <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider block">Pieza 01 · La diferencia iARTESANA</span>
-              <h3 className="text-2xl sm:text-4xl font-extrabold text-white">Contexto estable</h3>
-            </div>
-          </div>
-          <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider">
-            Prioridad estructural
-          </span>
-        </div>
-        <p className="text-lg sm:text-xl text-gray-200 leading-relaxed font-normal max-w-3xl">
+      <div className="max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14 space-y-4">
+        <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+          Contexto estable
+        </h3>
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-200 leading-relaxed font-normal max-w-3xl">
           Quién sois, cómo habláis, cómo trabajáis y qué criterios seguís. Es la documentación estratégica que sirve como guía inmutable de referencia tanto para tu equipo como para los sistemas de Inteligencia Artificial.
         </p>
       </div>
@@ -143,17 +132,11 @@ export default function BaseDigitalPage() {
       </StickyScrollVideoSection>
 
       {/* ── PIEZA 02 ── */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14">
-        <div className="flex items-center gap-4 mb-4">
-          <div className="w-12 h-12 rounded-xl bg-[#86BF58]/15 flex items-center justify-center text-[#86BF58] shrink-0">
-            <Database className="w-6 h-6" />
-          </div>
-          <div>
-            <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider block">Pieza 02</span>
-            <h3 className="text-2xl sm:text-4xl font-extrabold text-white">Datos vivos</h3>
-          </div>
-        </div>
-        <p className="text-lg sm:text-xl text-gray-200 leading-relaxed font-normal max-w-3xl">
+      <div className="max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14 space-y-4">
+        <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+          Datos vivos
+        </h3>
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-200 leading-relaxed font-normal max-w-3xl">
           Lo que cambia cada día: clientes, operaciones, incidencias, disponibilidad e histórico. Una arquitectura de datos limpia, aislada y preparada para nutrir a la IA.
         </p>
       </div>
@@ -166,17 +149,11 @@ export default function BaseDigitalPage() {
       </StickyScrollVideoSection>
 
       {/* ── PIEZA 03 ── */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14">
-        <div className="flex items-center gap-4 mb-4">
-          <div className="w-12 h-12 rounded-xl bg-[#86BF58]/15 flex items-center justify-center text-[#86BF58] shrink-0">
-            <Wrench className="w-6 h-6" />
-          </div>
-          <div>
-            <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider block">Pieza 03</span>
-            <h3 className="text-2xl sm:text-4xl font-extrabold text-white">Herramientas conectadas</h3>
-          </div>
-        </div>
-        <p className="text-lg sm:text-xl text-gray-200 leading-relaxed font-normal max-w-3xl">
+      <div className="max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14 space-y-4">
+        <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+          Herramientas conectadas
+        </h3>
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-200 leading-relaxed font-normal max-w-3xl">
           Las aplicaciones por las que tu equipo consulta, introduce y utiliza la información diaria sin duplicar tareas ni introducir datos a mano.
         </p>
       </div>
