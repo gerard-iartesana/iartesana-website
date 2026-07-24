@@ -49,7 +49,7 @@ export default function BaseDigitalPage() {
           <h1 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white tracking-tight [text-shadow:_0_4px_24px_rgba(0,0,0,0.98)]">
             Base digital
           </h1>
-          <p className="text-lg sm:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed font-medium [text-shadow:_0_2px_16px_rgba(0,0,0,0.98)]">
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 max-w-3xl mx-auto leading-relaxed font-normal [text-shadow:_0_2px_16px_rgba(0,0,0,0.98)]">
             Marca, conocimiento, datos vivos y herramientas conectadas. La estructura digital estable sobre la que trabajan las personas y la inteligencia artificial sin generar caos.
           </p>
 
@@ -72,7 +72,7 @@ export default function BaseDigitalPage() {
         <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
           Las 3 piezas de los cimientos
         </h2>
-        <p className="text-lg text-gray-300 max-w-2xl mx-auto font-normal">
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 max-w-2xl mx-auto leading-relaxed font-normal">
           Todo lo que construimos se traduce en soluciones concretas para el negocio, nunca en tecnología abstracta.
         </p>
       </div>
@@ -82,7 +82,7 @@ export default function BaseDigitalPage() {
         <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#86BF58] tracking-tight">
           Contexto estable
         </h3>
-        <p className="text-lg sm:text-xl lg:text-2xl text-gray-200 leading-relaxed font-normal max-w-3xl">
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 leading-relaxed font-normal max-w-3xl">
           Quién sois, cómo habláis, cómo trabajáis y qué criterios seguís. Es la documentación estratégica que sirve como guía inmutable de referencia tanto para tu equipo como para los sistemas de Inteligencia Artificial.
         </p>
       </div>
@@ -99,7 +99,7 @@ export default function BaseDigitalPage() {
         <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#86BF58] tracking-tight">
           Datos vivos
         </h3>
-        <p className="text-lg sm:text-xl lg:text-2xl text-gray-200 leading-relaxed font-normal max-w-3xl">
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 leading-relaxed font-normal max-w-3xl">
           Lo que cambia cada día: clientes, operaciones, incidencias, disponibilidad e histórico. Una arquitectura de datos limpia, aislada y preparada para nutrir a la IA.
         </p>
       </div>
@@ -116,7 +116,7 @@ export default function BaseDigitalPage() {
         <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#86BF58] tracking-tight">
           Herramientas conectadas
         </h3>
-        <p className="text-lg sm:text-xl lg:text-2xl text-gray-200 leading-relaxed font-normal max-w-3xl">
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 leading-relaxed font-normal max-w-3xl">
           Las aplicaciones por las que tu equipo consulta, introduce y utiliza la información diaria sin duplicar tareas ni introducir datos a mano.
         </p>
       </div>
@@ -137,7 +137,7 @@ export default function BaseDigitalPage() {
           <h3 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
             Diseño, marca y comunicación
           </h3>
-          <p className="text-base sm:text-lg text-gray-200 leading-relaxed font-normal pt-1">
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 max-w-3xl mx-auto leading-relaxed font-normal pt-1">
             En iARTESANA desarrollamos aplicaciones y soluciones tecnológicas que han evolucionado integrando de forma natural el diseño, la marca y la comunicación. Todos estos servicios se absorben dentro de la Base Digital, entendiendo la imagen y el mensaje como la primera capa imprescindible del contexto estable.
           </p>
         </div>
@@ -146,7 +146,7 @@ export default function BaseDigitalPage() {
           <h3 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             ¿Quieres construir la Base Digital de tu empresa?
           </h3>
-          <p className="text-lg text-gray-200 font-normal max-w-xl mx-auto">
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 max-w-xl mx-auto leading-relaxed font-normal">
             Comenzamos con una conversación directa de 45 minutos para auditar tu punto de partida sin coste ni compromiso.
           </p>
           <div className="pt-2">
