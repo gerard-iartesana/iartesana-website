@@ -119,13 +119,12 @@ export default function ScrollTimeline() {
                   : 'opacity-0 translate-y-10 pointer-events-none'
               }`}
             >
-              {/* Barra lateral con indicador de color */}
+              {/* Barra lateral con indicador de color (sin resplandor) */}
               <div
                 onClick={() => isRevealed && toggleExpand(index)}
                 className="w-5 sm:w-7 shrink-0 rounded-sm cursor-pointer self-stretch transition-all duration-300"
                 style={{
                   backgroundColor: step.color,
-                  boxShadow: isRevealed ? `0 0 16px ${step.color}aa` : 'none',
                 }}
                 title={step.title}
               />
@@ -138,7 +137,7 @@ export default function ScrollTimeline() {
                   onClick={() => isRevealed && toggleExpand(index)}
                 >
                   <div className="flex items-center justify-between">
-                    {/* Título de la capa en BOLD */}
+                    {/* Título de la capa */}
                     <h3 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight group-hover:text-gray-200 transition-colors">
                       {step.title}
                     </h3>
@@ -157,7 +156,7 @@ export default function ScrollTimeline() {
                     </button>
                   </div>
 
-                  {/* Texto de debajo en REGULAR / NORMAL */}
+                  {/* Texto de debajo del título */}
                   <p className="text-xl sm:text-2xl font-normal text-gray-200 max-w-3xl leading-relaxed">
                     {step.mainIdea}
                   </p>
@@ -166,47 +165,47 @@ export default function ScrollTimeline() {
                 {/* Expandable Details Block con animación suave */}
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    isExpanded ? 'max-h-[600px] opacity-100 pt-3 space-y-5' : 'max-h-0 opacity-0 pt-0 space-y-0'
+                    isExpanded ? 'max-h-[700px] opacity-100 pt-3 space-y-5' : 'max-h-0 opacity-0 pt-0 space-y-0'
                   }`}
                 >
-                  {/* Description */}
-                  <p className="text-lg sm:text-xl text-gray-300 max-w-3xl leading-relaxed border-t border-surface-border/40 pt-4 font-normal">
+                  {/* Description con el mismo tamaño de letra */}
+                  <p className="text-xl sm:text-2xl font-normal text-gray-200 max-w-3xl leading-relaxed border-t border-gray-800 pt-4">
                     {step.description}
                   </p>
 
-                  {/* Results */}
-                  <div className="space-y-2.5">
-                    <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] font-normal text-gray-400 uppercase tracking-wider block">Resultados concretos:</span>
-                    <ul className="space-y-2.5 text-base sm:text-lg text-gray-200">
+                  {/* Results con el mismo tamaño de letra que el texto de debajo del título */}
+                  <div className="space-y-3">
+                    <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] font-normal text-gray-400 uppercase tracking-wider block">
+                      Resultados concretos:
+                    </span>
+                    <ul className="space-y-3 text-xl sm:text-2xl font-normal text-gray-200 leading-relaxed">
                       {step.results.map((res, rIdx) => (
                         <li key={rIdx} className="flex items-start gap-3">
-                          <Check className="w-5 h-5 shrink-0 mt-0.5" style={{ color: step.color }} />
+                          <Check className="w-6 h-6 shrink-0 mt-1" style={{ color: step.color }} />
                           <span>{res}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  {/* Botón de enlace Explorar */}
+                  {/* Botón de enlace Explorar más grande y sin negrita */}
                   {step.exploreUrl && (
-                    <div className="pt-2">
+                    <div className="pt-3">
                       <Link
                         href={step.exploreUrl}
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-sm font-bold text-white transition-all duration-300 hover:scale-[1.03]"
+                        className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl text-base sm:text-lg font-normal text-white transition-all duration-300 hover:scale-[1.03]"
                         style={{
                           backgroundColor: step.darkColor,
                         }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.backgroundColor = step.hoverColor;
-                          e.currentTarget.style.boxShadow = `0 0 25px ${step.hoverColor}bb`;
                         }}
                         onMouseLeave={(e) => {
                           e.currentTarget.style.backgroundColor = step.darkColor;
-                          e.currentTarget.style.boxShadow = 'none';
                         }}
                       >
                         <span>Explorar</span>
-                        <ArrowRight className="w-4 h-4" />
+                        <ArrowRight className="w-5 h-5" />
                       </Link>
                     </div>
                   )}
