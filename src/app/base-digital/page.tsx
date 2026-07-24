@@ -135,10 +135,10 @@ export default function BaseDigitalPage() {
             SERVICIOS INTEGRADORES
           </span>
           <h3 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Diseño, marca y comunicación dentro de la Base Digital
+            Diseño, marca y comunicación
           </h3>
           <p className="text-base sm:text-lg text-gray-200 leading-relaxed font-normal pt-1">
-            iARTESANA nació diseñando marcas e identidades visuales. Esos servicios no se han eliminado: se han absorbido de forma natural dentro de la Base Digital. Entendemos la comunicación y el diseño como la primera capa del contexto estable.
+            En iARTESANA desarrollamos aplicaciones y soluciones tecnológicas que han evolucionado integrando de forma natural el diseño, la marca y la comunicación. Todos estos servicios se absorben dentro de la Base Digital, entendiendo la imagen y el mensaje como la primera capa imprescindible del contexto estable.
           </p>
         </div>
 
