@@ -80,7 +80,7 @@ export default function IaAplicadaPage() {
 
           <div className="space-y-4 pt-4 max-w-3xl mx-auto">
             <p className="text-2xl sm:text-3xl font-extrabold text-white leading-snug tracking-tight">
-              No implantamos IA sin una Base Digital sana. No vendemos chatbots flotantes sobre información desordenada.
+              Implantamos IA sobre una base sana sobre información ordenada.
             </p>
             <p className="text-base sm:text-lg text-[#38A8E0] font-semibold">
               Cada agente opera únicamente sobre conocimiento verificado de tu negocio.
