@@ -38,33 +38,26 @@ const pieza03Items = [
 export default function BaseDigitalPage() {
   return (
     <div className="text-[#E2E8F0] bg-[#080A0E]">
-      {/* ── Hero y Secciones Introductorias con vídeo de fondo extendido ── */}
+      {/* ── Hero con vídeo de fondo ── */}
       <section className="relative pt-28 sm:pt-36 pb-16 px-4 sm:px-6 lg:px-8">
-        <HeroVideo src="/videos/video-base-digital-hero.mp4" opacity={0.4} blendMode="screen" />
+        <HeroVideo src="/videos/video-base-digital-hero.mp4" opacity={0.45} blendMode="screen" />
 
-        <div className="relative z-10 max-w-5xl mx-auto space-y-16 sm:space-y-24">
-          {/* Header */}
-          <div className="text-center space-y-6 flex flex-col justify-center items-center">
-            <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-100 font-semibold block [text-shadow:_0_2px_10px_rgba(0,0,0,0.95)]">
-              CAPA 01 · LOS CIMIENTOS
-            </span>
-            <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight [text-shadow:_0_4px_24px_rgba(0,0,0,0.98)]">
-              Base digital
-            </h1>
-            <p className="text-lg sm:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed font-medium pt-2 [text-shadow:_0_2px_16px_rgba(0,0,0,0.98)]">
-              Marca, conocimiento, datos vivos y herramientas conectadas. La estructura digital estable sobre la que trabajan las personas y la inteligencia artificial sin generar caos.
-            </p>
-          </div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8 flex flex-col justify-center items-center">
+          <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-100 font-semibold block [text-shadow:_0_2px_10px_rgba(0,0,0,0.95)]">
+            CAPA 01
+          </span>
+          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white tracking-tight [text-shadow:_0_4px_24px_rgba(0,0,0,0.98)]">
+            Base digital
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed font-medium [text-shadow:_0_2px_16px_rgba(0,0,0,0.98)]">
+            Marca, conocimiento, datos vivos y herramientas conectadas. La estructura digital estable sobre la que trabajan las personas y la inteligencia artificial sin generar caos.
+          </p>
 
-          {/* Frase clave */}
-          <div className="text-center space-y-5 max-w-3xl mx-auto py-2">
-            <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
-              PRINCIPIO DE IMPLANTACIÓN
-            </span>
+          <div className="space-y-4 pt-4 max-w-3xl mx-auto">
             <p className="text-2xl sm:text-3xl font-extrabold text-white leading-snug tracking-tight">
               Revisamos lo que ya te funciona, qué puede conectarse y qué necesita ordenarse.
             </p>
-            <p className="text-base sm:text-lg text-[#86BF58] font-semibold pt-1">
+            <p className="text-base sm:text-lg text-[#86BF58] font-semibold">
               Cuando la Base Digital es sana se implanta la Inteligencia Artificial.
             </p>
           </div>
