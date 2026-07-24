@@ -48,7 +48,6 @@ export default function StickyScrollVideoSection({
     const onScroll = () => {
       const rect = wrapper.getBoundingClientRect();
       const wh = window.innerHeight;
-      // progress 0→1 based on how far through the section we've scrolled
       const totalScroll = rect.height - wh;
       if (totalScroll <= 0) return;
       const scrolled = -rect.top;
@@ -56,13 +55,16 @@ export default function StickyScrollVideoSection({
       targetTimeRef.current = progress * video.duration;
     };
 
-    // Smooth lerp loop for video scrubbing
+    // Smooth lerp loop with seeking protection for 60fps silky video scrubbing
     const loop = () => {
-      if (video.duration) {
+      if (video && video.duration) {
         const diff = targetTimeRef.current - currentTimeRef.current;
-        if (Math.abs(diff) > 0.01) {
-          currentTimeRef.current += diff * 0.15;
-          video.currentTime = currentTimeRef.current;
+        if (Math.abs(diff) > 0.003) {
+          currentTimeRef.current += diff * 0.08; // Silky smooth lerp factor
+          // Only update currentTime when browser decoder isn't busy seeking
+          if (!video.seeking) {
+            video.currentTime = Math.max(0, Math.min(video.duration - 0.01, currentTimeRef.current));
+          }
         }
       }
       rafRef.current = requestAnimationFrame(loop);
@@ -92,7 +94,7 @@ export default function StickyScrollVideoSection({
           muted
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover transform-gpu translate-z-0"
         >
           <source src={src} type="video/mp4" />
         </video>
