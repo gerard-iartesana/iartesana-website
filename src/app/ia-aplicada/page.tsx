@@ -1,141 +1,218 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { Cpu, ShieldCheck, ArrowRight, Sparkles, AlertCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import HeroVideo from '@/components/HeroVideo';
+import StickyScrollVideoSection from '@/components/StickyScrollVideoSection';
+import ScrollRevealChecklist from '@/components/ScrollRevealChecklist';
 
 export const metadata: Metadata = {
   title: 'IA Aplicada · La Inteligencia en Acción | iARTESANA',
   description: 'Inteligencia artificial que conoce tu empresa antes de actuar. Escala de intervención transparente con supervisión humana.',
 };
 
+const pieza01Items = [
+  { title: 'Asistente documental:', description: 'respuestas inmediatas basadas en tus manuales y protocolos.' },
+  { title: 'Búsqueda semántica:', description: 'localiza información exacta entre miles de documentos en segundos.' },
+  { title: 'Borradores inteligentes:', description: 'propuestas de respuestas a clientes o correos listas para revisar.' },
+];
+
+const pieza02Items = [
+  { title: 'Procesamiento de documentos:', description: 'extracción automática de datos de facturas, albaranes y pedidos.' },
+  { title: 'Trazabilidad total:', description: 'registro detallado de cada ejecución, motivo y datos procesados.' },
+  { title: 'Acción reversible:', description: 'capacidad de deshacer o auditar cualquier paso automatizado.' },
+];
+
+const pieza03Items = [
+  { title: 'Validación en un clic:', description: 'el agente presenta la propuesta y el humano aprueba o corrige.' },
+  { title: 'Definición de límites:', description: 'zonas protegidas donde la IA nunca actúa de forma autónoma.' },
+  { title: 'Identificador de autoría:', description: 'registro transparente de quién validó y autorizó cada acción.' },
+];
+
+const escalaIntervencion = [
+  {
+    nivel: 'Asiste',
+    queHace: 'Propone, resume o busca información operativa.',
+    registro: 'Consulta registrada',
+    reversible: 'No aplica (no modifica datos)',
+    badgeColor: 'bg-[#38A8E0]/20 text-[#38A8E0] border-[#38A8E0]/40',
+  },
+  {
+    nivel: 'Automatiza',
+    queHace: 'Ejecuta procesos ya definidos y estandarizados.',
+    registro: 'Log completo de cada ejecución',
+    reversible: 'Sí (auditable)',
+    badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
+  },
+  {
+    nivel: 'Actúa',
+    queHace: 'Usa herramientas dentro de límites establecidos.',
+    registro: 'Registro de acción, motivo y contexto',
+    reversible: 'Sí, con deshacer explícito',
+    badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
+  },
+  {
+    nivel: 'Pide aprobación',
+    queHace: 'Se detiene cuando la decisión requiere criterio experto.',
+    registro: 'Identificador de quién aprobó y qué',
+    reversible: 'Garantizado (nada ocurre sin visto bueno)',
+    badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40',
+  },
+];
+
 export default function IaAplicadaPage() {
-  const escalaIntervencion = [
-    {
-      nivel: 'Asiste',
-      queHace: 'Propone, resume o busca información operativa.',
-      registro: 'Consulta registrada',
-      reversible: 'No aplica (no modifica datos)',
-      badgeColor: 'bg-[#38A8E0]/20 text-[#38A8E0] border-[#38A8E0]/40',
-    },
-    {
-      nivel: 'Automatiza',
-      queHace: 'Ejecuta procesos ya definidos y estandarizados.',
-      registro: 'Log completo de cada ejecución',
-      reversible: 'Sí (auditable)',
-      badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
-    },
-    {
-      nivel: 'Actúa',
-      queHace: 'Usa herramientas dentro de límites establecidos.',
-      registro: 'Registro de acción, motivo y contexto',
-      reversible: 'Sí, con deshacer explícito',
-      badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
-    },
-    {
-      nivel: 'Pide aprobación',
-      queHace: 'Se detiene cuando la decisión requiere criterio experto.',
-      registro: 'Identificador de quién aprobó y qué',
-      reversible: 'Garantizado (nada ocurre sin visto bueno)',
-      badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40',
-    },
-  ];
-
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 pb-24 text-[#E2E8F0]">
-      {/* Header Section */}
-      <div className="text-center space-y-6 pt-8">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#38A8E0]/10 border border-[#38A8E0]/30 text-xs font-mono text-[#38A8E0] font-bold">
-          <Cpu className="w-4 h-4" />
-          <span>CAPA 02 · LA INTELIGENCIA EN ACCIÓN</span>
+    <div className="text-[#E2E8F0] bg-[#080A0E]">
+      {/* ── Hero con vídeo de fondo extendido ── */}
+      <section className="relative pt-28 sm:pt-36 pb-16 px-4 sm:px-6 lg:px-8">
+        <HeroVideo src="/videos/video-ia-aplicada-hero.mp4" opacity={0.45} blendMode="screen" />
+
+        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8 flex flex-col justify-center items-center">
+          <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-100 font-semibold block [text-shadow:_0_2px_10px_rgba(0,0,0,0.95)]">
+            CAPA 02
+          </span>
+          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white tracking-tight [text-shadow:_0_4px_24px_rgba(0,0,0,0.98)]">
+            IA aplicada
+          </h1>
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 max-w-3xl mx-auto leading-relaxed font-normal [text-shadow:_0_2px_16px_rgba(0,0,0,0.98)]">
+            Inteligencia artificial que conoce tu empresa antes de actuar. Agentes, asistentes y automatizaciones operativas integradas sobre tu Base Digital con niveles transparentes de autonomía.
+          </p>
+
+          <div className="space-y-4 pt-4 max-w-3xl mx-auto">
+            <p className="text-2xl sm:text-3xl font-extrabold text-white leading-snug tracking-tight">
+              No implantamos IA sin una Base Digital sana. No vendemos chatbots flotantes sobre información desordenada.
+            </p>
+            <p className="text-base sm:text-lg text-[#38A8E0] font-semibold">
+              Cada agente opera únicamente sobre conocimiento verificado de tu negocio.
+            </p>
+          </div>
         </div>
+      </section>
 
-        <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
-          IA aplicada
-        </h1>
-
-        <p className="text-xl sm:text-2xl text-[#38A8E0] font-semibold italic">
-          "Inteligencia artificial que conoce tu empresa antes de actuar."
-        </p>
-
-        <p className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-          Agentes, asistentes, buscadores internos y automatizaciones operativas construidos sobre tu propia Base Digital.
+      {/* ── Título de las 3 piezas / formas de interacción ── */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3 pt-12 pb-6">
+        <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
+          ESCALA Y AUTONOMÍA
+        </span>
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          Las 3 formas de interacción con la IA
+        </h2>
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          Adaptamos el nivel de intervención a las necesidades reales y la sensibilidad de cada proceso de tu empresa.
         </p>
       </div>
 
-      {/* La Regla de Oro */}
-      <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-[#38A8E0]/15 via-surface-card to-surface-card border-l-8 border-l-[#38A8E0] border border-surface-border flex flex-col md:flex-row items-center gap-6 shadow-xl">
-        <div className="p-4 rounded-2xl bg-[#38A8E0]/20 text-[#38A8E0] shrink-0">
-          <AlertCircle className="w-8 h-8" />
-        </div>
-        <div className="space-y-2 text-center md:text-left">
-          <h2 className="text-2xl font-bold text-white">La regla no negociable:</h2>
-          <p className="text-base text-gray-200 leading-relaxed">
-            No implantamos IA hasta que la Base Digital está sana. No vendemos chatbots flotantes sobre información desordenada. Cada agente opera únicamente sobre conocimiento verificado de tu negocio.
-          </p>
-        </div>
+      {/* ── PIEZA 01 ── */}
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14 space-y-4">
+        <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#38A8E0] tracking-tight">
+          Asistencia y consulta
+        </h3>
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 leading-relaxed font-normal max-w-3xl">
+          Agentes que buscan, resumen y extraen información de tu Base Digital para responder preguntas de tu equipo en segundos, sin modificar datos ni ejecutar acciones por su cuenta.
+        </p>
       </div>
 
-      {/* Escala de Intervención */}
-      <div className="space-y-8">
-        <div className="text-center space-y-3">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Escala de intervención</h2>
-          <p className="text-base text-gray-200 max-w-2xl mx-auto">
-            No todos los procesos necesitan la misma autonomía. Cada sistema se clasifica en uno de los 4 niveles con trazabilidad total y reversibilidad garantizada.
-          </p>
-        </div>
+      <StickyScrollVideoSection src="/videos/video-ia.mp4">
+        <h4 className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-300 font-bold mb-4">
+          Lo que queda construido:
+        </h4>
+        <ScrollRevealChecklist items={pieza01Items} />
+      </StickyScrollVideoSection>
 
-        <div className="overflow-x-auto rounded-2xl border border-surface-border bg-surface-card shadow-xl">
-          <table className="w-full text-left border-collapse min-w-[640px]">
-            <thead>
-              <tr className="border-b border-surface-border text-xs font-mono text-gray-300 uppercase bg-surface-hover/50">
-                <th className="py-4 px-6">Nivel</th>
-                <th className="py-4 px-6">Qué hace</th>
-                <th className="py-4 px-6">Qué registro deja</th>
-                <th className="py-4 px-6">¿Reversible?</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-surface-border text-base">
-              {escalaIntervencion.map((item, index) => (
-                <tr key={index} className="hover:bg-surface-hover/50 transition-colors">
-                  <td className="py-5 px-6 font-bold text-white">
-                    <span className={`inline-block px-3.5 py-1.5 rounded-full text-xs font-mono font-bold border ${item.badgeColor}`}>
-                      {item.nivel}
-                    </span>
-                  </td>
-                  <td className="py-5 px-6 text-gray-200 font-medium">{item.queHace}</td>
-                  <td className="py-5 px-6 text-gray-300 font-mono text-xs">{item.registro}</td>
-                  <td className="py-5 px-6 text-[#38A8E0] font-bold text-xs">{item.reversible}</td>
+      {/* ── PIEZA 02 ── */}
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14 space-y-4">
+        <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#38A8E0] tracking-tight">
+          Automatización de procesos
+        </h3>
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 leading-relaxed font-normal max-w-3xl">
+          Sistemas autónomos que ejecutan tareas estructuradas (clasificación de facturas, procesamiento de formularios, sincronización de registros) dejando un log completo e inalterable.
+        </p>
+      </div>
+
+      <StickyScrollVideoSection src="/videos/video-apps.mp4">
+        <h4 className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-300 font-bold mb-4">
+          Lo que queda construido:
+        </h4>
+        <ScrollRevealChecklist items={pieza02Items} />
+      </StickyScrollVideoSection>
+
+      {/* ── PIEZA 03 ── */}
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14 space-y-4">
+        <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#38A8E0] tracking-tight">
+          Supervisión y control humano
+        </h3>
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 leading-relaxed font-normal max-w-3xl">
+          Para las decisiones críticas o de alta sensibilidad, la IA prepara el trabajo completo pero se detiene para solicitar la aprobación explícita de un profesional de tu plantilla.
+        </p>
+      </div>
+
+      <StickyScrollVideoSection src="/videos/video-base.mp4">
+        <h4 className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-300 font-bold mb-4">
+          Lo que queda construido:
+        </h4>
+        <ScrollRevealChecklist items={pieza03Items} />
+      </StickyScrollVideoSection>
+
+      {/* ── Secciones finales ── */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24 pt-16 pb-24 text-center">
+        {/* Tabla Escala de Intervención */}
+        <div className="space-y-8 max-w-4xl mx-auto">
+          <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
+            NIVELES DE AUTONOMÍA
+          </span>
+          <h3 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Escala de intervención transparente
+          </h3>
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 max-w-3xl mx-auto leading-relaxed font-normal">
+            Cada proceso de tu empresa se clasifica explícitamente en uno de los 4 niveles de autonomía con trazabilidad total y reversibilidad garantizada.
+          </p>
+
+          <div className="overflow-x-auto rounded-2xl border border-gray-800 bg-[#0C1017] shadow-xl text-left">
+            <table className="w-full border-collapse min-w-[640px]">
+              <thead>
+                <tr className="border-b border-gray-800 text-xs font-mono text-gray-400 uppercase bg-gray-900/60">
+                  <th className="py-4 px-6">Nivel</th>
+                  <th className="py-4 px-6">Qué hace</th>
+                  <th className="py-4 px-6">Qué registro deja</th>
+                  <th className="py-4 px-6">¿Reversible?</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="divide-y divide-gray-800/60 text-base">
+                {escalaIntervencion.map((item, index) => (
+                  <tr key={index} className="hover:bg-gray-900/40 transition-colors">
+                    <td className="py-5 px-6 font-bold text-white">
+                      <span className={`inline-block px-3.5 py-1.5 rounded-full text-xs font-mono font-bold border ${item.badgeColor}`}>
+                        {item.nivel}
+                      </span>
+                    </td>
+                    <td className="py-5 px-6 text-gray-200 font-normal">{item.queHace}</td>
+                    <td className="py-5 px-6 text-gray-400 font-mono text-xs">{item.registro}</td>
+                    <td className="py-5 px-6 text-[#38A8E0] font-semibold text-xs">{item.reversible}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
 
-      {/* Los Límites los Pone el Cliente */}
-      <div className="p-8 sm:p-12 rounded-3xl bg-surface-card border border-surface-border space-y-6 shadow-xl">
-        <h2 className="text-2xl sm:text-3xl font-bold text-white">Los límites los pones tú</h2>
-        <p className="text-base text-gray-200 leading-relaxed">
-          En cada proyecto realizamos una pregunta clave: <em className="text-white font-semibold">"¿Dónde no querríais nunca que hubiera IA en vuestro negocio?"</em>.
-        </p>
-        <p className="text-base text-gray-200 leading-relaxed">
-          Respetamos profundamente las zonas delicadas de trato humano, decisiones emocionales o validaciones críticas. La IA entra solo donde aporta claridad y ahorra tiempo sin arriesgar la calidad.
-        </p>
-      </div>
-
-      {/* CTA Box */}
-      <div className="text-center p-12 rounded-3xl bg-gradient-to-r from-surface-card via-surface-hover to-surface-card border border-[#38A8E0]/40 space-y-6 shadow-2xl">
-        <h3 className="text-3xl font-extrabold text-white">¿Quieres evaluar qué automatizar en tu empresa?</h3>
-        <p className="text-base text-gray-200 max-w-lg mx-auto">
-          Agenda la primera sesión de 45 minutos para definir tus necesidades.
-        </p>
-        <Link
-          href="/agendar"
-          className="inline-flex items-center gap-3 px-9 py-4 rounded-full text-base font-normal text-white bg-[#38A8E0] hover:bg-[#38A8E0]/90 transition-all shadow-lg shadow-[#38A8E0]/20"
-        >
-          <span>Reservar primera sesión</span>
-          <ArrowRight className="w-5 h-5" />
-        </Link>
+        {/* CTA final */}
+        <div className="space-y-6 max-w-3xl mx-auto pt-4">
+          <h3 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+            ¿Quieres aplicar Inteligencia Artificial en tu empresa?
+          </h3>
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 max-w-xl mx-auto leading-relaxed font-normal">
+            Comenzamos con una conversación directa de 45 minutos para auditar tu punto de partida sin coste ni compromiso.
+          </p>
+          <div className="pt-2">
+            <Link
+              href="/agendar"
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-lg sm:text-xl font-normal text-white bg-[#0A3D62] hover:bg-[#009DF8] hover:shadow-[0_0_35px_rgba(0,157,248,1)] hover:scale-[1.03] transition-all duration-300 shadow-[0_8px_25px_rgba(0,0,0,0.7)]"
+            >
+              <span>Reserva primera reunión</span>
+              <ArrowRight className="w-5 h-5 text-white" />
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
