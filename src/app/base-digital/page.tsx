@@ -111,79 +111,86 @@ export default function BaseDigitalPage() {
             Todo lo que construimos se traduce en soluciones concretas para el negocio, nunca en tecnología abstracta.
           </p>
         </div>
-
-        {/* ── PIEZA 01 ── */}
       </div>
 
-      {/* ── PIEZA 01: Cabecera ── */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-8 pb-2 pt-8">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[#86BF58]/15 flex items-center justify-center text-[#86BF58] shrink-0">
-              <Compass className="w-6 h-6" />
+      {/* ── PIEZA 01 ── */}
+      <StickyScrollVideoSection src="/videos/video-base.mp4">
+        <div className="space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <div className="w-11 h-11 rounded-xl bg-[#86BF58]/20 flex items-center justify-center text-[#86BF58] shrink-0">
+                <Compass className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider block">Pieza 01 · La diferencia iARTESANA</span>
+                <h3 className="text-2xl sm:text-4xl font-extrabold text-white">Contexto estable</h3>
+              </div>
+            </div>
+            <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider">
+              Prioridad estructural
+            </span>
+          </div>
+          <p className="text-base sm:text-lg text-gray-100 leading-relaxed font-normal max-w-3xl">
+            Quién sois, cómo habláis, cómo trabajáis y qué criterios seguís. Es la documentación estratégica que sirve como guía inmutable de referencia tanto para tu equipo como para los sistemas de Inteligencia Artificial.
+          </p>
+        </div>
+
+        <div className="pt-2 space-y-2">
+          <h4 className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-300 font-semibold">
+            Lo que queda construido:
+          </h4>
+          <ScrollRevealChecklist items={pieza01Items} />
+        </div>
+      </StickyScrollVideoSection>
+
+      {/* ── PIEZA 02 ── */}
+      <StickyScrollVideoSection src="/videos/video-bbdd.mp4">
+        <div className="space-y-3">
+          <div className="flex items-center gap-3">
+            <div className="w-11 h-11 rounded-xl bg-[#86BF58]/20 flex items-center justify-center text-[#86BF58] shrink-0">
+              <Database className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider block">Pieza 01 · La diferencia iARTESANA</span>
-              <h3 className="text-2xl sm:text-4xl font-extrabold text-white">Contexto estable</h3>
+              <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider block">Pieza 02</span>
+              <h3 className="text-2xl sm:text-4xl font-extrabold text-white">Datos vivos</h3>
             </div>
           </div>
-          <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider">
-            Prioridad estructural
-          </span>
+          <p className="text-base sm:text-lg text-gray-100 leading-relaxed font-normal max-w-3xl">
+            Lo que cambia cada día: clientes, operaciones, incidencias, disponibilidad e histórico. Una arquitectura de datos limpia, aislada y preparada para nutrir a la IA.
+          </p>
         </div>
-        <p className="text-lg sm:text-xl text-gray-200 leading-relaxed font-normal max-w-3xl">
-          Quién sois, cómo habláis, cómo trabajáis y qué criterios seguís. Es la documentación estratégica que sirve como guía inmutable de referencia tanto para tu equipo como para los sistemas de Inteligencia Artificial.
-        </p>
-      </div>
 
-      {/* ── PIEZA 01: Vídeo ── */}
-      <StickyScrollVideoSection src="/videos/video-base.mp4">
-        <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-300 font-semibold mb-2">Lo que queda construido:</h4>
-        <ScrollRevealChecklist items={pieza01Items} />
+        <div className="pt-2 space-y-2">
+          <h4 className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-300 font-semibold">
+            Lo que queda construido:
+          </h4>
+          <ScrollRevealChecklist items={pieza02Items} />
+        </div>
       </StickyScrollVideoSection>
 
-      {/* ── PIEZA 02: Cabecera ── */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-8 pb-2 pt-8">
-        <div className="flex items-center gap-4 mb-4">
-          <div className="w-12 h-12 rounded-xl bg-[#86BF58]/15 flex items-center justify-center text-[#86BF58] shrink-0">
-            <Database className="w-6 h-6" />
-          </div>
-          <div>
-            <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider block">Pieza 02</span>
-            <h3 className="text-2xl sm:text-4xl font-extrabold text-white">Datos vivos</h3>
-          </div>
-        </div>
-        <p className="text-lg sm:text-xl text-gray-200 leading-relaxed font-normal max-w-3xl">
-          Lo que cambia cada día: clientes, operaciones, incidencias, disponibilidad e histórico. Una arquitectura de datos limpia, aislada y preparada para nutrir a la IA.
-        </p>
-      </div>
-
-      {/* ── PIEZA 02: Vídeo ── */}
-      <StickyScrollVideoSection src="/videos/video-bbdd.mp4">
-        <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-300 font-semibold mb-2">Lo que queda construido:</h4>
-        <ScrollRevealChecklist items={pieza02Items} />
-      </StickyScrollVideoSection>
-
-      {/* ── PIEZA 03: Cabecera ── */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-8 pb-2 pt-8">
-        <div className="flex items-center gap-4 mb-4">
-          <div className="w-12 h-12 rounded-xl bg-[#86BF58]/15 flex items-center justify-center text-[#86BF58] shrink-0">
-            <Wrench className="w-6 h-6" />
-          </div>
-          <div>
-            <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider block">Pieza 03</span>
-            <h3 className="text-2xl sm:text-4xl font-extrabold text-white">Herramientas conectadas</h3>
-          </div>
-        </div>
-        <p className="text-lg sm:text-xl text-gray-200 leading-relaxed font-normal max-w-3xl">
-          Las aplicaciones por las que tu equipo consulta, introduce y utiliza la información diaria sin duplicar tareas ni introducir datos a mano.
-        </p>
-      </div>
-
-      {/* ── PIEZA 03: Vídeo ── */}
+      {/* ── PIEZA 03 ── */}
       <StickyScrollVideoSection src="/videos/video-apps.mp4">
-        <h4 className="text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-300 font-semibold mb-2">Lo que queda construido:</h4>
-        <ScrollRevealChecklist items={pieza03Items} />
+        <div className="space-y-3">
+          <div className="flex items-center gap-3">
+            <div className="w-11 h-11 rounded-xl bg-[#86BF58]/20 flex items-center justify-center text-[#86BF58] shrink-0">
+              <Wrench className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="text-xs font-mono font-bold text-[#86BF58] uppercase tracking-wider block">Pieza 03</span>
+              <h3 className="text-2xl sm:text-4xl font-extrabold text-white">Herramientas conectadas</h3>
+            </div>
+          </div>
+          <p className="text-base sm:text-lg text-gray-100 leading-relaxed font-normal max-w-3xl">
+            Las aplicaciones por las que tu equipo consulta, introduce y utiliza la información diaria sin duplicar tareas ni introducir datos a mano.
+          </p>
+        </div>
+
+        <div className="pt-2 space-y-2">
+          <h4 className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-wider text-gray-300 font-semibold">
+            Lo que queda construido:
+          </h4>
+          <ScrollRevealChecklist items={pieza03Items} />
+        </div>
       </StickyScrollVideoSection>
 
       {/* ── Secciones finales ── */}
