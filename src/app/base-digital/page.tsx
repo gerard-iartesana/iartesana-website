@@ -115,8 +115,8 @@ export default function BaseDigitalPage() {
       </div>
 
       {/* ── PIEZA 01 ── */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14 space-y-4">
-        <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14 space-y-4">
+        <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#86BF58] tracking-tight">
           Contexto estable
         </h3>
         <p className="text-lg sm:text-xl lg:text-2xl text-gray-200 leading-relaxed font-normal max-w-3xl">
@@ -132,8 +132,8 @@ export default function BaseDigitalPage() {
       </StickyScrollVideoSection>
 
       {/* ── PIEZA 02 ── */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14 space-y-4">
-        <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14 space-y-4">
+        <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#86BF58] tracking-tight">
           Datos vivos
         </h3>
         <p className="text-lg sm:text-xl lg:text-2xl text-gray-200 leading-relaxed font-normal max-w-3xl">
@@ -149,8 +149,8 @@ export default function BaseDigitalPage() {
       </StickyScrollVideoSection>
 
       {/* ── PIEZA 03 ── */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14 space-y-4">
-        <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14 space-y-4">
+        <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#86BF58] tracking-tight">
           Herramientas conectadas
         </h3>
         <p className="text-lg sm:text-xl lg:text-2xl text-gray-200 leading-relaxed font-normal max-w-3xl">

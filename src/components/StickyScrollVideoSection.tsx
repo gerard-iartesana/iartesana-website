@@ -112,8 +112,8 @@ export default function StickyScrollVideoSection({
         />
 
         {/* Contenido sobre el vídeo */}
-        <div className="absolute inset-0 flex items-start justify-center pt-6 sm:pt-8 px-4 sm:px-8 z-10" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
-          <div className="w-full max-w-4xl mx-auto text-white space-y-6">
+        <div className="absolute inset-0 flex items-start justify-center pt-6 sm:pt-8 z-10" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
+          <div className="w-full max-w-4xl mx-auto px-4 sm:px-8 text-white space-y-6">
             {children}
           </div>
         </div>
