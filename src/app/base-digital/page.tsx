@@ -38,79 +38,80 @@ const pieza03Items = [
 export default function BaseDigitalPage() {
   return (
     <div className="text-[#E2E8F0] bg-[#080A0E]">
-      {/* ── Hero con vídeo de fondo idéntico al estilo de la página principal ── */}
-      <section className="relative pt-28 sm:pt-36 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center space-y-6 flex flex-col justify-center items-center">
-        <HeroVideo src="/videos/video-base-digital-hero.mp4" />
+      {/* ── Hero y Secciones Introductorias con vídeo de fondo extendido ── */}
+      <section className="relative pt-28 sm:pt-36 pb-16 px-4 sm:px-6 lg:px-8">
+        <HeroVideo src="/videos/video-base-digital-hero.mp4" opacity={0.4} blendMode="screen" />
 
-        <span className="relative z-10 text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-100 font-semibold block [text-shadow:_0_2px_10px_rgba(0,0,0,0.95)]">
-          CAPA 01 · LOS CIMIENTOS
-        </span>
-        <h1 className="relative z-10 text-4xl sm:text-6xl font-extrabold text-white tracking-tight [text-shadow:_0_4px_24px_rgba(0,0,0,0.98)]">
-          Base digital
-        </h1>
-        <p className="relative z-10 text-lg sm:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed font-medium pt-2 [text-shadow:_0_2px_16px_rgba(0,0,0,0.98)]">
-          Marca, conocimiento, datos vivos y herramientas conectadas. La estructura digital estable sobre la que trabajan las personas y la inteligencia artificial sin generar caos.
-        </p>
+        <div className="relative z-10 max-w-5xl mx-auto space-y-16 sm:space-y-24">
+          {/* Header */}
+          <div className="text-center space-y-6 flex flex-col justify-center items-center">
+            <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-100 font-semibold block [text-shadow:_0_2px_10px_rgba(0,0,0,0.95)]">
+              CAPA 01 · LOS CIMIENTOS
+            </span>
+            <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight [text-shadow:_0_4px_24px_rgba(0,0,0,0.98)]">
+              Base digital
+            </h1>
+            <p className="text-lg sm:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed font-medium pt-2 [text-shadow:_0_2px_16px_rgba(0,0,0,0.98)]">
+              Marca, conocimiento, datos vivos y herramientas conectadas. La estructura digital estable sobre la que trabajan las personas y la inteligencia artificial sin generar caos.
+            </p>
+          </div>
+
+          {/* Frase clave */}
+          <div className="text-center space-y-5 max-w-3xl mx-auto py-2">
+            <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
+              PRINCIPIO DE IMPLANTACIÓN
+            </span>
+            <p className="text-2xl sm:text-3xl font-extrabold text-white leading-snug tracking-tight">
+              Revisamos lo que ya te funciona, qué puede conectarse y qué necesita ordenarse.
+            </p>
+            <p className="text-base sm:text-lg text-[#86BF58] font-semibold pt-1">
+              Cuando la Base Digital es sana se implanta la Inteligencia Artificial.
+            </p>
+          </div>
+
+          {/* Dos Certezas */}
+          <div className="space-y-8">
+            <div className="text-center space-y-2">
+              <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
+                GARANTÍAS OPERATIVAS
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Dos certezas sobre la Base Digital</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-[#86BF58] shrink-0" />
+                  <h3 className="text-xl font-bold text-white">1. Sirve al equipo humano desde el primer día</h3>
+                </div>
+                <p className="text-base text-gray-300 leading-relaxed font-normal pl-9">
+                  Un manual de buenas prácticas, un inventario claro y un protocolo de incidencias son útiles hoy mismo para tus empleados, aunque nunca se implantase un agente de IA.
+                </p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <RefreshCw className="w-6 h-6 text-[#86BF58] shrink-0" />
+                  <h3 className="text-xl font-bold text-white">2. No hay que rehacer la empresa desde cero</h3>
+                </div>
+                <p className="text-base text-gray-300 leading-relaxed font-normal pl-9">
+                  Aprovechamos las herramientas que tu plantilla ya domina y construimos las pasarelas de conexión necesarias en lugar de obligarte a cambiar de software.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* ── Secciones principales sin marcos ni pastillas ── */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24 pb-4 pt-6">
-
-        {/* Frase clave */}
-        <div className="text-center space-y-5 max-w-3xl mx-auto py-2">
-          <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
-            PRINCIPIO DE IMPLANTACIÓN
-          </span>
-          <p className="text-2xl sm:text-3xl font-extrabold text-white leading-snug tracking-tight">
-            Revisamos lo que ya te funciona, qué puede conectarse y qué necesita ordenarse.
-          </p>
-          <p className="text-base sm:text-lg text-[#86BF58] font-semibold pt-1">
-            Cuando la Base Digital es sana se implanta la Inteligencia Artificial.
-          </p>
-        </div>
-
-        {/* Dos Certezas */}
-        <div className="space-y-8">
-          <div className="text-center space-y-2">
-            <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
-              GARANTÍAS OPERATIVAS
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Dos certezas sobre la Base Digital</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-6 h-6 text-[#86BF58] shrink-0" />
-                <h3 className="text-xl font-bold text-white">1. Sirve al equipo humano desde el primer día</h3>
-              </div>
-              <p className="text-base text-gray-300 leading-relaxed font-normal pl-9">
-                Un manual de buenas prácticas, un inventario claro y un protocolo de incidencias son útiles hoy mismo para tus empleados, aunque nunca se implantase un agente de IA.
-              </p>
-            </div>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <RefreshCw className="w-6 h-6 text-[#86BF58] shrink-0" />
-                <h3 className="text-xl font-bold text-white">2. No hay que rehacer la empresa desde cero</h3>
-              </div>
-              <p className="text-base text-gray-300 leading-relaxed font-normal pl-9">
-                Aprovechamos las herramientas que tu plantilla ya domina y construimos las pasarelas de conexión necesarias en lugar de obligarte a cambiar de software.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Título de sección */}
-        <div className="text-center space-y-3">
-          <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
-            ESTRUCTURA MODULAR
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Las 3 piezas de los cimientos
-          </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto font-normal">
-            Todo lo que construimos se traduce en soluciones concretas para el negocio, nunca en tecnología abstracta.
-          </p>
-        </div>
+      {/* ── Título de las 3 piezas ── */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3 pt-12 pb-6">
+        <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
+          ESTRUCTURA MODULAR
+        </span>
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          Las 3 piezas de los cimientos
+        </h2>
+        <p className="text-lg text-gray-300 max-w-2xl mx-auto font-normal">
+          Todo lo que construimos se traduce en soluciones concretas para el negocio, nunca en tecnología abstracta.
+        </p>
       </div>
 
       {/* ── PIEZA 01 ── */}
