@@ -68,36 +68,6 @@ export default function BaseDigitalPage() {
               Cuando la Base Digital es sana se implanta la Inteligencia Artificial.
             </p>
           </div>
-
-          {/* Dos Certezas */}
-          <div className="space-y-8">
-            <div className="text-center space-y-2">
-              <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
-                GARANTÍAS OPERATIVAS
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Dos certezas sobre la Base Digital</h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-[#86BF58] shrink-0" />
-                  <h3 className="text-xl font-bold text-white">1. Sirve al equipo humano desde el primer día</h3>
-                </div>
-                <p className="text-base text-gray-300 leading-relaxed font-normal pl-9">
-                  Un manual de buenas prácticas, un inventario claro y un protocolo de incidencias son útiles hoy mismo para tus empleados, aunque nunca se implantase un agente de IA.
-                </p>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <RefreshCw className="w-6 h-6 text-[#86BF58] shrink-0" />
-                  <h3 className="text-xl font-bold text-white">2. No hay que rehacer la empresa desde cero</h3>
-                </div>
-                <p className="text-base text-gray-300 leading-relaxed font-normal pl-9">
-                  Aprovechamos las herramientas que tu plantilla ya domina y construimos las pasarelas de conexión necesarias en lugar de obligarte a cambiar de software.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
