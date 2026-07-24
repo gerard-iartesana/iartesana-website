@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import { Compass, Database, Wrench, CheckCircle2, ArrowRight, RefreshCw } from 'lucide-react';
 import StickyScrollVideoSection from '@/components/StickyScrollVideoSection';
 import ScrollRevealChecklist from '@/components/ScrollRevealChecklist';
+import HeroVideo from '@/components/HeroVideo';
 
 export const metadata: Metadata = {
   title: 'Base Digital · Capa 01 | iARTESANA',
@@ -36,21 +37,24 @@ const pieza03Items = [
 
 export default function BaseDigitalPage() {
   return (
-    <div className="text-[#E2E8F0] bg-[#080A0E]">
+    <div className="text-[#E2E8F0] bg-[#080A0E] overflow-hidden">
+      {/* ── Hero con vídeo de fondo idéntico al estilo de la página principal ── */}
+      <section className="relative pt-28 sm:pt-36 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center space-y-6 flex flex-col justify-center items-center">
+        <HeroVideo src="/videos/video-base-digital-hero.mp4" />
+
+        <span className="relative z-10 text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-100 font-semibold block [text-shadow:_0_2px_10px_rgba(0,0,0,0.95)]">
+          CAPA 01 · LOS CIMIENTOS
+        </span>
+        <h1 className="relative z-10 text-4xl sm:text-6xl font-extrabold text-white tracking-tight [text-shadow:_0_4px_24px_rgba(0,0,0,0.98)]">
+          Base digital
+        </h1>
+        <p className="relative z-10 text-lg sm:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed font-medium pt-2 [text-shadow:_0_2px_16px_rgba(0,0,0,0.98)]">
+          Marca, conocimiento, datos vivos y herramientas conectadas. La estructura digital estable sobre la que trabajan las personas y la inteligencia artificial sin generar caos.
+        </p>
+      </section>
+
       {/* ── Secciones principales sin marcos ni pastillas ── */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24 pt-28 sm:pt-36 pb-4">
-        {/* Header */}
-        <div className="text-center space-y-4">
-          <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
-            CAPA 01 · LOS CIMIENTOS
-          </span>
-          <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
-            Base digital
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-normal pt-2">
-            Marca, conocimiento, datos vivos y herramientas conectadas. La estructura digital estable sobre la que trabajan las personas y la inteligencia artificial sin generar caos.
-          </p>
-        </div>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24 pb-4 pt-6">
 
         {/* Frase clave */}
         <div className="text-center space-y-5 max-w-3xl mx-auto py-2">

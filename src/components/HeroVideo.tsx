@@ -2,7 +2,11 @@
 
 import React, { useEffect, useRef } from 'react';
 
-export default function HeroVideo() {
+interface HeroVideoProps {
+  src?: string;
+}
+
+export default function HeroVideo({ src = '/hero-bg.mp4' }: HeroVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -25,7 +29,7 @@ export default function HeroVideo() {
         playsInline
         className="w-full h-full object-cover opacity-100"
       >
-        <source src="/hero-bg.mp4" type="video/mp4" />
+        <source src={src} type="video/mp4" />
       </video>
 
       {/* Máscara radial: atenúa el vídeo al ~50% en el centro (detrás del texto) y se abre al 100% de intensidad hacia los bordes */}
