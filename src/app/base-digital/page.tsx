@@ -37,7 +37,7 @@ const pieza03Items = [
 
 export default function BaseDigitalPage() {
   return (
-    <div className="text-[#E2E8F0] bg-[#080A0E] overflow-hidden">
+    <div className="text-[#E2E8F0] bg-[#080A0E]">
       {/* ── Hero con vídeo de fondo idéntico al estilo de la página principal ── */}
       <section className="relative pt-28 sm:pt-36 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center space-y-6 flex flex-col justify-center items-center">
         <HeroVideo src="/videos/video-base-digital-hero.mp4" />
