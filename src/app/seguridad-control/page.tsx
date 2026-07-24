@@ -100,7 +100,7 @@ export default function SeguridadControlPage() {
         </p>
         <Link
           href="/agendar"
-          className="inline-flex items-center gap-3 px-9 py-4 rounded-full text-base font-bold text-white bg-[#7361A8] hover:bg-[#7361A8]/90 transition-all shadow-lg shadow-[#7361A8]/20"
+          className="inline-flex items-center gap-3 px-9 py-4 rounded-full text-base font-normal text-white bg-[#7361A8] hover:bg-[#7361A8]/90 transition-all shadow-lg shadow-[#7361A8]/20"
         >
           <span>Reservar primera sesión</span>
           <ArrowRight className="w-5 h-5" />
