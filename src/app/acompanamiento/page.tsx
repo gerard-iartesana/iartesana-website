@@ -2,129 +2,208 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
-import { Users, GraduationCap, LifeBuoy, TrendingUp, ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, GraduationCap, LifeBuoy, TrendingUp } from 'lucide-react';
+import HeroVideo from '@/components/HeroVideo';
+import StickyScrollVideoSection from '@/components/StickyScrollVideoSection';
+import ScrollRevealChecklist from '@/components/ScrollRevealChecklist';
 
 export const metadata: Metadata = {
   title: 'Acompañamiento Humano · Personas Cerca | iARTESANA',
   description: 'Adopción real, formación para el equipo, soporte directo con David y Gerard y evolución continua del sistema.',
 };
 
+const pieza01Items = [
+  { title: 'Sesiones prácticas:', description: 'formación aplicada sobre casos de uso reales de vuestro día a día.' },
+  { title: 'Guías de uso rápido:', description: 'manuales operativos sencillos para la consulta diaria de la plantilla.' },
+  { title: 'Autonomía de equipo:', description: 'capacidad para operar y utilizar las herramientas con confianza total.' },
+];
+
+const pieza02Items = [
+  { title: 'Atención personalizada:', description: 'trato humano directo por canales fluidos de comunicación.' },
+  { title: 'Resolución ágil:', description: 'respuesta directa de los arquitectos del sistema sin intermediarios.' },
+  { title: 'Supervisión compartida:', description: 'revisión conjunta de la evolución y uso real de las herramientas.' },
+];
+
+const pieza03Items = [
+  { title: 'Ajuste de modelos:', description: 'refinamiento constante del contexto a medida que la empresa cambia.' },
+  { title: 'Nuevas integraciones:', description: 'incorporación progresiva de nuevos módulos y herramientas.' },
+  { title: 'Escalabilidad natural:', description: 'un sistema que crece al ritmo real de tu plantilla y operaciones.' },
+];
+
+const serviciosAcompanamiento = [
+  {
+    icon: GraduationCap,
+    titulo: 'Formación de equipo',
+    descripcion: 'Para que tu personal entienda las herramientas, sepa cuándo utilizarlas, conozca sus límites y no dependa de nosotros para cada acción.',
+  },
+  {
+    icon: LifeBuoy,
+    titulo: 'Soporte con nombre propio',
+    descripcion: 'Hablas directamente con quien conoce tu implantación. Sin sistemas de tickets deshumanizados ni agentes automáticos de primera línea.',
+  },
+  {
+    icon: TrendingUp,
+    titulo: 'Evolución continua',
+    descripcion: 'A medida que tu negocio crece o surgen nuevos retos operacionales, ajustamos los modelos y conectamos nuevos módulos.',
+  },
+];
+
 export default function AcompanamientoPage() {
-  const serviciosAcompanamiento = [
-    {
-      icon: GraduationCap,
-      titulo: 'Formación de equipo',
-      descripcion: 'Para que tu personal entienda las herramientas, sepa cuándo utilizarlas, conozca sus límites y no dependa de nosotros para cada acción.',
-    },
-    {
-      icon: LifeBuoy,
-      titulo: 'Soporte con nombre propio',
-      descripcion: 'Hablas directamente con quien conoce tu implantación. Sin sistemas de tickets deshumanizados ni agentes automáticos de primera línea.',
-    },
-    {
-      icon: TrendingUp,
-      titulo: 'Evolución continua',
-      descripcion: 'A medida que tu negocio crece o surgen nuevos retos operacionales, ajustamos los modelos y conectamos nuevos módulos.',
-    },
-  ];
-
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 pb-24 text-[#E2E8F0]">
-      {/* Header Section */}
-      <div className="text-center space-y-6 pt-8">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E15A9C]/10 border border-[#E15A9C]/30 text-xs font-mono text-[#E15A9C] font-bold">
-          <Users className="w-4 h-4" />
-          <span>CAPA 04 · PERSONAS CERCA</span>
+    <div className="text-[#E2E8F0] bg-[#080A0E]">
+      {/* ── Hero con vídeo de fondo ── */}
+      <section className="relative pt-28 sm:pt-36 pb-16 px-4 sm:px-6 lg:px-8">
+        <HeroVideo src="/videos/video-acompanamiento-hero.mp4" opacity={0.45} blendMode="screen" />
+
+        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8 flex flex-col justify-center items-center">
+          <span className="text-sm sm:text-base font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-100 font-semibold block [text-shadow:_0_2px_10px_rgba(0,0,0,0.95)]">
+            CAPA 04
+          </span>
+          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white tracking-tight [text-shadow:_0_4px_24px_rgba(0,0,0,0.98)]">
+            Acompañamiento humano
+          </h1>
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 max-w-3xl mx-auto leading-relaxed font-normal [text-shadow:_0_2px_16px_rgba(0,0,0,0.98)]">
+            No vendemos software y nos vamos. Garantizamos que el sistema se use de verdad con formación práctica para tu equipo, soporte directo con David y Gerard y evolución continua del sistema.
+          </p>
+
+          <div className="space-y-4 pt-4 max-w-3xl mx-auto">
+            <p className="text-2xl sm:text-3xl font-extrabold text-white leading-snug tracking-tight">
+              Artesanía no significa hacerlo todo a mano. Significa saber qué cosas no se deben automatizar.
+            </p>
+            <p className="text-base sm:text-lg text-[#E15A9C] font-semibold">
+              Garantizamos la adopción real y la autonomía de tu equipo desde el primer día.
+            </p>
+          </div>
         </div>
+      </section>
 
-        <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
-          Acompañamiento humano
-        </h1>
-
-        <p className="text-xl sm:text-2xl text-[#E15A9C] font-semibold italic">
-          "No vendemos software y nos vamos. Garantizamos que el sistema se use de verdad."
-        </p>
-
-        <p className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-          Formación, soporte directo y evolución permanente. El valor real no está en la entrega de la herramienta, sino en su adopción por parte del equipo.
-        </p>
-      </div>
-
-      {/* Frase Destacada de la Casa */}
-      <div className="p-10 sm:p-14 rounded-3xl bg-gradient-to-r from-surface-card via-[#1A1322] to-surface-card border-l-8 border-l-[#E15A9C] border border-[#E15A9C]/40 text-center space-y-4 shadow-xl">
-        <span className="text-xs font-mono uppercase tracking-widest text-[#E15A9C] font-bold">Tesis de Marca</span>
-        <h2 className="text-2xl sm:text-4xl font-extrabold text-white leading-snug max-w-4xl mx-auto">
-          "Artesanía no significa hacerlo todo a mano. Significa saber qué cosas no se deben automatizar."
+      {/* ── Título de las 3 piezas de acompañamiento ── */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3 pt-12 pb-6">
+        <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
+          ADOPCIÓN Y PERSONAS
+        </span>
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          Las 3 piezas del acompañamiento
         </h2>
-      </div>
-
-      {/* Servicios de Acompañamiento */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {serviciosAcompanamiento.map((item, index) => {
-          const Icon = item.icon;
-          return (
-            <div key={index} className="p-8 rounded-3xl bg-surface-card border border-surface-border space-y-4 shadow-lg">
-              <div className="w-14 h-14 rounded-2xl bg-[#E15A9C]/15 border border-[#E15A9C]/30 flex items-center justify-center text-[#E15A9C]">
-                <Icon className="w-7 h-7" />
-              </div>
-              <h3 className="text-xl font-bold text-white">{item.titulo}</h3>
-              <p className="text-sm sm:text-base text-gray-200 leading-relaxed">{item.descripcion}</p>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Equipo Directo: David & Gerard a Gran Escala */}
-      <div className="space-y-8">
-        <div className="text-center space-y-2">
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white">Quienes están detrás</h2>
-          <p className="text-base text-gray-300">Sin intermediarios ni agencias subcontratadas.</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* David */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-surface-border flex flex-col sm:flex-row items-center sm:items-start gap-6 shadow-xl">
-            <div className="relative w-36 h-36 rounded-2xl overflow-hidden shrink-0 border-2 border-[#86BF58] shadow-2xl">
-              <Image src="/team/david.jpg" alt="David" fill className="object-cover" />
-            </div>
-            <div className="space-y-3 text-center sm:text-left">
-              <h3 className="text-2xl sm:text-3xl font-bold text-white">David</h3>
-              <p className="text-xs font-mono text-[#86BF58] font-bold">Estrategia & Arquitectura de Conocimiento</p>
-              <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
-                Especialista en estructuración de procesos, contexto de negocio e identidad. Garantiza que la IA refleje fielmente la cultura y los criterios reales de la empresa.
-              </p>
-            </div>
-          </div>
-
-          {/* Gerard */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-surface-border flex flex-col sm:flex-row items-center sm:items-start gap-6 shadow-xl">
-            <div className="relative w-36 h-36 rounded-2xl overflow-hidden shrink-0 border-2 border-[#38A8E0] shadow-2xl">
-              <Image src="/team/gerard.jpg" alt="Gerard" fill className="object-cover" />
-            </div>
-            <div className="space-y-3 text-center sm:text-left">
-              <h3 className="text-2xl sm:text-3xl font-bold text-white">Gerard</h3>
-              <p className="text-xs font-mono text-[#38A8E0] font-bold">Ingeniería de Sistemas & Datos</p>
-              <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
-                Desarrollador de infraestructura, bases de datos y agentes autónomos. Garantiza el rendimiento técnico, la seguridad en la nube, la explicabilidad y la soberanía.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* CTA Box */}
-      <div className="text-center p-12 rounded-3xl bg-gradient-to-r from-surface-card via-surface-hover to-surface-card border border-[#E15A9C]/40 space-y-6 shadow-2xl">
-        <h3 className="text-3xl font-extrabold text-white">¿Hablamos directamente?</h3>
-        <p className="text-base text-gray-200 max-w-lg mx-auto">
-          Reserva una primera conversación de 45 minutos con David y Gerard.
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          Formación continua, atención personal sin intermediarios y ajuste permanente al crecimiento del negocio.
         </p>
-        <Link
-          href="/agendar"
-          className="inline-flex items-center gap-3 px-9 py-4 rounded-full text-base font-normal text-white bg-[#E15A9C] hover:bg-[#E15A9C]/90 transition-all shadow-lg shadow-[#E15A9C]/20"
-        >
-          <span>Reservar primera sesión</span>
-          <ArrowRight className="w-5 h-5" />
-        </Link>
+      </div>
+
+      {/* ── PIEZA 01 ── */}
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14 space-y-4">
+        <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#E15A9C] tracking-tight">
+          Formación y autonomía
+        </h3>
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 leading-relaxed font-normal max-w-3xl">
+          Capacitamos a tu equipo para que entienda cómo interactuar con las herramientas de IA, cuándo utilizarlas y cuáles son sus límites, sin depender de externos.
+        </p>
+      </div>
+
+      <StickyScrollVideoSection src="/videos/video-base.mp4">
+        <h4 className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-300 font-bold mb-4">
+          Lo que queda construido:
+        </h4>
+        <ScrollRevealChecklist items={pieza01Items} />
+      </StickyScrollVideoSection>
+
+      {/* ── PIEZA 02 ── */}
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14 space-y-4">
+        <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#E15A9C] tracking-tight">
+          Soporte con nombre propio
+        </h3>
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 leading-relaxed font-normal max-w-3xl">
+          Contacto directo y constante con David y Gerard. Eliminamos las plataformas de tickets deshumanizadas para ofrecerte respuestas rápidas de quienes mejor conocen tu sistema.
+        </p>
+      </div>
+
+      <StickyScrollVideoSection src="/videos/video-apps.mp4">
+        <h4 className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-300 font-bold mb-4">
+          Lo que queda construido:
+        </h4>
+        <ScrollRevealChecklist items={pieza02Items} />
+      </StickyScrollVideoSection>
+
+      {/* ── PIEZA 03 ── */}
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-8 pb-4 pt-10 sm:pt-14 space-y-4">
+        <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#E15A9C] tracking-tight">
+          Evolución continua
+        </h3>
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 leading-relaxed font-normal max-w-3xl">
+          A medida que tu negocio crece, aparecen nuevos productos o cambian tus procesos, ajustamos los modelos de IA y conectamos nuevas capacidades sin rehacer el sistema.
+        </p>
+      </div>
+
+      <StickyScrollVideoSection src="/videos/video-bbdd.mp4">
+        <h4 className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-300 font-bold mb-4">
+          Lo que queda construido:
+        </h4>
+        <ScrollRevealChecklist items={pieza03Items} />
+      </StickyScrollVideoSection>
+
+      {/* ── Secciones finales ── */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24 pt-16 pb-24 text-center">
+        {/* Equipo Directo: David & Gerard */}
+        <div className="space-y-8 max-w-4xl mx-auto">
+          <span className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-400 font-normal block text-center">
+            EQUIPO DIRECTO
+          </span>
+          <h3 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Quienes están detrás del acompañamiento
+          </h3>
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 max-w-2xl mx-auto leading-relaxed font-normal">
+            Sin intermediarios ni agencias subcontratadas. Trato directo con los fundadores.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left pt-4">
+            {/* David */}
+            <div className="p-8 rounded-2xl bg-[#0C1017] border border-gray-800 flex flex-col sm:flex-row items-center sm:items-start gap-6 shadow-xl">
+              <div className="relative w-32 h-32 rounded-xl overflow-hidden shrink-0 border-2 border-[#86BF58] shadow-2xl">
+                <Image src="/team/david.jpg" alt="David" fill className="object-cover" />
+              </div>
+              <div className="space-y-2 text-center sm:text-left">
+                <h4 className="text-2xl font-bold text-white">David</h4>
+                <p className="text-xs font-mono text-[#86BF58] font-semibold">Estrategia & Arquitectura de Conocimiento</p>
+                <p className="text-sm text-gray-300 leading-relaxed font-normal pt-1">
+                  Especialista en estructuración de procesos, contexto de negocio e identidad. Garantiza que la IA refleje fielmente la cultura y los criterios reales de la empresa.
+                </p>
+              </div>
+            </div>
+
+            {/* Gerard */}
+            <div className="p-8 rounded-2xl bg-[#0C1017] border border-gray-800 flex flex-col sm:flex-row items-center sm:items-start gap-6 shadow-xl">
+              <div className="relative w-32 h-32 rounded-xl overflow-hidden shrink-0 border-2 border-[#38A8E0] shadow-2xl">
+                <Image src="/team/gerard.jpg" alt="Gerard" fill className="object-cover" />
+              </div>
+              <div className="space-y-2 text-center sm:text-left">
+                <h4 className="text-2xl font-bold text-white">Gerard</h4>
+                <p className="text-xs font-mono text-[#38A8E0] font-semibold">Ingeniería de Sistemas & Datos</p>
+                <p className="text-sm text-gray-300 leading-relaxed font-normal pt-1">
+                  Desarrollador de infraestructura, bases de datos y agentes autónomos. Garantiza el rendimiento técnico, la seguridad en la nube, la explicabilidad y la soberanía.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA final */}
+        <div className="space-y-6 max-w-3xl mx-auto pt-4">
+          <h3 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+            ¿Hablamos directamente?
+          </h3>
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 max-w-xl mx-auto leading-relaxed font-normal">
+            Reserva una primera conversación de 45 minutos con David y Gerard para auditar tu punto de partida.
+          </p>
+          <div className="pt-2">
+            <Link
+              href="/agendar"
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-lg sm:text-xl font-normal text-white bg-[#0A3D62] hover:bg-[#009DF8] hover:shadow-[0_0_35px_rgba(0,157,248,1)] hover:scale-[1.03] transition-all duration-300 shadow-[0_8px_25px_rgba(0,0,0,0.7)]"
+            >
+              <span>Reserva primera reunión</span>
+              <ArrowRight className="w-5 h-5 text-white" />
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
