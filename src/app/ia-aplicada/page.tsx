@@ -129,7 +129,7 @@ export default function IaAplicadaPage() {
         </p>
       </div>
 
-      <StickyScrollVideoSection src="/videos/video-apps.mp4">
+      <StickyScrollVideoSection src="/videos/video-automatizacion.mp4">
         <h4 className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-300 font-bold mb-4">
           Lo que queda construido:
         </h4>
