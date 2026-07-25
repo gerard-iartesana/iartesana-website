@@ -4,9 +4,10 @@ import React, { useRef, useEffect, useState } from 'react';
 
 interface ScrollRevealChecklistProps {
   items: { title: string; description: string }[];
+  accentColor?: string;
 }
 
-export default function ScrollRevealChecklist({ items }: ScrollRevealChecklistProps) {
+export default function ScrollRevealChecklist({ items, accentColor = '#86BF58' }: ScrollRevealChecklistProps) {
   const listRef = useRef<HTMLDivElement>(null);
   const [visibleCount, setVisibleCount] = useState(0);
 
@@ -15,26 +16,21 @@ export default function ScrollRevealChecklist({ items }: ScrollRevealChecklistPr
     if (!el) return;
 
     const onScroll = () => {
-      // Find the parent StickyScrollVideoSection wrapper (the section with height: 500vh)
       const section = el.closest('[data-video-section]');
       if (!section) return;
 
       const rect = section.getBoundingClientRect();
       const wh = window.innerHeight;
 
-      // Section scroll progress: 0 = just entered, 1 = fully scrolled past
       const totalScroll = rect.height - wh;
       if (totalScroll <= 0) return;
       const scrolled = -rect.top;
       const sectionProgress = Math.max(0, Math.min(1, scrolled / totalScroll));
 
-      // Items appear spread across 20%-90% of the section scroll
-      // This gives time for the video to advance between each item
       const startAt = 0.0;
       const endAt = 0.65;
       const itemProgress = Math.max(0, Math.min(1, (sectionProgress - startAt) / (endAt - startAt)));
 
-      // Map to number of visible items
       const count = Math.floor(itemProgress * (items.length + 0.8));
       setVisibleCount(Math.min(items.length, count));
     };
@@ -45,7 +41,6 @@ export default function ScrollRevealChecklist({ items }: ScrollRevealChecklistPr
     return () => window.removeEventListener('scroll', onScroll);
   }, [items.length]);
 
-  // Layout order: left(0), right(1), left(2), right(3), center(4)
   const getPosition = (index: number, total: number) => {
     if (index === total - 1 && total % 2 === 1) return 'center';
     return index % 2 === 0 ? 'left' : 'right';
@@ -68,15 +63,13 @@ export default function ScrollRevealChecklist({ items }: ScrollRevealChecklistPr
                 ${isCenter ? 'sm:col-span-2 sm:justify-center sm:max-w-xl sm:mx-auto' : ''}
               `}
             >
-              {/* Green square indicator */}
+              {/* Square indicator dynamically styled with accentColor */}
               <div
-                className={`
-                  w-3.5 h-3.5 rounded-[2px] shrink-0 mt-2.5 transition-all duration-700
-                  ${isVisible
-                    ? 'bg-[#86BF58] shadow-[0_0_14px_rgba(134,191,88,0.7)]'
-                    : 'bg-gray-700/50'
-                  }
-                `}
+                className="w-3.5 h-3.5 rounded-[2px] shrink-0 mt-2.5 transition-all duration-700"
+                style={{
+                  backgroundColor: isVisible ? accentColor : 'rgba(55, 65, 81, 0.5)',
+                  boxShadow: isVisible ? `0 0 14px ${accentColor}b3` : 'none',
+                }}
               />
               <span className="text-lg sm:text-xl lg:text-2xl text-gray-100 leading-relaxed">
                 <strong className="text-white">{item.title}</strong> {item.description}

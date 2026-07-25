@@ -91,7 +91,7 @@ export default function BaseDigitalPage() {
         <h4 className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-300 font-bold mb-4">
           Lo que queda construido:
         </h4>
-        <ScrollRevealChecklist items={pieza01Items} />
+        <ScrollRevealChecklist items={pieza01Items} accentColor="#86BF58" />
       </StickyScrollVideoSection>
 
       {/* ── PIEZA 02 ── */}
@@ -108,7 +108,7 @@ export default function BaseDigitalPage() {
         <h4 className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-300 font-bold mb-4">
           Lo que queda construido:
         </h4>
-        <ScrollRevealChecklist items={pieza02Items} />
+        <ScrollRevealChecklist items={pieza02Items} accentColor="#86BF58" />
       </StickyScrollVideoSection>
 
       {/* ── PIEZA 03 ── */}
@@ -125,7 +125,7 @@ export default function BaseDigitalPage() {
         <h4 className="text-xs sm:text-sm font-['Open_Sans',sans-serif] uppercase tracking-widest text-gray-300 font-bold mb-4">
           Lo que queda construido:
         </h4>
-        <ScrollRevealChecklist items={pieza03Items} />
+        <ScrollRevealChecklist items={pieza03Items} accentColor="#86BF58" />
       </StickyScrollVideoSection>
 
       {/* ── Secciones finales ── */}
