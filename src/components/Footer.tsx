@@ -73,7 +73,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <span>Soberanía de Datos</span>
             <span>•</span>
-            <span>Reglamento Europeo IA Ready</span>
+            <span>Arquitectura preparada para el Reglamento Europeo de IA</span>
           </div>
         </div>
       </div>

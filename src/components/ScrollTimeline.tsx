@@ -44,7 +44,7 @@ export default function ScrollTimeline() {
       darkColor: '#3A2D5C',
       hoverColor: '#8B76C6',
       mainIdea: 'Construimos para que la empresa conserve el control de lo suyo.',
-      description: 'Garantía de portabilidad absoluta, trazabilidad forense de cada acción de IA y preparación estructural ante la normativa europea (EU AI Act).',
+      description: 'Garantía de portabilidad absoluta, trazabilidad forense de cada acción de IA y arquitectura preparada para alinearse con el Reglamento Europeo de IA (EU AI Act).',
       exploreUrl: '/seguridad-control',
       results: [
         'Datos estructurados y portables',

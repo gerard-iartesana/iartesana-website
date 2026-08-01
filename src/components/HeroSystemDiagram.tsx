@@ -43,8 +43,8 @@ export default function HeroSystemDiagram() {
       bgGlow: 'rgba(115, 97, 168, 0.15)',
       borderColor: 'rgba(115, 97, 168, 0.4)',
       icon: ShieldCheck,
-      description: 'Garantía de portabilidad de datos, trazabilidad completa de cada acción y preparación para la normativa europea de IA (EU AI Act).',
-      features: ['Datos estructurados y exportables', 'Trazabilidad y explicabilidad total', 'Reglamento Europeo IA Ready'],
+      description: 'Garantía de portabilidad de datos, trazabilidad completa y arquitectura preparada para alinearse con el Reglamento Europeo de IA (EU AI Act).',
+      features: ['Datos estructurados y exportables', 'Trazabilidad y explicabilidad total', 'Alineados con Reglamento Europeo de IA'],
       href: '/seguridad-control',
     },
     {

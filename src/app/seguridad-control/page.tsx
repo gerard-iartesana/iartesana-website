@@ -5,11 +5,12 @@ import { ArrowRight, Key, Database, Search, FileCheck, ShieldCheck } from 'lucid
 import HeroVideo from '@/components/HeroVideo';
 import StickyScrollVideoSection from '@/components/StickyScrollVideoSection';
 import ScrollRevealChecklist from '@/components/ScrollRevealChecklist';
+import PreparationExplanationModal from '@/components/PreparationExplanationModal';
 
 export const metadata: Metadata = {
   title: 'Seguridad y Control · Capa 03 | iARTESANA',
   description:
-    'Control de accesos, portabilidad de datos, trazabilidad forense, explicabilidad y preparación para el Reglamento Europeo de IA (EU AI Act).',
+    'Control de accesos, portabilidad de datos, trazabilidad forense, explicabilidad y arquitectura preparada para alinearse con el Reglamento Europeo de IA (EU AI Act).',
   alternates: {
     canonical: '/seguridad-control',
   },
@@ -54,7 +55,7 @@ const pieza02Items = [
 
 const pieza03Items = [
   { title: 'Portabilidad sin ataduras:', description: 'exportación completa de tu información sin dependencia de proveedor.' },
-  { title: 'Alineación EU AI Act:', description: 'cumplimiento estructural de las exigencias europeas sobre Inteligencia Artificial.' },
+  { title: 'Alineación EU AI Act:', description: 'arquitectura preparada para alinearse con el Reglamento Europeo de IA.' },
   { title: 'Sostenibilidad a largo plazo:', description: 'sistemas construidos para perdurar ante cambios tecnológicos.' },
 ];
 
@@ -82,7 +83,7 @@ const pilares = [
   {
     icon: ShieldCheck,
     titulo: '5. Preparación normativa',
-    descripcion: 'Estructuración alineada con el Reglamento Europeo de IA (EU AI Act). Te dejamos preparado para cumplir las exigencias normativas.',
+    descripcion: 'Arquitectura preparada para alinearse con el Reglamento Europeo de IA. Te dejamos preparado para cumplir las exigencias según tu papel y riesgo.',
   },
 ];
 
@@ -168,8 +169,11 @@ export default function SeguridadControlPage() {
           Portabilidad y normativa
         </h3>
         <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 leading-relaxed font-normal max-w-3xl">
-          Tus datos se estructuran en formatos abiertos e independientes de cualquier software propietario, dejándote 100% preparado para la regulación europea (EU AI Act).
+          Tus datos se estructuran en formatos abiertos e independientes de cualquier software propietario. Tu arquitectura queda preparada para alinearse con el Reglamento Europeo de IA (EU AI Act).
         </p>
+        <div className="pt-2">
+          <PreparationExplanationModal buttonText="Qué significa esta preparación" variant="button" />
+        </div>
       </div>
 
       <StickyScrollVideoSection src="/videos/video-apps.mp4">
@@ -194,23 +198,35 @@ export default function SeguridadControlPage() {
             {pilares.map((pilar, index) => {
               const Icon = pilar.icon;
               return (
-                <div key={index} className="p-6 rounded-2xl bg-[#0C1017] border border-gray-800 space-y-3 shadow-lg">
-                  <div className="w-12 h-12 rounded-xl bg-[#7361A8]/20 border border-[#7361A8]/30 flex items-center justify-center text-[#7361A8]">
-                    <Icon className="w-6 h-6" />
+                <div key={index} className="p-6 rounded-2xl bg-[#0C1017] border border-gray-800 space-y-3 shadow-lg flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="w-12 h-12 rounded-xl bg-[#7361A8]/20 border border-[#7361A8]/30 flex items-center justify-center text-[#7361A8]">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <h4 className="text-lg font-bold text-white">{pilar.titulo}</h4>
+                    <p className="text-sm text-gray-300 leading-relaxed font-normal">{pilar.descripcion}</p>
                   </div>
-                  <h4 className="text-lg font-bold text-white">{pilar.titulo}</h4>
-                  <p className="text-sm text-gray-300 leading-relaxed font-normal">{pilar.descripcion}</p>
+                  {index === 4 && (
+                    <div className="pt-2">
+                      <PreparationExplanationModal variant="link" buttonText="Qué significa esta preparación" />
+                    </div>
+                  )}
                 </div>
               );
             })}
 
             {/* 6th Card: Transparencia Legal */}
-            <div className="p-6 rounded-2xl bg-[#0C1017] border border-gray-800 space-y-3 text-left">
-              <span className="text-xs font-mono text-[#7361A8] font-bold block">Criterio Ético y Legal</span>
-              <h4 className="text-lg font-bold text-white">Transparencia legal</h4>
-              <p className="text-sm text-gray-300 leading-relaxed font-normal">
-                iARTESANA no es una asesoría jurídica. La promesa exacta es <em className="text-white font-semibold">"te dejamos preparado para cumplir"</em> las exigencias del Reglamento Europeo de IA, sin promesas vacías ni letra pequeña.
-              </p>
+            <div className="p-6 rounded-2xl bg-[#0C1017] border border-gray-800 space-y-3 text-left flex flex-col justify-between">
+              <div className="space-y-3">
+                <span className="text-xs font-mono text-[#7361A8] font-bold block">Criterio Ético y Legal</span>
+                <h4 className="text-lg font-bold text-white">Transparencia legal</h4>
+                <p className="text-sm text-gray-300 leading-relaxed font-normal">
+                  iARTESANA realiza consultoría e ingeniería. La propuesta exacta es construir una <em className="text-white font-semibold">«arquitectura preparada para alinearse con el Reglamento Europeo de IA»</em>, garantizando preparación técnica y organizativa real según tu papel y nivel de riesgo.
+                </p>
+              </div>
+              <div className="pt-2">
+                <PreparationExplanationModal variant="link" buttonText="Qué significa esta preparación" />
+              </div>
             </div>
           </div>
         </div>

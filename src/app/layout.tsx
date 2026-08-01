@@ -129,7 +129,7 @@ export default function RootLayout({
             itemOffered: {
               '@type': 'Service',
               name: 'Seguridad y Control',
-              description: 'Gobernanza de accesos, explicabilidad, trazabilidad forense y preparación para EU AI Act.',
+              description: 'Gobernanza de accesos, explicabilidad, trazabilidad forense y arquitectura preparada para alinearse con el Reglamento Europeo de IA.',
             },
           },
           {
