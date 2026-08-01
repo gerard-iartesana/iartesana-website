@@ -48,6 +48,7 @@ export default function ProcessStepsSection() {
         </>
       ),
       text: 'Análisis detallado de tu operativa, oportunidades de automatización y hoja de ruta con presupuesto cerrado.',
+      href: '/diagnostico',
       border: 'border-[#38A8E0]/70 shadow-[0_0_20px_rgba(56,168,224,0.3)]',
       triggerAt: 0.4,
     },
@@ -83,18 +84,31 @@ export default function ProcessStepsSection() {
           return (
             <div
               key={idx}
-              className={`space-y-4 p-7 sm:p-8 rounded-2xl bg-surface-card border ${step.border} transition-all duration-700 ease-out transform ${
+              className={`space-y-4 p-7 sm:p-8 rounded-2xl bg-surface-card border ${step.border} transition-all duration-700 ease-out transform flex flex-col justify-between ${
                 isCardVisible
                   ? 'opacity-100 translate-x-0'
                   : 'opacity-0 -translate-x-16'
               }`}
             >
-              <span className="text-5xl sm:text-6xl font-extrabold text-gray-400 font-['Open_Sans',sans-serif] block">{step.num}</span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">{step.title}</h3>
-              <p className="text-base sm:text-lg font-medium text-gray-300 font-['Open_Sans',sans-serif]">{step.subtitle}</p>
-              <p className="text-lg sm:text-xl text-gray-200 leading-relaxed font-normal pt-1">
-                {step.text}
-              </p>
+              <div className="space-y-4">
+                <span className="text-5xl sm:text-6xl font-extrabold text-gray-400 font-['Open_Sans',sans-serif] block">{step.num}</span>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">{step.title}</h3>
+                <p className="text-base sm:text-lg font-medium text-gray-300 font-['Open_Sans',sans-serif]">{step.subtitle}</p>
+                <p className="text-lg sm:text-xl text-gray-200 leading-relaxed font-normal pt-1">
+                  {step.text}
+                </p>
+              </div>
+              {step.href && (
+                <div className="pt-2">
+                  <Link
+                    href={step.href}
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#38A8E0] hover:text-[#009DF8] hover:underline"
+                  >
+                    <span>Ver detalles del diagnóstico</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              )}
             </div>
           );
         })}

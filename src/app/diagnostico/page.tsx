@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import { FileText, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Diagnóstico iARTESANA (350 €) · Punto de Entrada',
+  title: 'Diagnóstico iARTESANA (360 €) · Punto de Entrada',
   description:
     'Análisis exhaustivo de procesos, evaluación de madurez de datos, matriz de oportunidades y hoja de ruta personalizada para implantar Inteligencia Artificial.',
   alternates: {

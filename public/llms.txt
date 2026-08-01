@@ -48,7 +48,7 @@
 
 ### 1. Diagnóstico iARTESANA
 - **Ruta**: https://iartesana.com/diagnostico
-- **Precio**: 350 € (descontables si se contrata la implantación).
+- **Precio**: 360 € (descontables al 100% si se contrata la implantación).
 - **Entregables**: Auditoría de procesos, mapa de datos, matriz de oportunidades priorizadas, mapa de riesgos y hoja de ruta.
 
 ### 2. Primera Sesión Gratuita
