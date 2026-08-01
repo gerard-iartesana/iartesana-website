@@ -9,10 +9,22 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/'],
       },
       {
-        userAgent: ['GPTBot', 'ChatGPT-User', 'ClaudeBot', 'PerplexityBot', 'Google-Extended', 'Applebot-Extended'],
+        userAgent: [
+          'GPTBot',
+          'ChatGPT-User',
+          'ClaudeBot',
+          'Claude-Web',
+          'PerplexityBot',
+          'Google-Extended',
+          'Applebot-Extended',
+          'Bytespider',
+          'CCBot',
+          'Diffbot',
+        ],
         allow: '/',
       },
     ],
     sitemap: 'https://iartesana.com/sitemap.xml',
+    host: 'https://iartesana.com',
   };
 }

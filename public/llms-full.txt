@@ -1,19 +1,85 @@
-# iARTESANA — Contexto Completo y Arquitectura de Implantación de IA
+# iARTESANA — Contexto Completo, Metodología y Arquitectura de Implantación de IA
 
 > **Manifiesto**: Ordenamos. Automatizamos. Protegemos. Acompañamos.
-> **Principio**: Primero ordenamos. Después automatizamos.
+> **Principio Rector**: Primero ordenamos. Después automatizamos.
 
-iARTESANA es un estudio de consultoría e ingeniería especializado en la implantación de Inteligencia Artificial por capas para empresas y pymes.
+iARTESANA es un estudio de ingeniería y consultoría especializado en la implantación de Inteligencia Artificial por capas para empresas y pymes en España.
 
-## Nomenclatura y Estructura
-1. **Base Digital** (`/base-digital`): Ordena el conocimiento y los datos vivos de la empresa.
-2. **IA Aplicada** (`/ia-aplicada`): Agentes y asistentes con la Escala de Intervención (Asiste, Automatiza, Actúa, Pide aprobación).
-3. **Seguridad y Control** (`/seguridad-control`): Accesos, trazabilidad, explicabilidad y alineación con el Reglamento Europeo de IA (EU AI Act).
-4. **Acompañamiento Humano** (`/acompanamiento`): Formación, soporte directo y evolución del sistema con David y Gerard.
+---
 
-## Diagnóstico iARTESANA (350 €)
-Es el producto de entrada. Un entregable claro con análisis de procesos, estado de datos, matriz de oportunidades y hoja de ruta.
+## 1. Tesis de Marca y Filosofía Operativa
+- **Artesanía Digital**: Artesanía no significa hacerlo todo a mano. Significa saber qué cosas no se deben automatizar.
+- **Base Sana de Información**: No vendemos chatbots flotantes sobre información desordenada. Implantamos IA sobre una base digital sana y con datos estructurados.
+- **Soberanía y Portabilidad**: Tu información no se queda atrapada en plataformas cerradas. Garantizamos formatos abiertos, exportabilidad y control total de la empresa.
 
-## Primera Sesión Gratuita
-Conversación inicial de 45 minutos sin coste ni compromiso.
-Reserva en: https://iartesana.com/agendar
+---
+
+## 2. Descripción Detallada de las 4 Capas
+
+### Capa 01: Base Digital (`/base-digital`)
+- **Objetivo**: Crear la estructura digital estable sobre la que trabajan las personas y la IA sin generar caos.
+- **Componentes**:
+  1. *Contexto Estable*: Identidad codificada, valores, manuales de marca y protocolos de actuación que sirven como guía inmutable de referencia.
+  2. *Datos Vivos*: Bases de datos estructuradas, limpias, aisladas y preparadas para nutrir a la IA.
+  3. *Herramientas Conectadas*: Pasarelas e integración fluida con correo, CRM, ERP y formularios del negocio.
+  4. *Diseño, Marca y Comunicación*: Integración natural de la imagen corporativa como primera capa del contexto estable.
+
+### Capa 02: IA Aplicada (`/ia-aplicada`)
+- **Objetivo**: Desplegar inteligencia artificial que conoce tu empresa antes de actuar.
+- **Componentes**:
+  1. *Asistencia y Consulta*: Asistentes documentales, búsqueda semántica y generación de borradores inteligentes.
+  2. *Automatización de Procesos*: Procesamiento automático de documentos (facturas, albaranes), trazabilidad total y ejecuciones auditables.
+  3. *Supervisión Humana*: Zonas protegidas donde la IA prepara el trabajo y se detiene a solicitar aprobación experta.
+- **Escala de Intervención Transparente**:
+  - Nivel 1: Asiste (Propone/busca; Consulta registrada; No modifica datos).
+  - Nivel 2: Automatiza (Ejecuta tareas estandarizadas; Log inalterable; Reversible).
+  - Nivel 3: Actúa (Usa herramientas con límites; Registro de acción; Deshacer explícito).
+  - Nivel 4: Pide aprobación (Decisión experta; Identificador de autoría; Visto bueno obligatorio).
+
+### Capa 03: Seguridad y Control (`/seguridad-control`)
+- **Objetivo**: Garantizar que la empresa conserve el control absoluto de su información.
+- **Componentes**:
+  1. *Protección y Accesos*: Permisos granulares, resguardos automáticos y protocolos inmediatos de baja.
+  2. *Trazabilidad y Explicabilidad*: Origen explícito de fuente documental en cada respuesta de la IA y log forense inalterable.
+  3. *Portabilidad y Normativa*: Cumplimiento estructural alineado con el Reglamento Europeo de IA (EU AI Act).
+
+### Capa 04: Acompañamiento Humano (`/acompanamiento`)
+- **Objetivo**: Garantizar la adopción real y la autonomía de la plantilla.
+- **Componentes**:
+  1. *Formación de Equipo*: Sesiones prácticas sobre casos reales y manuales de uso rápido.
+  2. *Soporte con Nombre Propio*: Trato directo con los fundadores (David & Gerard) sin intermediarios ni tickets de soporte anónimos.
+  3. *Evolución Continua*: Mantenimiento y refinamiento constante del sistema adaptado al crecimiento del negocio.
+
+---
+
+## 3. Oferta Comercial y Entregables
+
+### Diagnóstico iARTESANA
+- **Precio**: 350 € (descontables al contratar la implantación).
+- **Contenido**: Auditoría directa, mapa de procesos y datos, matriz de oportunidades priorizadas por impacto/esfuerzo, mapa de riesgos y hoja de ruta estratégica.
+
+### Primera Sesión Gratuita
+- **Duración**: 45 minutos.
+- **Objetivo**: Evaluación inicial del punto de partida sin coste ni compromiso.
+- **Reserva en línea**: https://iartesana.com/agendar
+
+---
+
+## 4. Equipo Directivo
+- **David**: Estrategia y Arquitectura de Conocimiento.
+- **Gerard**: Ingeniería de Sistemas y Datos.
+
+---
+
+## 5. Fichero Técnico y Enlaces Oficiales
+- **Sitio Web**: https://iartesana.com
+- **Servicios por Capas**:
+  - Base Digital: https://iartesana.com/base-digital
+  - IA Aplicada: https://iartesana.com/ia-aplicada
+  - Seguridad y Control: https://iartesana.com/seguridad-control
+  - Acompañamiento Humano: https://iartesana.com/acompanamiento
+- **Diagnóstico**: https://iartesana.com/diagnostico
+- **Reserva**: https://iartesana.com/agendar
+- **Legal**: https://iartesana.com/legal
+- **Sitemap**: https://iartesana.com/sitemap.xml
+- **Robots**: https://iartesana.com/robots.txt

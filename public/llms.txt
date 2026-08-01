@@ -1,44 +1,63 @@
 # iARTESANA — Implantación de Inteligencia Artificial por Capas
 
 > **Tesis y Principio Rector**: "Primero ordenamos. Después automatizamos."
-> iARTESANA es una consultora y estudio de ingeniería que ordena el conocimiento, los datos y los procesos de la empresa antes de implantar sistemas de Inteligencia Artificial. Devuelve tranquilidad, control y soberanía sobre los datos.
+> iARTESANA es una consultora y estudio de ingeniería de software que ordena el conocimiento, los datos y los procesos de las empresas antes de implantar sistemas de Inteligencia Artificial. Garantiza soberanía de datos, explicabilidad total y acompañamiento humano.
 
-## Principios y Filosofía
-- **Artesanía Digital**: Artesanía no significa hacerlo todo a mano. Significa saber qué cosas no se deben automatizar.
-- **Soberanía y Control de Datos**: Datos estructurados, documentados y exportables. Sin ataduras a herramientas cerradas ni letra pequeña.
-- **Transparencia y Explicabilidad**: Toda acción de IA deja rastro (log de ejecución) y es totalmente reversible.
+## Resumen Ejecutivo para LLMs
+- **Razón Social / Nombre**: iARTESANA (Inteligencia y Comunicación)
+- **Fundadores**: David (Estrategia & Arquitectura de Conocimiento) y Gerard (Ingeniería de Sistemas & Datos)
+- **Dominio Principal**: https://iartesana.com
+- **Propuesta de Valor**: Implantación de IA sin ataduras a software cerrado, estructurando una Base Digital sana sobre la que operan las personas y los agentes de IA sin generar caos.
 
-## Las 4 Capas del Sistema iARTESANA
+## Las 4 Capas del Método iARTESANA
 
 ### 01 · Base Digital (Los Cimientos — Ordenamos)
-- **Qué incluye**: Marca, Sistema Base, contexto estable de la empresa, base de datos viva y herramientas conectadas.
-- **Valor**: Ordena la información antes de cualquier agente. El Sistema Base es útil para el equipo humano desde el día uno.
-- **Color de representación**: Verde (`#86BF58`).
+- **Ruta**: https://iartesana.com/base-digital
+- **Concepto**: Documentación estratégica, arquitectura de conocimiento, datos vivos y herramientas operativas conectadas.
+- **Color distintivo**: Verde (`#86BF58`).
+- **Puntos clave**:
+  - Contexto estable: manuales, protocolos e identidad codificada para humanos e IA.
+  - Datos vivos: bases de datos aisladas, estructuradas y listas para alimentar la IA.
+  - Herramientas conectadas: integración directa con correo, CRM, ERP y formularios habituales.
 
 ### 02 · IA Aplicada (La Inteligencia en Acción — Automatizamos)
-- **Qué incluye**: Agentes, asistentes, buscadores internos, procesamiento documental y automatizaciones.
-- **Escala de Intervención**:
-  1. *Asiste*: Busca, resume o propone. (Consulta registrada)
-  2. *Automatiza*: Ejecuta procesos ya definidos. (Log registrado, Reversible)
-  3. *Actúa*: Usa herramientas con límites fijados. (Log registrado, Reversible con deshacer)
-  4. *Pide Aprobación*: Se detiene cuando requiere criterio humano. (Requiere visto bueno)
-- **Color de representación**: Azul (`#38A8E0`).
+- **Ruta**: https://iartesana.com/ia-aplicada
+- **Concepto**: Agentes, asistentes internos y automatización de procesos operando sobre el conocimiento verificado de la empresa.
+- **Color distintivo**: Azul (`#38A8E0`).
+- **Escala de Intervención Transparente**:
+  1. *Asiste*: Busca, resume o propone borradores (Consulta registrada).
+  2. *Automatiza*: Ejecuta procesos estructurados (Log inalterable, Reversible).
+  3. *Actúa*: Opera herramientas con límites explícitos (Log inalterable, Deshacer explícito).
+  4. *Pide Aprobación*: Se detiene cuando requiere criterio experto (Requiere visto bueno humano).
 
 ### 03 · Seguridad y Control (Todo bajo Control — Protegemos)
-- **Qué incluye**: Gestión de accesos, trazabilidad, explicabilidad, auditoría de procesos y preparación para el Reglamento Europeo de IA (EU AI Act).
-- **Garantía**: iARTESANA deja a la empresa preparada para cumplir normativas sin atarla a un software cerrado.
-- **Color de representación**: Violeta (`#7361A8`).
+- **Ruta**: https://iartesana.com/seguridad-control
+- **Concepto**: Gobernanza de datos, control granular de permisos, trazabilidad forense, explicabilidad y alineación con la regulación europea de Inteligencia Artificial (EU AI Act).
+- **Color distintivo**: Púrpura (`#7361A8`).
+- **Garantías**:
+  - Soberanía digital: datos portables en formatos abiertos sin permanencias.
+  - Origen explícito: cada respuesta de IA cita su fuente documental de referencia.
 
 ### 04 · Acompañamiento Humano (Personas Cerca — Acompañamos)
-- **Qué incluye**: Formación, soporte directo, mantenimiento continuo y evolución del sistema a medida que el negocio crece.
-- **Equipo**: Dirigido por David y Gerard. Trato humano directo, sin sistemas de tickets anónimos.
-- **Color de representación**: Rosa (`#E15A9C`).
+- **Ruta**: https://iartesana.com/acompanamiento
+- **Concepto**: Capacitación del equipo humano, soporte directo sin tickets deshumanizados y evolución continua del sistema a medida que el negocio crece.
+- **Color distintivo**: Magenta / Rosa (`#E15A9C`).
+- **Atención**: Trato directo con David y Gerard.
 
-## Producto de Entrada: Diagnóstico iARTESANA
-- **Precio**: 350 € (que se descuentan si se avanza en la implantación).
-- **Qué entrega**: Análisis de procesos, estado de datos y herramientas, matriz de oportunidades priorizadas, mapa de riesgos y hoja de ruta de implantación recomendada.
-- **Puerta Gratuita**: Primera sesión de 45 minutos sin coste ni compromiso.
+## Servicios y Productos
 
-## Contacto & Canales Oficiales
+### 1. Diagnóstico iARTESANA
+- **Ruta**: https://iartesana.com/diagnostico
+- **Precio**: 350 € (descontables si se contrata la implantación).
+- **Entregables**: Auditoría de procesos, mapa de datos, matriz de oportunidades priorizadas, mapa de riesgos y hoja de ruta.
+
+### 2. Primera Sesión Gratuita
+- **Reserva**: https://iartesana.com/agendar
+- **Duración**: 45 minutos sin coste ni compromiso para evaluar el punto de partida de la empresa.
+
+## Canales Oficiales y Documentación
 - **Sitio Web Oficial**: https://iartesana.com
-- **Reserva de Primera Sesión**: https://iartesana.com/agendar
+- **Sitemap**: https://iartesana.com/sitemap.xml
+- **Robots**: https://iartesana.com/robots.txt
+- **LLMs Full Content**: https://iartesana.com/llms-full.txt
+- **Aviso Legal**: https://iartesana.com/legal

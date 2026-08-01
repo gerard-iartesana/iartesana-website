@@ -4,8 +4,37 @@ import { Metadata } from 'next';
 import { FileText, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Diagnóstico iARTESANA (360 €) | Producto de Entrada',
-  description: 'Análisis exhaustivo de procesos, estado de datos, matriz de oportunidades y hoja de ruta para la implantación de IA en tu empresa.',
+  title: 'Diagnóstico iARTESANA (350 €) · Punto de Entrada',
+  description:
+    'Análisis exhaustivo de procesos, evaluación de madurez de datos, matriz de oportunidades y hoja de ruta personalizada para implantar Inteligencia Artificial.',
+  alternates: {
+    canonical: '/diagnostico',
+  },
+  openGraph: {
+    title: 'Diagnóstico iARTESANA · Auditoría e Hoja de Ruta de IA',
+    description:
+      'Descubre cómo implantar Inteligencia Artificial en tu empresa con una auditoría completa de datos, procesos y riesgos.',
+    url: 'https://iartesana.com/diagnostico',
+    siteName: 'iARTESANA',
+    locale: 'es_ES',
+    type: 'website',
+    images: [
+      {
+        url: 'https://iartesana.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Diagnóstico iARTESANA · Punto de Entrada',
+        type: 'image/png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Diagnóstico iARTESANA · Auditoría e Hoja de Ruta de IA',
+    description:
+      'Descubre cómo implantar Inteligencia Artificial en tu empresa con una auditoría completa de datos, procesos y riesgos.',
+    images: ['https://iartesana.com/og-image.png'],
+  },
 };
 
 export default function DiagnosticoPage() {

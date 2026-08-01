@@ -8,8 +8,37 @@ import StickyScrollVideoSection from '@/components/StickyScrollVideoSection';
 import ScrollRevealChecklist from '@/components/ScrollRevealChecklist';
 
 export const metadata: Metadata = {
-  title: 'Acompañamiento Humano · Personas Cerca | iARTESANA',
-  description: 'Adopción real, formación para el equipo, soporte directo con David y Gerard y evolución continua del sistema.',
+  title: 'Acompañamiento Humano · Capa 04 | iARTESANA',
+  description:
+    'Capacitación de equipo, formación práctica, soporte directo con David y Gerard y evolución continua del sistema.',
+  alternates: {
+    canonical: '/acompanamiento',
+  },
+  openGraph: {
+    title: 'Acompañamiento Humano · Capa 04 | iARTESANA',
+    description:
+      'Trato humano directo sin tickets de soporte anónimos. Formación práctica y adaptación constante.',
+    url: 'https://iartesana.com/acompanamiento',
+    siteName: 'iARTESANA',
+    locale: 'es_ES',
+    type: 'website',
+    images: [
+      {
+        url: 'https://iartesana.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Acompañamiento Humano · Capa 04 | iARTESANA',
+        type: 'image/png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Acompañamiento Humano · Capa 04 | iARTESANA',
+    description:
+      'Trato humano directo sin tickets de soporte anónimos. Formación práctica y adaptación constante.',
+    images: ['https://iartesana.com/og-image.png'],
+  },
 };
 
 const pieza01Items = [

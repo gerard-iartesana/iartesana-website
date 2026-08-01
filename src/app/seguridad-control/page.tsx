@@ -7,8 +7,37 @@ import StickyScrollVideoSection from '@/components/StickyScrollVideoSection';
 import ScrollRevealChecklist from '@/components/ScrollRevealChecklist';
 
 export const metadata: Metadata = {
-  title: 'Seguridad y Control · Todo Bajo Control | iARTESANA',
-  description: 'Control de accesos, portabilidad de datos, trazabilidad, explicabilidad y alineación con la normativa europea de IA.',
+  title: 'Seguridad y Control · Capa 03 | iARTESANA',
+  description:
+    'Control de accesos, portabilidad de datos, trazabilidad forense, explicabilidad y preparación para el Reglamento Europeo de IA (EU AI Act).',
+  alternates: {
+    canonical: '/seguridad-control',
+  },
+  openGraph: {
+    title: 'Seguridad y Control · Capa 03 | iARTESANA',
+    description:
+      'Gobernanza de datos, explicabilidad, permisos granulares y soberanía digital para tu empresa.',
+    url: 'https://iartesana.com/seguridad-control',
+    siteName: 'iARTESANA',
+    locale: 'es_ES',
+    type: 'website',
+    images: [
+      {
+        url: 'https://iartesana.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Seguridad y Control · Capa 03 | iARTESANA',
+        type: 'image/png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Seguridad y Control · Capa 03 | iARTESANA',
+    description:
+      'Gobernanza de datos, explicabilidad, permisos granulares y soberanía digital para tu empresa.',
+    images: ['https://iartesana.com/og-image.png'],
+  },
 };
 
 const pieza01Items = [

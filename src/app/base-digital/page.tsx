@@ -8,7 +8,36 @@ import HeroVideo from '@/components/HeroVideo';
 
 export const metadata: Metadata = {
   title: 'Base Digital · Capa 01 | iARTESANA',
-  description: 'Ordenamos el contexto estable, los datos vivos y las herramientas conectadas sobre los que operan las personas y la inteligencia artificial.',
+  description:
+    'Ordenamos el contexto estable, los datos vivos y las herramientas conectadas sobre los que operan las personas y la inteligencia artificial sin generar caos.',
+  alternates: {
+    canonical: '/base-digital',
+  },
+  openGraph: {
+    title: 'Base Digital · Capa 01 | iARTESANA',
+    description:
+      'Marca, conocimiento, datos vivos y herramientas conectadas. La estructura digital estable para tu empresa.',
+    url: 'https://iartesana.com/base-digital',
+    siteName: 'iARTESANA',
+    locale: 'es_ES',
+    type: 'website',
+    images: [
+      {
+        url: 'https://iartesana.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Base Digital · Capa 01 | iARTESANA',
+        type: 'image/png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Base Digital · Capa 01 | iARTESANA',
+    description:
+      'Marca, conocimiento, datos vivos y herramientas conectadas. La estructura digital estable para tu empresa.',
+    images: ['https://iartesana.com/og-image.png'],
+  },
 };
 
 const pieza01Items = [

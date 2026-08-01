@@ -1,11 +1,45 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { Metadata } from 'next';
 import ScrollTimeline from '@/components/ScrollTimeline';
 import HeroVideo from '@/components/HeroVideo';
 import ConvergenceLines from '@/components/ConvergenceLines';
 import TeamSection from '@/components/TeamSection';
 import ProcessStepsSection from '@/components/ProcessStepsSection';
+
+export const metadata: Metadata = {
+  title: 'iARTESANA · Implantación de Inteligencia Artificial por Capas',
+  description:
+    'Implantamos inteligencia artificial en tu empresa ordenando primero el conocimiento, los datos y los procesos. Soberanía de datos, explicabilidad y acompañamiento humano.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'iARTESANA · Implantación de Inteligencia Artificial por Capas',
+    description:
+      'Primero ordenamos. Después automatizamos. Descubre el método iARTESANA para empresas.',
+    url: 'https://iartesana.com',
+    siteName: 'iARTESANA',
+    locale: 'es_ES',
+    type: 'website',
+    images: [
+      {
+        url: 'https://iartesana.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'iARTESANA · Implantación de Inteligencia Artificial por Capas',
+        type: 'image/png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'iARTESANA · Implantación de Inteligencia Artificial por Capas',
+    description: 'Primero ordenamos. Después automatizamos. Soberanía y control sobre tus datos.',
+    images: ['https://iartesana.com/og-image.png'],
+  },
+};
 
 export default function HomePage() {
   return (

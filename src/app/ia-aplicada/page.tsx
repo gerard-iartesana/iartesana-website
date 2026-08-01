@@ -7,8 +7,37 @@ import StickyScrollVideoSection from '@/components/StickyScrollVideoSection';
 import ScrollRevealChecklist from '@/components/ScrollRevealChecklist';
 
 export const metadata: Metadata = {
-  title: 'IA Aplicada · La Inteligencia en Acción | iARTESANA',
-  description: 'Inteligencia artificial que conoce tu empresa antes de actuar. Escala de intervención transparente con supervisión humana.',
+  title: 'IA Aplicada · Capa 02 | iARTESANA',
+  description:
+    'Inteligencia artificial que conoce tu empresa antes de actuar. Escala de intervención transparente con supervisión humana y soberanía de datos.',
+  alternates: {
+    canonical: '/ia-aplicada',
+  },
+  openGraph: {
+    title: 'IA Aplicada · Capa 02 | iARTESANA',
+    description:
+      'Agentes, asistentes y automatización de procesos operando sobre el conocimiento verificado de tu empresa.',
+    url: 'https://iartesana.com/ia-aplicada',
+    siteName: 'iARTESANA',
+    locale: 'es_ES',
+    type: 'website',
+    images: [
+      {
+        url: 'https://iartesana.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'IA Aplicada · Capa 02 | iARTESANA',
+        type: 'image/png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'IA Aplicada · Capa 02 | iARTESANA',
+    description:
+      'Agentes, asistentes y automatización de procesos operando sobre el conocimiento verificado de tu empresa.',
+    images: ['https://iartesana.com/og-image.png'],
+  },
 };
 
 const pieza01Items = [
