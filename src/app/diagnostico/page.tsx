@@ -81,7 +81,7 @@ export default function DiagnosticoPage() {
         </div>
 
         <p className="text-emerald-400 text-sm font-semibold max-w-md mx-auto">
-          ✓ Garantía: Los 360 € se descuentan al 100% del importe total si avanzamos juntos en la implantación.
+          ✓ Garantía: 360 € — se descuentan íntegramente del proyecto si continuamos con la implantación.
         </p>
 
         <div className="pt-4">

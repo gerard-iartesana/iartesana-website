@@ -44,7 +44,7 @@ export default function ProcessStepsSection() {
       title: 'Diagnóstico iARTESANA',
       subtitle: (
         <>
-          <strong className="font-bold text-white text-lg sm:text-xl">360 €</strong> (Descontables al 100%)
+          <strong className="font-bold text-white text-lg sm:text-xl">360 €</strong> — se descuentan íntegramente del proyecto si continuamos con la implantación.
         </>
       ),
       text: 'Análisis detallado de tu operativa, oportunidades de automatización y hoja de ruta con presupuesto cerrado.',
